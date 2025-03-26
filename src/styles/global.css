@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color: black;
+  background-image: url("/images/PaperTexture.png");
+}
+
+:root {
+  --Black: #1e1e1e;
+
+  --Gray: #2c2c2c;
+  --light-Gray: gray;
+
+  --Blue: #0277f7;
+  --light-Blue: #4a8ed9;
+}

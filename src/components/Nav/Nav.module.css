@@ -1,0 +1,58 @@
+.sideNav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 50;
+  margin: 0 20px;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sideNav.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.tab {
+  all: unset;
+  color: var(--light-Gray);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 60px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--light-Blue);
+}
+
+.active {
+  color: var(--Blue);
+  font-weight: 700;
+  position: relative;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+}
