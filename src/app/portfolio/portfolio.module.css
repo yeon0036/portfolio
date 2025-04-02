@@ -1,0 +1,49 @@
+.content {
+  margin: 32px 0;
+  padding: 40px 0;
+  border-bottom: 0.5px solid var(--light-Gray);
+  scroll-margin-top: 200px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 24px; */
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 80px;
+  border-left: 10px solid var(--Blue);
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.portfolioTitle {
+  color: var(--White);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px auto;
+}
+
+.portfolioCard {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid var(--light-Gray);
+  border-radius: 8px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 5s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

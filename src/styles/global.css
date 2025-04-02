@@ -4,18 +4,33 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   font-family: "Helvetica Neue", sans-serif;
-  color: black;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(74, 142, 217, 0.5),
+    rgba(2, 119, 247, 0.5)
+  ); */
+  color: var(--White);
   background-image: url("/images/PaperTexture.png");
+  overflow-x: hidden;
 }
 
 :root {
   --Black: #1e1e1e;
+  --White: #d5dce3;
 
   --Gray: #2c2c2c;
   --light-Gray: gray;
 
   --Blue: #0277f7;
-  --light-Blue: #4a8ed9;
+  --light-Blue: #0a0a0a;
 }

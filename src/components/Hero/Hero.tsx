@@ -8,7 +8,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="aboutme" className={styles.hero}>
+    <section id="hero" className={styles.hero}>
       <h1 className={styles.title}>
         JUNG
         <br />
