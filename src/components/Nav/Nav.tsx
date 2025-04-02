@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 
 const tab = [
+  { key: "hero", label: "Landing", href: "#hero" },
   { key: "aboutme", label: "AboutMe", href: "#aboutme" },
+  { key: "skills", label: "Skills", href: "#skills" },
   { key: "portfolio", label: "Portfolio", href: "#portfolio" },
   { key: "contact", label: "Contact", href: "#contact" },
 ];
@@ -14,34 +16,52 @@ export default function Navigation() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    const handleObserve = () => {
+      const targets = document.querySelectorAll("section[id]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              setActiveTab(entry.target.id);
+            }
+          }
+        },
+        {
+          rootMargin: "0px 0px -60% 0px",
+          threshold: 0,
+        }
+      );
+
+      targets.forEach((section) => observer.observe(section));
+
+      return () => {
+        targets.forEach((section) => observer.unobserve(section));
+      };
+    };
+
+    requestAnimationFrame(handleObserve);
+
     const onScroll = () => {
       setShow(window.scrollY > window.innerHeight * 0.2);
     };
     window.addEventListener("scroll", onScroll);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveTab(entry.target.id);
-          }
-        }
-      },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0.3 }
-    );
-
-    const targets = document.querySelectorAll("section[id]");
-    targets.forEach((section) => observer.observe(section));
-
     return () => {
       window.removeEventListener("scroll", onScroll);
-      targets.forEach((section) => observer.unobserve(section));
     };
   }, []);
 
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      const offsetTop = el.getBoundingClientRect().top + window.scrollY;
+      const offset = 100;
+      window.scrollTo({
+        top: offsetTop - offset,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

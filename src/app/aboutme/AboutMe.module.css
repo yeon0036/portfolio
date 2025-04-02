@@ -1,7 +1,8 @@
-.continer {
-  width: 100%;
-  background-color: var(--light-Blue);
-  color: var(--Black);
+.sectionLine {
+  margin: 32px 0;
+  padding: 40px 0;
+  border-bottom: 0.5px solid var(--light-Gray);
+  scroll-margin-top: 200px;
 }
 
 .about {
@@ -20,21 +21,105 @@
   padding-left: 20px;
 }
 
-.content {
+.container {
   display: flex;
-  align-items: center;
-  gap: 28px;
-  margin: 32px 0;
-  font-size: 16px;
+  align-items: flex-start;
+  margin: 32px auto;
   line-height: 26px;
-  color: var(--Black);
-}
-
-.content p + p {
-  margin-top: 20px;
 }
 
 .image {
   border-radius: 9999px;
   object-fit: cover;
+  align-items: top;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 32px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 0.5px solid var(--light-Gray);
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 0.5px solid var(--light-Gray);
+}
+
+.eduLogo {
+  padding: 8px;
+  margin: 12px 0;
+  background-color: white;
+  object-fit: cover;
+}
+
+.schoolName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.eduContainer {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.eduContent {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 16px;
+}
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+  /* border-bottom: 0.5px solid var(--light-Gray); */
+}
+
+.certificateGroup {
+  margin-top: 18px;
+}
+
+.certificateTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  min-width: 120px;
+}
+
+.certificateContainer {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 5s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
