@@ -1,0 +1,11 @@
+.container {
+  padding: 40px;
+  background-color: var(--Blue);
+  align-items: center;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 200;
+}

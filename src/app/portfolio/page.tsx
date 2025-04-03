@@ -28,7 +28,7 @@ export default function Portfolio() {
   return (
     <section
       ref={sectionRef}
-      style={{ minHeight: "100vh" }}
+      // style={{ minHeight: "100vh" }}
       id="portfolio"
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""

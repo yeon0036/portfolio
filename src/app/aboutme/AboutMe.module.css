@@ -46,6 +46,11 @@
   font-weight: bold;
 }
 
+.semiTitle {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .intro {
   display: flex;
   flex-direction: column;

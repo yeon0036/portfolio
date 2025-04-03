@@ -78,6 +78,13 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
+            src="/logo/nodejs.png"
+            alt="node js"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
             src="/logo/vscode.png"
             alt="vscode"
             width={80}
@@ -130,6 +137,13 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
+            src="/logo/git.png"
+            alt="git"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
             src="/logo/xd.png"
             alt="xd"
             width={80}
@@ -161,15 +175,15 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/nodejs.png"
-            alt="node js"
+            src="/logo/c.svg"
+            alt="c"
             width={80}
             height={80}
           />
           <Image
             className={styles.logoImg}
-            src="/logo/git.png"
-            alt="git"
+            src="/logo/c++.png"
+            alt="c++"
             width={80}
             height={80}
           />

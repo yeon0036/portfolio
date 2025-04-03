@@ -26,11 +26,16 @@
 .scrollBtn {
   font-size: 24px;
   margin-top: 100px;
+  width: 100%;
+  max-width: 100%;
   background: none;
   color: var(--light-Blue);
   border: none;
   cursor: pointer;
   animation: bounce 1.4s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes bounce {
