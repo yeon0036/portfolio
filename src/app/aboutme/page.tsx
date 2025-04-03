@@ -44,7 +44,9 @@ export default function AboutMe() {
           </div>
           <div className={styles.content}>
             <div className={styles.intro}>
-              <p className={styles.sectionTitle}>정혜연</p>
+              <p className={styles.sectionTitle}>
+                정혜연 <span className={styles.semiTitle}>Jung HyeYeon</span>
+              </p>
               <p>2000.03.06</p>
               <p>
                 안녕하세요. <strong>익숙함과 새로움의 공존</strong>을 추구하는

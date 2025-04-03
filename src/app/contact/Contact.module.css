@@ -1,0 +1,45 @@
+.title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 80px;
+  border-left: 10px solid var(--Blue);
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  color: var(--light-Blue);
+}
+
+.logo {
+  background-color: var(--White);
+  padding: 12px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.linkTitle {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
