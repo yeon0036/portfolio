@@ -72,7 +72,7 @@ export default function AboutMe() {
                   <p className={styles.schoolName}>아주대학교</p>
                   <p>2019.03 ~ 2025.02</p>
                   <p>전공: 불어불문학과</p>
-                  <p>부전공: 디지털미디어학과</p>
+                  <p>제 2 전공: 디지털미디어학과</p>
                 </div>
               </div>
               <div className={styles.eduContainer}>

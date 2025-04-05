@@ -78,6 +78,13 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
+            src="/logo/restAPI.png"
+            alt="rest api"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
             src="/logo/nodejs.png"
             alt="node js"
             width={80}
@@ -92,7 +99,7 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/githib.png"
+            src="/logo/github.png"
             alt="github"
             width={80}
             height={80}
