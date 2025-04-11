@@ -84,7 +84,7 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/nodejs.png"
+            src="/logo/nodeJs.png"
             alt="node js"
             width={80}
             height={80}
