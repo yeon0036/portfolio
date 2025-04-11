@@ -1,6 +1,6 @@
 .sectionLine {
   margin: 32px 0;
-  padding: 40px 0;
+  padding-bottom: 80px;
   border-bottom: 0.5px solid var(--light-Gray);
   scroll-margin-top: 200px;
 }
@@ -23,7 +23,6 @@
 .container {
   display: flex;
   align-items: flex-start;
-  margin: 32px auto;
   line-height: 26px;
   gap: 52px;
 }
@@ -98,8 +97,6 @@
   justify-content: space-between;
   gap: 12px;
   margin-top: 40px;
-  padding-bottom: 40px;
-  /* border-bottom: 0.5px solid var(--light-Gray); */
 }
 
 .certificateGroup {
