@@ -1,0 +1,53 @@
+.title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 80px;
+  border-left: 10px solid var(--Blue);
+  padding-left: 20px;
+}
+
+.content {
+  margin: 32px 0;
+  padding-bottom: 80px;
+  border-bottom: 0.5px solid var(--light-Gray);
+  scroll-margin-top: 200px;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 12px;
+}
+
+.logoImg {
+  object-fit: contain;
+  border: 1px solid var(--light-Gray);
+  background-color: var(--White);
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.skillTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.skillContiner {
+  margin-bottom: 20px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

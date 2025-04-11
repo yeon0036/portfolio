@@ -1,18 +1,28 @@
 "use client";
 
-import Hero from "@/components/Hero/Hero";
+import Hero from "../components/Hero/Hero";
 import AboutMe from "./aboutme/page";
-import Navigation from "@/components/Nav/Nav";
-import styles from "./page.module.css";
+import Skills from "./skills/page";
+import Portfolio from "./portfolio/page";
+import Contact from "./contact/page";
+import Navigation from "../components/Nav/Nav";
+import styles from "./Landing.module.css";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Navigation />
-      <div className={styles.content}>
-        <AboutMe />
-      </div>
+      <main className={styles.wrapper}>
+        <Navigation />
+        <div>
+          <Hero />
+          <div className={styles.content}>
+            <AboutMe />
+            <Skills />
+            <Portfolio />
+            <Contact />
+          </div>
+        </div>
+      </main>
     </>
   );
 }
