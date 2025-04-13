@@ -27,12 +27,6 @@ export const portfolioItems: PortfolioProps[] = [
     category: "FE",
   },
   {
-    id: "16HLAB",
-    title: "16HLAB",
-    image: "/images/16HLAB/16HLAB.png",
-    category: "DESIGN",
-  },
-  {
     id: "WITH",
     title: "WITH",
     image: "/images/WITH/WITH.png",
