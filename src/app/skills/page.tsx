@@ -25,7 +25,6 @@ export default function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      style={{ minHeight: "100vh" }}
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
       }`}
@@ -78,7 +77,14 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/nodejs.png"
+            src="/logo/restAPI.png"
+            alt="rest api"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/nodeJs.png"
             alt="node js"
             width={80}
             height={80}
@@ -92,7 +98,7 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/githib.png"
+            src="/logo/github.png"
             alt="github"
             width={80}
             height={80}

@@ -23,7 +23,7 @@
   color: var(--light-Gray);
 }
 
-.scrollBtn {
+.scrollArrow {
   font-size: 24px;
   margin-top: 100px;
   width: 100%;
@@ -31,7 +31,6 @@
   background: none;
   color: var(--light-Blue);
   border: none;
-  cursor: pointer;
   animation: bounce 1.4s infinite;
   display: flex;
   justify-content: center;
@@ -45,5 +44,14 @@
   }
   50% {
     transform: translateY(8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 200px 20px 20px;
+  }
+  .title {
+    font-size: 52px;
   }
 }

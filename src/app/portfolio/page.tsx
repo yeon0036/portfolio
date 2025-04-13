@@ -1,12 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./portfolio.module.css";
+import type { JSX } from "react";
 import { useEffect, useRef, useState } from "react";
+import PortfolioModal from "./components/PortfolioModal";
+import Rolling from "./components/PortfolioDetail/Rolling";
+import Whyne from "./components/PortfolioDetail/WHYNE";
+import GlobalNomad from "./components/PortfolioDetail/GlobalNomad";
+import styles from "./portfolio.module.css";
+import { portfolioItems } from "./PortfolioData";
+
+const componentMap: Record<string, JSX.Element> = {
+  Rolling: <Rolling />,
+  Whyne: <Whyne />,
+  GlobalNomad: <GlobalNomad />,
+};
 
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState<null | string>(null);
+  const [activeTab, setActiveTab] = useState<
+    "ALL" | "JavaScript" | "TypeScript"
+  >("ALL");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,50 +44,60 @@ export default function Portfolio() {
   return (
     <section
       ref={sectionRef}
-      // style={{ minHeight: "100vh" }}
+      // style={{ minHeight: "50vh" }}
       id="portfolio"
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
       }`}
     >
       <p className={styles.title}>Portfolio</p>
+
+      {/* 탭 */}
+      <div className={styles.tabs}>
+        {["ALL", "JavaScript", "TypeScript"].map((tab) => (
+          <button
+            key={tab}
+            onClick={() =>
+              setActiveTab(tab as "ALL" | "JavaScript" | "TypeScript")
+            }
+            className={`${styles.tab} ${
+              activeTab === tab ? styles.active : ""
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* 포트폴리오 카드 */}
       <div className={styles.content}>
         <div className={styles.container}>
-          <div>
-            <div className={styles.portfolioCard}>
-              <Image
-                src="/images/Rolling.svg"
-                alt="Rolling"
-                width={250}
-                height={250}
-              />
-              <p className={styles.portfolioTitle}>Rolling</p>
-            </div>
-          </div>
-          <div>
-            <div className={styles.portfolioCard}>
-              <Image
-                src="/images/WINEY.svg"
-                alt="WINEY"
-                width={250}
-                height={250}
-              />
-              <p className={styles.portfolioTitle}>WINEY</p>
-            </div>
-          </div>
-          <div>
-            <div className={styles.portfolioCard}>
-              <Image
-                src="/images/GlobalNomad.svg"
-                alt="GlobalNomad"
-                width={250}
-                height={250}
-              />
-              <p className={styles.portfolioTitle}>GlobalNomad</p>
-            </div>
-          </div>
+          {portfolioItems
+            .filter(
+              (item) => activeTab === "ALL" || item.category === activeTab
+            )
+            .map((item) => (
+              <div key={item.id} onClick={() => setIsOpen(item.id)}>
+                <div className={styles.portfolioCard}>
+                  <Image
+                    className={styles.portfolioImage}
+                    src={item.image}
+                    alt={item.title}
+                    width={200}
+                    height={200}
+                  />
+                </div>
+              </div>
+            ))}
         </div>
       </div>
+
+      {/* 모달 */}
+      {isOpen && (
+        <PortfolioModal onClose={() => setIsOpen(null)}>
+          {componentMap[isOpen]}
+        </PortfolioModal>
+      )}
     </section>
   );
 }

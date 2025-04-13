@@ -10,7 +10,7 @@
 
 .content {
   margin: 32px 0;
-  padding: 40px 0;
+  padding-bottom: 80px;
   border-bottom: 0.5px solid var(--light-Gray);
   scroll-margin-top: 200px;
 }

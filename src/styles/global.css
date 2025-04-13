@@ -20,7 +20,7 @@ body {
     rgba(2, 119, 247, 0.5)
   ); */
   color: var(--White);
-  background-image: url("/images/PaperTexture.png");
+  background-color: var(--Black);
   overflow-x: hidden;
 }
 

@@ -35,10 +35,10 @@ export default function AboutMe() {
         <div className={styles.container}>
           <div>
             <Image
-              src="/images/ProfilePhoto.jpeg"
+              src="/images/ProfilePhoto2.jpeg"
               alt="profile image"
-              width={240}
-              height={240}
+              width={280}
+              height={280}
               className={styles.image}
             />
           </div>
@@ -72,7 +72,7 @@ export default function AboutMe() {
                   <p className={styles.schoolName}>아주대학교</p>
                   <p>2019.03 ~ 2025.02</p>
                   <p>전공: 불어불문학과</p>
-                  <p>부전공: 디지털미디어학과</p>
+                  <p>제 2 전공: 디지털미디어학과</p>
                 </div>
               </div>
               <div className={styles.eduContainer}>
