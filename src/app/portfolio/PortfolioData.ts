@@ -1,4 +1,4 @@
-export type PortfolioCategory = "FE" | "DESIGN";
+export type PortfolioCategory = "JavaScript" | "TypeScript";
 
 export interface PortfolioProps {
   id: string;
@@ -12,24 +12,18 @@ export const portfolioItems: PortfolioProps[] = [
     id: "GlobalNomad",
     title: "GlobalNomad",
     image: "/images/GlobalNomad/GlobalNomad.svg",
-    category: "FE",
+    category: "TypeScript",
   },
   {
     id: "Rolling",
     title: "Rolling",
     image: "/images/Rolling/Rolling.svg",
-    category: "FE",
+    category: "JavaScript",
   },
   {
     id: "Whyne",
     title: "WHYNE",
     image: "/images/WHYNE/WHYNE.svg",
-    category: "FE",
-  },
-  {
-    id: "WITH",
-    title: "WITH",
-    image: "/images/WITH/WITH.png",
-    category: "DESIGN",
+    category: "TypeScript",
   },
 ];

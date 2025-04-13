@@ -201,121 +201,111 @@ export default function GlobalNomad() {
             <ul className={styles.rnrList}>
               <li>
                 <p className={styles.semiTitle}>API</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      Axios 인스턴스를 활용한 인증 기반 API 설정 및 인터셉터
+                      Axios 인스턴스를 활용해 인증 기반 API 설정 및 인터셉터
                       구성
                     </li>
                     <li>
-                      모든 요청에 자동으로 토큰을 포함하고, 401 응답 시
+                      모든 요청에 토큰을 자동 포함시키고, 401 응답 시
                       refreshToken으로 갱신 및 재요청 처리
                     </li>
                     <li>
                       SSR 대응을 위해 localStorage 대신 쿠키 기반(JWT) 인증 방식
-                      사용
+                      적용
                     </li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      토큰 인증 흐름과 401 처리, 자동 로그아웃 처리 등 보안
-                      중심의 에러 핸들링을 경험
+                      토큰 인증 흐름, 401 처리, 자동 로그아웃 등 보안 중심의
+                      에러 핸들링 경험
                     </li>
-                    <li>
-                      클라이언트/서버 구분에 따른 인증 처리 방식의 차이를 이해함
-                    </li>
+                    <li>클라이언트와 서버의 인증 처리 방식 차이를 이해함</li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>prefetch 시 토큰이 적용되지 않아 요청이 실패함</li>
+                    <li>prefetch 시 토큰 미적용으로 요청 실패 발생</li>
                     <li>
-                      SSR 상황에서 쿠키 기반 인증 처리가 더 정교하게 분리될
-                      필요가 있었음
+                      SSR 환경에서의 쿠키 인증 처리를 더 정교하게 나눌 필요가
+                      있었음
                     </li>
                   </div>
                 </ul>
               </li>
+
               <li>
                 <p className={styles.semiTitle}>Query hooks</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      API 호출 로직을 커스텀 훅으로 추상화하여 컴포넌트에서
-                      재사용 가능하도록 설계
+                      API 호출 로직을 커스텀 훅으로 추상화하여 재사용 가능한
+                      구조로 설계
                     </li>
                     <li>
-                      네이밍과 구조를 일관되게 유지하여 가독성과 유지보수성을
-                      높임
+                      네이밍과 구조 일관성 유지로 가독성과 유지보수성 향상
                     </li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      공통 구조(QueryKey, QueryFn) 패턴화를 통해 팀 단위 개발에
-                      적합한 구조를 익힘
+                      QueryKey, QueryFn 등 공통 구조 패턴화를 통해 팀 협업에
+                      적합한 구조 학습
                     </li>
                     <li>
-                      상태 관리 흐름에서 에러/로딩 처리 일관화의 중요성을 체감
+                      에러 및 로딩 상태를 일관성 있게 처리하는 흐름의 중요성
+                      체감
                     </li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>
-                      초기에 기대했던 것과는 달리, 기존 hook들을 변형하여 사용할
-                      일이 많아짐
-                    </li>
-                    <li>
-                      mutation과 query를 초기 세팅시에 적절히 분리하지 못한 것이
-                      아쉬움
-                    </li>
+                    <li>기존 훅들을 수정해서 써야 하는 경우가 많아졌음</li>
+                    <li>mutation과 query의 초기 분리가 부족했음</li>
                   </div>
                 </ul>
               </li>
+
               <li>
                 <p className={styles.semiTitle}>내 정보 페이지</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      초기에는 입력창이 항상 노출되는 구조였으나, UX 개선을 위해
-                      모달 기반 수정 UI로 변경
+                      항상 노출되던 입력창을 UX 개선을 위해 모달 기반 UI로 변경
                     </li>
                     <li>
                       사용자 정보는 useUser 훅으로 관리, 수정 시 useMutation을
-                      활용하여 서버에 업데이트 요청
+                      활용해 서버에 반영
                     </li>
                     <li>
-                      수정 후 setState와 refetch를 통해 화면에 변경 사항 반영
+                      수정 후 setState와 refetch로 변경 사항을 화면에 반영
                     </li>
+                    <li>로딩 상태는 framer-motion으로 처리하여 UX 향상</li>
                     <li>
-                      로딩 상태를 framer-motion으로 처리하여 사용자 경험을 개선
+                      lighthouse 점수를 고려해 최적화를 위한 리팩토링 진행
                     </li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
+                    <li>모달 기반 UX 설계의 흐름을 고민하게 되었음</li>
                     <li>
-                      모달 기반 UX 설계로 사용자 중심의 흐름을 고민하게 되었고,
+                      useMutation과 query hook으로 데이터 흐름 제어 방식 학습
                     </li>
                     <li>
-                      useMutation과 query hook들을 통해 데이터 갱신 흐름을
-                      명확히 제어하는 방법을 익혔습니다.
-                    </li>
-                    <li>
-                      단순한 기능 구현을 넘어서 언제 보여주고 언제 감추는지에
-                      대한 사용자 경험 설계의 중요성을 체감했습니다.
+                      기능 구현을 넘어, UI 노출 타이밍에 대한 설계 중요성 체감
                     </li>
                   </div>
                 </ul>
@@ -323,48 +313,44 @@ export default function GlobalNomad() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      invalidateQueries 대신 refetch와 setState로 처리해 구조적
-                      통일성이 떨어졌다고 느꼈음
+                      invalidateQueries 대신 refetch와 setState를 사용해 구조적
+                      통일성이 떨어졌음
                     </li>
                   </div>
                 </ul>
               </li>
+
               <li>
                 <p className={styles.semiTitle}>예약 현황 페이지</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      달력(react-calendar)과 아이콘을 조합하여 날짜별 예약
-                      상태를 시각적으로 표현
+                      react-calendar와 아이콘을 조합해 날짜별 예약 상태 시각화
+                    </li>
+                    <li>다양한 상태와 시간대 필터링을 위한 모달 UI 구성</li>
+                    <li>
+                      상태 변경은 useMutation으로 처리하고 invalidateQueries로
+                      쿼리 갱신
                     </li>
                     <li>
-                      다양한 상태(pending, confirmed, declined) 및 시간대
-                      필터링을 위한 모달 UI 구성
-                    </li>
-                    <li>
-                      상태 변경은 useMutation으로 처리하고 관련 쿼리를
-                      invalidateQueries로 갱신
+                      lighthouse 점수를 고려해 최적화를 위한 리팩토링 진행
                     </li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>
-                      복잡한 상태와 동적 쿼리 흐름 속에서 데이터 분리, 캐싱,
-                      갱신 전략의 중요성을 배움
-                    </li>
-                    <li>상태 관리와 시각화(UI)의 연결 구조 설계 경험</li>
+                    <li>복잡한 상태 관리 및 데이터 갱신 전략의 중요성 학습</li>
+                    <li>상태와 UI 시각화를 연결하는 구조 설계 경험</li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      상태 변경 후 달력에 즉각 반영되지 않는 점이 있었고, 로직이
-                      복잡하여 유지보수와 수정이 부담되는 구조로 발전한 점이
-                      아쉬웠음
+                      상태 변경 후 UI 반영이 즉각적이지 않았고, 로직이 복잡해져
+                      유지보수가 어려워졌음
                     </li>
                   </div>
                 </ul>
@@ -372,6 +358,21 @@ export default function GlobalNomad() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={styles.bottomContainer}>
+        <p className={styles.title}>Repository</p>
+        <Link
+          href="https://github.com/T2-GlobalNomad/GlobalNomad"
+          target="_blank"
+        >
+          <Image
+            className={styles.overviewImg}
+            src="/logo/github.png"
+            alt="github repository"
+            width={150}
+            height={150}
+          />
+        </Link>
       </div>
     </div>
   );

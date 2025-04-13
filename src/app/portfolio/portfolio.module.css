@@ -7,9 +7,13 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 28px;
-  margin-right: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  padding: 0 12px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .title {
@@ -26,7 +30,7 @@
 .tab {
   /* display: flex; */
   align-items: center;
-  width: 112px;
+  max-width: 100%;
   margin: 12px 8px;
   padding: 4px 12px;
   background-color: transparent;
@@ -47,24 +51,23 @@
   transition: all 0.5s ease;
 }
 
-.portfolioTitle {
-  color: var(--White);
-  font-size: 18px;
-  font-weight: bold;
-  margin: 12px auto;
-}
-
 .portfolioCard {
   display: flex;
   flex-direction: column;
-  width: 201px;
-  /* max-width: 100%; */
+  width: 100%;
+  max-width: 180px;
   border: 0.5px solid var(--light-Gray);
   border-radius: 8px;
-  object-fit: fill;
   cursor: pointer;
-  transform: translateY(0);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.portfolioImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .portfolioCard:hover {
@@ -82,4 +85,27 @@
 .show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .portfolioCard {
+    width: 100%;
+    max-width: none;
+  }
+
+  .portfolioImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .tab {
+    font-size: 16px;
+  }
 }

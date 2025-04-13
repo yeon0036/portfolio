@@ -10,3 +10,9 @@
   font-weight: 200;
   color: var(--Black);
 }
+
+@media (max-width: 850px) {
+  .container {
+    width: 100%;
+  }
+}
