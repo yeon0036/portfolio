@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <section
       ref={sectionRef}
-      style={{ minHeight: "50vh" }}
+      style={{ minHeight: "60vh" }}
       id="contact"
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
