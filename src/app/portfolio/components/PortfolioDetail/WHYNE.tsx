@@ -171,7 +171,7 @@ export default function Whyne() {
 
         {/* R & R */}
         <div className={styles.detailContainer}>
-          <p className={styles.semiTitle}>📄 담당 역할 (R&R)</p>
+          <p className={styles.semiTitle}>📄 R & R </p>
           <div className={styles.detailList}>
             <ul className={styles.rnrList}>
               <li>
@@ -181,13 +181,15 @@ export default function Whyne() {
                 <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>CSS Module을 기반으로 공통 Button 컴포넌트 제작</li>
+                    <li>CSS Module 기반으로 공통 Button 컴포넌트 구현</li>
                     <li>
-                      Primary/Secondary 유형과 small/regular 사이즈 옵션 설정
+                      Primary/Secondary 타입과 small/regular 사이즈 옵션 설정
                     </li>
-                    <li>className을 props로 받아 커스터마이징 가능하게 설계</li>
                     <li>
-                      전역 컬러, 마진 등 스타일 가이드 기준을 기본값으로 적용
+                      className을 props로 받아 커스터마이징 가능하도록 설계
+                    </li>
+                    <li>
+                      전역 컬러와 마진 등 스타일 가이드 기준을 기본값으로 적용
                     </li>
                   </div>
                 </ul>
@@ -195,12 +197,12 @@ export default function Whyne() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      공통 컴포넌트는 초기에 기준을 잘 잡고 작업해야 전체 흐름이
-                      매끄럽다는 점을 체감함
+                      공통 컴포넌트는 초기 설계 기준이 중요하며, 흐름 전반에 큰
+                      영향을 줌을 체감
                     </li>
                     <li>
-                      className을 props로 넘기지 않으면 의도한 기본 스타일이
-                      적용되지 않음을 확인
+                      className을 props로 전달하지 않으면 기본 스타일이 적용되지
+                      않음을 인지함
                     </li>
                   </div>
                 </ul>
@@ -208,15 +210,15 @@ export default function Whyne() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      버튼 타입별로 파일을 분리하여 코드가 분산되고 유지보수가
+                      버튼 타입별로 파일이 분리되어 코드가 분산되고 유지보수가
                       불편해졌음
                     </li>
                     <li>
-                      전역 폰트 적용이 제대로 되지 않아 세팅 재검토가 필요했음
+                      전역 폰트 적용이 제대로 되지 않아 설정을 재검토할 필요가
+                      있었음
                     </li>
                     <li>
-                      디자인 요소가 일부 명확히 공유되지 않아 통일성 있는 스타일
-                      적용이 어려웠음
+                      디자인 가이드가 일부 불명확해 스타일 통일 적용이 어려웠음
                     </li>
                   </div>
                 </ul>
@@ -227,30 +229,31 @@ export default function Whyne() {
                 <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>탭 방식 UI로 리뷰/와인/프로필을 구성</li>
+                    <li>탭 UI를 활용해 리뷰/와인/프로필 정보를 구분</li>
                     <li>
-                      스크립트가 길어지지 않도록 최대한 컴포넌트 분리하여
-                      유지보수 용이하게 구성
+                      스크립트 길이를 줄이기 위해 컴포넌트를 최대한 분리하여
+                      구성
                     </li>
-                    <li>사용자 전용 리뷰 모달을 재구성해 UX 개선</li>
-                    <li>삭제 기능에는 확인 모달을 추가해 실수 방지</li>
+                    <li>사용자 전용 리뷰 모달을 재구성하여 UX를 개선</li>
+                    <li>삭제 기능에 확인 모달을 추가해 실수 방지 처리</li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      정해진 UI에서 더 나은 UX를 고민하며 개선하는 경험을 얻음
+                      제한된 UI 조건 안에서 더 나은 UX를 고민하고 개선하는
+                      경험을 얻음
                     </li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>반응형 디자인을 더 정교하게 다듬을 시간이 부족했음</li>
+                    <li>반응형 디자인을 더 정교하게 개선할 시간이 부족했음</li>
                     <li>
-                      데이터 관리를 상태 기반(useState)로만 하여, React Query
-                      등을 활용했으면 더 효율적이었을 것 같음
+                      상태 관리를 useState 위주로만 하여 React Query를
+                      활용했다면 더 효율적이었을 것 같음
                     </li>
                   </div>
                 </ul>
@@ -258,6 +261,21 @@ export default function Whyne() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={styles.bottomContainer}>
+        <p className={styles.title}>Repository</p>
+        <Link
+          href="https://github.com/yujuseop/Project-Team2-WINE"
+          target="_blank"
+        >
+          <Image
+            className={styles.overviewImg}
+            src="/logo/github.png"
+            alt="github repository"
+            width={150}
+            height={150}
+          />
+        </Link>
       </div>
     </div>
   );

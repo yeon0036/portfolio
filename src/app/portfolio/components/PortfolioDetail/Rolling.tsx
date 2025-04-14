@@ -141,7 +141,7 @@ export default function Rolling() {
 
         {/* R & R */}
         <div className={styles.detailContainer}>
-          <p className={styles.semiTitle}>📄 담당 역할 (R&R)</p>
+          <p className={styles.semiTitle}>📄 R & R</p>
           <div className={styles.detailList}>
             <ul className={styles.rnrList}>
               <li>
@@ -149,10 +149,12 @@ export default function Rolling() {
                 <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>Styled-components를 사용하여 공통 버튼 제작</li>
                     <li>
-                      동일한 형태의 버튼들을 하나의 컴포넌트로 구성하여 재사용성
-                      확보 (RoundButton – check, home, plus)
+                      styled-components를 활용해 공통 버튼 컴포넌트를 구현
+                    </li>
+                    <li>
+                      RoundButton(check, home, plus 등)을 하나의 컴포넌트로
+                      구성하여 재사용성 확보
                     </li>
                   </div>
                 </ul>
@@ -160,8 +162,7 @@ export default function Rolling() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      공통 컴포넌트를 만드는 과정에서, 유지보수성과 확장성을
-                      고려한 설계가 얼마나 중요한지 체감함
+                      유지보수성과 확장성을 고려한 컴포넌트 설계의 중요성을 체감
                     </li>
                   </div>
                 </ul>
@@ -169,9 +170,8 @@ export default function Rolling() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      Primary, Secondary, Outlined 버튼을 하나의 스크립트에서
-                      관리할 수 있었지만, 파일을 분리함으로써 오히려 관리가
-                      복잡해짐
+                      Primary, Secondary, Outlined 버튼을 하나로 관리할 수
+                      있었지만 파일 분리로 관리가 복잡해짐
                     </li>
                     <li>
                       버튼 크기 기준이 일관되지 않아 스타일 관리가 어려웠음
@@ -185,9 +185,9 @@ export default function Rolling() {
                 <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>Styled-components를 사용하여 UI 구성</li>
+                    <li>styled-components를 사용하여 UI 구성</li>
                     <li>
-                      필수 입력값 검증 및 사용자 경험을 고려한 폼 처리 로직 구현
+                      필수 입력값 검증과 사용자 경험을 고려한 폼 처리 로직 구현
                     </li>
                   </div>
                 </ul>
@@ -195,11 +195,10 @@ export default function Rolling() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      사용자 중심의 입력 방식 구성 및 상태 관리에 대한 경험을
-                      쌓음
+                      사용자 중심 입력 방식과 상태 관리 흐름에 대한 경험을 쌓음
                     </li>
                     <li>
-                      컴포넌트를 구조화하면서 코드 재사용성과 유지보수성을
+                      컴포넌트 구조화를 통해 코드 재사용성과 유지보수성을
                       고려하게 됨
                     </li>
                   </div>
@@ -208,12 +207,11 @@ export default function Rolling() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      중복되는 컴포넌트를 분리하지 못해 불필요한 코드가 발생한
-                      부분이 있었음
+                      중복되는 컴포넌트를 분리하지 못해 코드 중복이 발생함
                     </li>
                     <li>
-                      폼 유효성 검사 로직이 다소 단순하여 사용자 예외 처리에
-                      한계가 있었음
+                      폼 유효성 검사 로직이 단순해 예외 처리 대응에 한계가
+                      있었음
                     </li>
                   </div>
                 </ul>
@@ -221,6 +219,18 @@ export default function Rolling() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={styles.bottomContainer}>
+        <p className={styles.title}>Repository</p>
+        <Link href="https://github.com/y5037/Rolling" target="_blank">
+          <Image
+            className={styles.overviewImg}
+            src="/logo/github.png"
+            alt="github repository"
+            width={150}
+            height={150}
+          />
+        </Link>
       </div>
     </div>
   );
