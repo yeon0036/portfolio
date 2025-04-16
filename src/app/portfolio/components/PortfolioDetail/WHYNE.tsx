@@ -271,13 +271,15 @@ export default function Whyne() {
           href="https://github.com/yujuseop/Project-Team2-WINE"
           target="_blank"
         >
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              className={styles.githubLogo}
+              src="/logo/github.png"
+              alt="github repository"
+              width={150}
+              height={150}
+            />
+          </div>
         </Link>
       </div>
     </div>
