@@ -49,7 +49,6 @@ export default function HomePage() {
   return (
     <>
       <main className={styles.wrapper}>
-        <Navigation />
         <nav className={styles.mobileNav}>
           <Link
             href="#aboutme"
@@ -93,6 +92,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <Navigation />
       </main>
     </>
   );

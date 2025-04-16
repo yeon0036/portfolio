@@ -10,13 +10,18 @@ export default function Rolling() {
       <div className={styles.container}>
         <p className={styles.title}>Rolling</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://rolling-yeon.vercel.app/">
+          <Link
+            href="https://rolling-yeon.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/Rolling/RollingTN.png"
               alt="Rolling 대표 썸네일"
               width={600}
               height={400}
               style={{ objectFit: "contain" }}
+              className={styles.thumbnail}
             />
           </Link>
         </div>

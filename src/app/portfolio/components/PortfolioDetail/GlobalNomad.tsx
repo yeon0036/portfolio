@@ -10,13 +10,17 @@ export default function GlobalNomad() {
       <div className={styles.container}>
         <p className={styles.title}>GlobalNomad</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://globalnomad-t2.vercel.app/">
+          <Link
+            href="https://globalnomad-t2.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/GlobalNomad/GlobalNomadTN.png"
               alt="GlobalNomad 대표 썸네일"
               width={600}
               height={400}
-              style={{ objectFit: "contain" }}
+              className={styles.thumbnail}
             />{" "}
           </Link>
         </div>
@@ -270,8 +274,8 @@ export default function GlobalNomad() {
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>기존 훅들을 수정해서 써야 하는 경우가 많아졌음</li>
-                    <li>mutation과 query의 초기 분리가 부족했음</li>
+                    <li>기존 훅들을 수정해서 써야 하는 경우가 많아짐</li>
+                    <li>mutation과 query의 초기 분리 부족</li>
                   </div>
                 </ul>
               </li>
@@ -300,7 +304,7 @@ export default function GlobalNomad() {
                 <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>모달 기반 UX 설계의 흐름을 고민하게 되었음</li>
+                    <li>모달 기반 UX 설계의 흐름을 고민하며 개선</li>
                     <li>
                       useMutation과 query hook으로 데이터 흐름 제어 방식 학습
                     </li>
@@ -314,7 +318,7 @@ export default function GlobalNomad() {
                   <div className={styles.rnrDetail}>
                     <li>
                       invalidateQueries 대신 refetch와 setState를 사용해 구조적
-                      통일성이 떨어졌음
+                      통일성이 떨어짐
                     </li>
                   </div>
                 </ul>
@@ -349,8 +353,8 @@ export default function GlobalNomad() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      상태 변경 후 UI 반영이 즉각적이지 않았고, 로직이 복잡해져
-                      유지보수가 어려워졌음
+                      상태 변경 후 UI 반영이 즉각적이지 않은 부분 존재, 로직이
+                      복잡해져 유지보수가 어려워짐
                     </li>
                   </div>
                 </ul>

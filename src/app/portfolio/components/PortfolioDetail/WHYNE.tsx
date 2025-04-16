@@ -10,13 +10,16 @@ export default function Whyne() {
       <div className={styles.container}>
         <p className={styles.title}>WHYNE</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://WHYNE-yeon.vercel.app/">
+          <Link
+            href="https://wyene-yeon.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/WHYNE/WHYNETN.png"
               alt="WHYNE 대표 썸네일"
               width={600}
               height={400}
-              style={{ objectFit: "contain" }}
             />
           </Link>
         </div>

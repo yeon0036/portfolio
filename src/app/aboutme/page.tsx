@@ -25,7 +25,7 @@ export default function AboutMe() {
     <section
       ref={sectionRef}
       id="aboutme"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "50vh" }}
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
       }`}
@@ -90,7 +90,7 @@ export default function AboutMe() {
                 </div>
               </div>
             </div>
-            <div className={styles.certificate}>
+            {/* <div className={styles.certificate}>
               <p className={styles.sectionTitle}>Certificate</p>
               <div className={styles.certificateGroup}>
                 <p className={styles.certificateTitle}>Design</p>
@@ -134,7 +134,7 @@ export default function AboutMe() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* @TODO 경력 */}
           </div>
         </div>

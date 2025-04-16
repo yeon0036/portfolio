@@ -52,7 +52,7 @@ export default function Portfolio() {
     >
       <p className={styles.title}>Portfolio</p>
 
-      {/* 탭 */}
+      {/* 모바일 탭 */}
       <div className={styles.tabs}>
         {["ALL", "JavaScript", "TypeScript"].map((tab) => (
           <button
@@ -83,8 +83,8 @@ export default function Portfolio() {
                     className={styles.portfolioImage}
                     src={item.image}
                     alt={item.title}
-                    width={200}
-                    height={200}
+                    width={250}
+                    height={250}
                   />
                 </div>
               </div>

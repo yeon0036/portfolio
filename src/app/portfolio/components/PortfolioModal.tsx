@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import CloseButton from "@/components/CloseButton/CloseButton";
 import styles from "./PortfolioModal.module.css";
 
 interface Props {
@@ -26,8 +27,9 @@ export default function PortfolioModal({ onClose, children }: Props) {
         onClose();
       }}
     >
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        {children}
+      <div className={styles.modal}>
+        <CloseButton className={styles.closeBtn} onClick={onClose} />
+        <div className={styles.modalContent}>{children} </div>
       </div>
     </div>
   );

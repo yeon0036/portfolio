@@ -30,10 +30,10 @@
 .mobileNav a.active {
   color: var(--Blue);
   font-weight: bold;
-  border-bottom: 2px solid var(--Blue);
+  /* border-bottom: 2px solid var(--Blue); */
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .wrapper {
     flex-direction: column;
     width: 100%;
