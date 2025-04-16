@@ -228,13 +228,15 @@ export default function Rolling() {
       <div className={styles.bottomContainer}>
         <p className={styles.title}>Repository</p>
         <Link href="https://github.com/y5037/Rolling" target="_blank">
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              className={styles.githubLogo}
+              src="/logo/github.png"
+              alt="github repository"
+              width={150}
+              height={150}
+            />
+          </div>
         </Link>
       </div>
     </div>

@@ -21,7 +21,7 @@ export default function GlobalNomad() {
               width={600}
               height={400}
               className={styles.thumbnail}
-            />{" "}
+            />
           </Link>
         </div>
       </div>
@@ -369,13 +369,15 @@ export default function GlobalNomad() {
           href="https://github.com/T2-GlobalNomad/GlobalNomad"
           target="_blank"
         >
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              src="/logo/github.png"
+              alt="github repository"
+              width={200}
+              height={200}
+              className={styles.githubLogo}
+            />
+          </div>
         </Link>
       </div>
     </div>
