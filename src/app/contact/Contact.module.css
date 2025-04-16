@@ -12,6 +12,7 @@
 .container {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 118px;
 }
 
 .content {
@@ -46,7 +47,7 @@
 
 @media (max-width: 850px) {
   .container {
-    padding-bottom: 52px;
+    padding-bottom: 0;
   }
 
   .logo {

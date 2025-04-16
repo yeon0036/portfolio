@@ -42,15 +42,19 @@
 }
 
 /* header */
+.thumbnail {
+  display: flex;
+  z-index: 2;
+  object-fit: contain;
+  width: 100%;
+}
 
 .thumbnailLink {
   display: flex;
-  z-index: 2;
-  margin-top: -72px;
   justify-content: center;
   align-items: center;
-  object-fit: contain;
   width: 100%;
+  margin-top: -72px;
 }
 
 /* overview */
@@ -61,6 +65,7 @@
   margin-top: -30px;
   justify-content: center;
   align-items: center;
+  /* position: relative; */
   object-fit: contain;
   width: 100%;
 }
@@ -130,4 +135,69 @@
   gap: 24px;
   margin-bottom: 52px;
   padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .bottomContainer {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .semiTitle {
+    font-size: 16px;
+    width: 100%; /* 좁은 화면에선 가득 채우기 */
+  }
+
+  .thumbnail {
+    margin-top: 40px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .overviewImg {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+  }
+
+  .detailList {
+    margin: 12px 0;
+  }
+
+  .detailTItle {
+    font-size: 16px;
+  }
+
+  .contentText {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .rnrIndex {
+    font-size: 16px;
+  }
+
+  .rnrDetail {
+    font-size: 12px;
+  }
+
+  .overviewImg {
+    width: 100%;
+    height: 100px;
+  }
+
+  .logoImg {
+    width: 64px;
+    height: 64px;
+  }
+
+  .closeBtn {
+    size: 20px;
+  }
 }
