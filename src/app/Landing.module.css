@@ -1,18 +1,38 @@
 .wrapper {
   display: flex;
-  max-width: 100%;
+  flex-direction: column;
+  padding-left: 350px;
+  width: 100%;
+  min-height: 100vh;
   background-color: var(--Black);
+  overflow-x: hidden;
 }
 
 .mainContent {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 40px;
-  margin-left: 350px;
+  padding: 40px;
+  box-sizing: border-box;
 }
 
 .mobileNav {
@@ -30,7 +50,6 @@
 .mobileNav a.active {
   color: var(--Blue);
   font-weight: bold;
-  /* border-bottom: 2px solid var(--Blue); */
 }
 
 @media (max-width: 1024px) {
