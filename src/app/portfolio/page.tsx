@@ -83,8 +83,8 @@ export default function Portfolio() {
                     className={styles.portfolioImage}
                     src={item.image}
                     alt={item.title}
-                    width={250}
-                    height={250}
+                    width={300}
+                    height={300}
                   />
                 </div>
               </div>

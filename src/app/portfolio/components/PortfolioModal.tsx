@@ -27,7 +27,7 @@ export default function PortfolioModal({ onClose, children }: Props) {
         onClose();
       }}
     >
-      <div className={styles.modal}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <CloseButton className={styles.closeBtn} onClick={onClose} />
         <div className={styles.modalContent}>{children} </div>
       </div>

@@ -16,10 +16,11 @@
   position: relative;
   flex-direction: column;
   width: 100%;
-  max-width: 800px;
-  max-height: 520px;
+  max-width: 1200px;
+  max-height: 700px;
   background-color: var(--Gray);
   padding: 48px;
+  margin: 20px auto;
   box-sizing: border-box;
   border-radius: 12px;
   overflow: hidden;
