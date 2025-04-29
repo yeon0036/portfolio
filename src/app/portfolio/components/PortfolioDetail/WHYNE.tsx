@@ -20,6 +20,8 @@ export default function Whyne() {
               alt="WHYNE 대표 썸네일"
               width={600}
               height={400}
+              style={{ objectFit: "contain" }}
+              className={styles.thumbnail}
             />
           </Link>
         </div>
