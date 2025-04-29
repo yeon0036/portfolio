@@ -47,49 +47,51 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className={styles.wrapper}>
-      <nav className={styles.mobileNav}>
-        <Link
-          href="#aboutme"
-          className={activeSection === "aboutme" ? styles.active : ""}
-        >
-          AboutMe
-        </Link>
-        <Link
-          href="#skills"
-          className={activeSection === "skills" ? styles.active : ""}
-        >
-          Skills
-        </Link>
-        <Link
-          href="#portfolio"
-          className={activeSection === "portfolio" ? styles.active : ""}
-        >
-          Portfolio
-        </Link>
-        <Link
-          href="#contact"
-          className={activeSection === "contact" ? styles.active : ""}
-        >
-          Contact
-        </Link>
-      </nav>
-      <div className={styles.content}>
-        <Hero />
-        <div ref={aboutRef} id="aboutme" className={styles.section}>
-          <AboutMe />
+    <div>
+      <Hero />
+      <main className={styles.wrapper}>
+        <nav className={styles.mobileNav}>
+          <Link
+            href="#aboutme"
+            className={activeSection === "aboutme" ? styles.active : ""}
+          >
+            AboutMe
+          </Link>
+          <Link
+            href="#skills"
+            className={activeSection === "skills" ? styles.active : ""}
+          >
+            Skills
+          </Link>
+          <Link
+            href="#portfolio"
+            className={activeSection === "portfolio" ? styles.active : ""}
+          >
+            Portfolio
+          </Link>
+          <Link
+            href="#contact"
+            className={activeSection === "contact" ? styles.active : ""}
+          >
+            Contact
+          </Link>
+        </nav>
+        <div className={styles.content}>
+          <div ref={aboutRef} id="aboutme" className={styles.section}>
+            <AboutMe />
+          </div>
+          <div ref={skillsRef} id="skills" className={styles.section}>
+            <Skills />
+          </div>
+          <div ref={portfolioRef} id="portfolio" className={styles.section}>
+            <Portfolio />
+          </div>
+          <div ref={contactRef} id="contact" className={styles.section}>
+            <Contact />
+          </div>
         </div>
-        <div ref={skillsRef} id="skills" className={styles.section}>
-          <Skills />
-        </div>
-        <div ref={portfolioRef} id="portfolio" className={styles.section}>
-          <Portfolio />
-        </div>
-        <div ref={contactRef} id="contact" className={styles.section}>
-          <Contact />
-        </div>
-      </div>
-      <Navigation />
-    </main>
+        <Navigation />
+      </main>
+    </div>
   );
 }
