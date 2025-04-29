@@ -373,8 +373,8 @@ export default function GlobalNomad() {
             <Image
               src="/logo/github.png"
               alt="github repository"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               className={styles.githubLogo}
             />
           </div>

@@ -49,8 +49,8 @@ export default function AboutMe() {
               </p>
               <p>2000.03.06</p>
               <p>
-                안녕하세요. <strong>익숙함과 새로움의 공존</strong>을 추구하는
-                개발자 정혜연입니다.
+                <strong>익숙함과 새로움의 공존</strong>을 추구하는 개발자
+                정혜연입니다.
               </p>
               <p>
                 TypeScript와 React 기반의 프로젝트를 주로 다뤄왔고, <br />
@@ -114,7 +114,7 @@ export default function AboutMe() {
                 </div>
               </div>
               <div className={styles.certificateGroup}>
-                <p className={styles.certificateTitle}>Language</p>
+                <p className={styles.sectionTitle}>Language</p>
                 <div className={styles.certificateContainer}>
                   <div>
                     <p className={styles.certificateTitle}>Delf B1</p>
