@@ -6,8 +6,8 @@ import styles from "./Nav.module.css";
 const tab = [
   { key: "hero", label: "Landing", href: "#hero" },
   { key: "aboutme", label: "AboutMe", href: "#aboutme" },
-  { key: "skills", label: "Skills", href: "#skills" },
   { key: "portfolio", label: "Portfolio", href: "#portfolio" },
+  { key: "skills", label: "Skills", href: "#skills" },
   { key: "contact", label: "Contact", href: "#contact" },
 ];
 

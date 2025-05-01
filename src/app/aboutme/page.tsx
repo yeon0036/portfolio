@@ -113,8 +113,8 @@ export default function AboutMe() {
                   </div>
                 </div>
               </div>
+              <p className={styles.sectionTitle}>Language</p>
               <div className={styles.certificateGroup}>
-                <p className={styles.sectionTitle}>Language</p>
                 <div className={styles.certificateContainer}>
                   <div>
                     <p className={styles.certificateTitle}>Delf B1</p>
@@ -126,11 +126,11 @@ export default function AboutMe() {
                 </div>
                 <div className={styles.certificateContainer}>
                   <div>
-                    <p className={styles.certificateTitle}>TOEIC</p>
+                    <p className={styles.certificateTitle}>TOEIC 720</p>
                   </div>
                   <div>
                     <p>YBM</p>
-                    <p>2019.02.02(임)</p>
+                    <p>만료됨.</p>
                   </div>
                 </div>
               </div>

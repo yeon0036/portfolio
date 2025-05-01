@@ -28,34 +28,6 @@ export default function Rolling() {
       </div>
 
       <div className={styles.container}>
-        <p className={styles.title}>Overview</p>
-        <p className={styles.semiTitle}>메인 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling1.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>롤링페이퍼 상세 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling2.png"
-          alt="rolling detail page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>롤링페이퍼 개설 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling3.png"
-          alt="rolling create page"
-          width={600}
-          height={400}
-        />
-      </div>
-
-      <div className={styles.container}>
         <p className={styles.title}>Details</p>
 
         {/* Functions */}
@@ -224,6 +196,33 @@ export default function Rolling() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={styles.container}>
+        <p className={styles.title}>Overview</p>
+        <p className={styles.semiTitle}>메인 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling1.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>롤링페이퍼 상세 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling2.png"
+          alt="rolling detail page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>롤링페이퍼 개설 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling3.png"
+          alt="rolling create page"
+          width={600}
+          height={400}
+        />
       </div>
       <div className={styles.bottomContainer}>
         <p className={styles.title}>Repository</p>

@@ -1,0 +1,20 @@
+/* menus */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 0.5px solid var(--White);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--White);
+}
+
+/* accordion */
+.container {
+  padding: 20px;
+  border: 1px solid var(--White);
+}

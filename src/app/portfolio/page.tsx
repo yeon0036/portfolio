@@ -1,25 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import type { JSX } from "react";
+// import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import PortfolioModal from "./components/PortfolioModal";
-import Rolling from "./components/PortfolioDetail/Rolling";
-import Whyne from "./components/PortfolioDetail/WHYNE";
-import GlobalNomad from "./components/PortfolioDetail/GlobalNomad";
 import styles from "./portfolio.module.css";
-import { portfolioItems } from "./PortfolioData";
-
-const componentMap: Record<string, JSX.Element> = {
-  Rolling: <Rolling />,
-  Whyne: <Whyne />,
-  GlobalNomad: <GlobalNomad />,
-};
+import Accordion from "./components/Accordion";
 
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isOpen, setIsOpen] = useState<null | string>(null);
   const [activeTab, setActiveTab] = useState<
     "ALL" | "JavaScript" | "TypeScript"
   >("ALL");
@@ -70,7 +58,7 @@ export default function Portfolio() {
       </div>
 
       {/* 포트폴리오 카드 */}
-      <div className={styles.content}>
+      {/* <div className={styles.content}>
         <div className={styles.container}>
           {portfolioItems
             .filter(
@@ -90,14 +78,12 @@ export default function Portfolio() {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
 
-      {/* 모달 */}
-      {isOpen && (
-        <PortfolioModal onClose={() => setIsOpen(null)}>
-          {componentMap[isOpen]}
-        </PortfolioModal>
-      )}
+      {/* accordion */}
+      <div className={styles.content}>
+        <Accordion />
+      </div>
     </section>
   );
 }
