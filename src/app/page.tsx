@@ -20,8 +20,8 @@ export default function HomePage() {
   useEffect(() => {
     const sections = [
       { id: "aboutme", ref: aboutRef },
-      { id: "skills", ref: skillsRef },
       { id: "portfolio", ref: portfolioRef },
+      { id: "skills", ref: skillsRef },
       { id: "contact", ref: contactRef },
     ];
 
@@ -58,16 +58,16 @@ export default function HomePage() {
             AboutMe
           </Link>
           <Link
-            href="#skills"
-            className={activeSection === "skills" ? styles.active : ""}
-          >
-            Skills
-          </Link>
-          <Link
             href="#portfolio"
             className={activeSection === "portfolio" ? styles.active : ""}
           >
             Portfolio
+          </Link>
+          <Link
+            href="#skills"
+            className={activeSection === "skills" ? styles.active : ""}
+          >
+            Skills
           </Link>
           <Link
             href="#contact"
@@ -80,11 +80,11 @@ export default function HomePage() {
           <div ref={aboutRef} id="aboutme" className={styles.section}>
             <AboutMe />
           </div>
-          <div ref={skillsRef} id="skills" className={styles.section}>
-            <Skills />
-          </div>
           <div ref={portfolioRef} id="portfolio" className={styles.section}>
             <Portfolio />
+          </div>
+          <div ref={skillsRef} id="skills" className={styles.section}>
+            <Skills />
           </div>
           <div ref={contactRef} id="contact" className={styles.section}>
             <Contact />

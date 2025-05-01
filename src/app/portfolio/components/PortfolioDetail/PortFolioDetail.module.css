@@ -60,8 +60,9 @@
 
 .overviewImg {
   display: flex;
+  gap: 12px;
   z-index: 2;
-  margin: -30px auto 0;
+  margin: -30px auto;
   justify-content: center;
   align-items: center;
   /* position: relative; */
