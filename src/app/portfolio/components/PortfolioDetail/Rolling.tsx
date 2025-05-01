@@ -232,8 +232,8 @@ export default function Rolling() {
               className={styles.githubLogo}
               src="/logo/github.png"
               alt="github repository"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
             />
           </div>
         </Link>

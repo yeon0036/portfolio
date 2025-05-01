@@ -1,17 +1,30 @@
+// Accordion.tsx
 import React, { useState, useRef } from "react";
+import AccordionMenu from "./AccordionMenu";
+import styles from "./Accordion.module.css";
 import GlobalNomad from "./PortfolioDetail/GlobalNomad";
 import Rolling from "./PortfolioDetail/Rolling";
 import Whyne from "./PortfolioDetail/WHYNE";
-import AccordionMenu from "./AccordionMenu";
-import styles from "./Accordion.module.css";
+import With from "./PortfolioDetail/With";
+import { PortfolioProps } from "../PortfolioData";
 
-const Accordion: React.FC = () => {
+type AccordionProps = {
+  items: PortfolioProps[];
+};
+
+const componentMap: Record<string, React.ReactElement> = {
+  GlobalNomad: <GlobalNomad />,
+  Rolling: <Rolling />,
+  WHYNE: <Whyne />,
+  With: <With />,
+};
+
+const Accordion: React.FC<AccordionProps> = ({ items }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleToggle = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-
     setTimeout(() => {
       itemRefs.current[index]?.scrollIntoView({
         behavior: "smooth",
@@ -20,25 +33,23 @@ const Accordion: React.FC = () => {
     }, 0);
   };
 
-  const items = [
-    { title: "GlobalNomad", content: <GlobalNomad /> },
-    { title: "Rolling", content: <Rolling /> },
-    { title: "WHYNE", content: <Whyne /> },
-  ];
-
   return (
     <div>
       {items.map((item, index) => (
         <AccordionMenu
-          key={index}
+          key={item.id}
+          thumbnail={item.image}
           title={item.title}
+          intro={item.intro}
           isOpen={openIndex === index}
           onClick={() => handleToggle(index)}
           ref={(el: HTMLDivElement | null) => {
             itemRefs.current[index] = el;
           }}
         >
-          <div className={styles.container}>{item.content}</div>
+          <div className={styles.container}>
+            {componentMap[item.id] ?? <p>준비 중입니다.</p>}
+          </div>
         </AccordionMenu>
       ))}
     </div>

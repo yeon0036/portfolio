@@ -2,14 +2,15 @@
 
 // import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import styles from "./portfolio.module.css";
+import { portfolioItems } from "./PortfolioData";
 import Accordion from "./components/Accordion";
+import styles from "./portfolio.module.css";
 
 export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<
-    "ALL" | "JavaScript" | "TypeScript"
+    "ALL" | "JavaScript" | "TypeScript" | "Design"
   >("ALL");
 
   useEffect(() => {
@@ -29,6 +30,11 @@ export default function Portfolio() {
     return () => observer.disconnect();
   }, []);
 
+  const filteredItems =
+    activeTab === "ALL"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeTab);
+
   return (
     <section
       ref={sectionRef}
@@ -42,11 +48,13 @@ export default function Portfolio() {
 
       {/* 모바일 탭 */}
       <div className={styles.tabs}>
-        {["ALL", "JavaScript", "TypeScript"].map((tab) => (
+        {["ALL", "JavaScript", "TypeScript", "Design"].map((tab) => (
           <button
             key={tab}
             onClick={() =>
-              setActiveTab(tab as "ALL" | "JavaScript" | "TypeScript")
+              setActiveTab(
+                tab as "ALL" | "JavaScript" | "TypeScript" | "Design"
+              )
             }
             className={`${styles.tab} ${
               activeTab === tab ? styles.active : ""
@@ -57,32 +65,9 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* 포트폴리오 카드 */}
-      {/* <div className={styles.content}>
-        <div className={styles.container}>
-          {portfolioItems
-            .filter(
-              (item) => activeTab === "ALL" || item.category === activeTab
-            )
-            .map((item) => (
-              <div key={item.id} onClick={() => setIsOpen(item.id)}>
-                <div className={styles.portfolioCard}>
-                  <Image
-                    className={styles.portfolioImage}
-                    src={item.image}
-                    alt={item.title}
-                    width={300}
-                    height={300}
-                  />
-                </div>
-              </div>
-            ))}
-        </div>
-      </div> */}
-
       {/* accordion */}
       <div className={styles.content}>
-        <Accordion />
+        <Accordion items={filteredItems} />
       </div>
     </section>
   );

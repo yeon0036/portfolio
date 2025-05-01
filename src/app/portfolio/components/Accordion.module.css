@@ -1,5 +1,5 @@
 /* menus */
-.menu {
+.menuBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,10 +7,37 @@
   border-bottom: 0.5px solid var(--White);
 }
 
+.infoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .title {
   font-size: 28px;
   font-weight: 500;
   color: var(--White);
+}
+
+.intro {
+  font-size: 16px;
+  color: var(--light-Gray);
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .intro {
+    font-size: 12px;
+  }
 }
 
 /* accordion */
