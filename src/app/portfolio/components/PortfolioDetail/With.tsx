@@ -187,14 +187,14 @@ export default function With() {
               <ul>
                 <div className={styles.rnrDetail}>
                   <Image
-                    className={styles.overviewImg}
+                    className={styles.overviewImgDesign}
                     src="/images/WITH/flowChart.jpg"
                     alt="flowchart"
                     width={600}
                     height={350}
                   />
                   <Image
-                    className={styles.overviewImg}
+                    className={styles.overviewImgDesign}
                     src="/images/WITH/siteMap.jpg"
                     alt="siteMap"
                     width={600}
@@ -207,11 +207,11 @@ export default function With() {
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.bottomContainer}>
         <p className={styles.title}>Overview</p>
         <p className={styles.semiTitle}>로그인/회원가입</p>
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview1.jpg"
           alt="with login/signup"
           width={600}
@@ -219,7 +219,7 @@ export default function With() {
         />
         <p className={styles.semiTitle}>메인페이지</p>
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview2.jpg"
           alt="with main"
           width={600}
@@ -227,21 +227,21 @@ export default function With() {
         />
         <p className={styles.semiTitle}>동아리 상세</p>
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview3.jpg"
           alt="with main"
           width={600}
           height={400}
         />
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview4.jpg"
           alt="with main"
           width={600}
           height={400}
         />
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview5.jpg"
           alt="with main"
           width={600}
@@ -249,14 +249,14 @@ export default function With() {
         />
         <p className={styles.semiTitle}>동아리 탐색</p>
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview6.jpg"
           alt="with search"
           width={600}
           height={400}
         />
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview7.jpg"
           alt="with search"
           width={600}
@@ -264,7 +264,7 @@ export default function With() {
         />
         <p className={styles.semiTitle}>내 정보</p>
         <Image
-          className={styles.overviewImg}
+          className={styles.overviewImgDesign}
           src="/images/WITH/overview8.jpg"
           alt="with mypage"
           width={600}
