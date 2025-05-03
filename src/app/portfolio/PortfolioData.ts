@@ -24,7 +24,7 @@ export const portfolioItems: PortfolioProps[] = [
     category: "JavaScript",
   },
   {
-    id: "Whyne",
+    id: "WHYNE",
     title: "WHYNE",
     image: "/images/WHYNE/WHYNE.svg",
     intro: "와인 관련 정보공유 커뮤니티",
