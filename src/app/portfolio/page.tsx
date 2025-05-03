@@ -67,7 +67,7 @@ export default function Portfolio() {
 
       {/* accordion */}
       <div className={styles.content}>
-        <Accordion items={filteredItems} />
+        <Accordion key={activeTab} items={filteredItems} />
       </div>
     </section>
   );
