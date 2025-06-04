@@ -12,6 +12,7 @@
 .container {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 118px;
 }
 
 .content {
@@ -42,4 +43,19 @@
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+}
+
+@media (max-width: 850px) {
+  .container {
+    padding-bottom: 0;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .linkTitle {
+    font-size: 18px;
+  }
 }
