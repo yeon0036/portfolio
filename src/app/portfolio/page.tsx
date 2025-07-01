@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { portfolioData } from "./components/FrontendData";
+import { portfolioData } from "./PortfolioData";
 import Accordion from "./components/Accordion";
 import styles from "./portfolio.module.css";
 

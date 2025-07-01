@@ -1,12 +1,17 @@
 import React, { useState, useRef } from "react";
 import AccordionMenu from "./AccordionMenu";
 import styles from "./Accordion.module.css";
-import PortfolioDetail from "./FrontedDetail";
+import PortfolioDetail from "./PortfolioDetail";
 import DesignDetail from "./DesignDetail";
-import { PortfolioProps } from "./FrontendData";
+import { PortfolioProps, DesignProps } from "../types";
+
+// category로 타입 분기
+function isDesign(item: PortfolioProps | DesignProps): item is DesignProps {
+  return item.category === "Design";
+}
 
 type AccordionProps = {
-  items: PortfolioProps[];
+  items: (PortfolioProps | DesignProps)[];
 };
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
@@ -38,8 +43,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           }}
         >
           <div className={styles.container}>
-            {item.category === "Design" ? (
-              <DesignDetail />
+            {isDesign(item) ? (
+              <DesignDetail data={item} />
             ) : (
               <PortfolioDetail id={item.id} />
             )}

@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./PortFolioDetail.module.css";
-import { portfolioData } from "./FrontendData";
+import { portfolioData } from "../PortfolioData";
+import { PortfolioProps } from "../types";
 
 interface PortfolioDetailProps {
   id: string;
 }
 
 export default function PortfolioDetail({ id }: PortfolioDetailProps) {
-  const project = portfolioData.find((p) => p.id === id);
+  const project = portfolioData.find((p) => p.id === id) as
+    | PortfolioProps
+    | undefined;
   if (!project) return <div>Not found</div>;
 
   return (
