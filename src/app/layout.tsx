@@ -3,7 +3,7 @@ import "@/styles/global.css";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "yeon's portfolio",
+  title: "정혜연 | Frontend Developer",
   description: "정혜연의 프론트앤드 포트폴리오입니다.",
 };
 

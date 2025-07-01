@@ -7,9 +7,9 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  padding: 0 12px;
+  padding: 12px 12px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -55,7 +55,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  max-width: 300px;
+  box-sizing: border-box;
   border: 0.5px solid var(--light-Gray);
   border-radius: 8px;
   cursor: pointer;
@@ -65,15 +67,15 @@
 
 .portfolioImage {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .portfolioCard:hover {
   transform: translateY(-10px);
   transition: all 0.5s ease;
-  box-shadow: 1px 2px 50px rgba(122, 178, 240, 0.3);
+  box-shadow: 5px 5px 20px rgba(122, 178, 240, 0.3);
 }
 
 .fade-in {
@@ -87,7 +89,7 @@
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;

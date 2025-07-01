@@ -10,44 +10,21 @@ export default function Rolling() {
       <div className={styles.container}>
         <p className={styles.title}>Rolling</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://rolling-yeon.vercel.app/">
+          <Link
+            href="https://rolling-yeon.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/Rolling/RollingTN.png"
               alt="Rolling 대표 썸네일"
               width={600}
               height={400}
               style={{ objectFit: "contain" }}
+              className={styles.thumbnail}
             />
           </Link>
         </div>
-      </div>
-
-      <div className={styles.container}>
-        <p className={styles.title}>Overview</p>
-        <p className={styles.semiTitle}>메인 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling1.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>롤링페이퍼 상세 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling2.png"
-          alt="rolling detail page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>롤링페이퍼 개설 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/Rolling/Rolling3.png"
-          alt="rolling create page"
-          width={600}
-          height={400}
-        />
       </div>
 
       <div className={styles.container}>
@@ -220,16 +197,45 @@ export default function Rolling() {
           </div>
         </div>
       </div>
+      <div className={styles.container}>
+        <p className={styles.title}>Overview</p>
+        <p className={styles.semiTitle}>메인 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling1.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>롤링페이퍼 상세 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling2.png"
+          alt="rolling detail page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>롤링페이퍼 개설 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/Rolling/Rolling3.png"
+          alt="rolling create page"
+          width={600}
+          height={400}
+        />
+      </div>
       <div className={styles.bottomContainer}>
         <p className={styles.title}>Repository</p>
         <Link href="https://github.com/y5037/Rolling" target="_blank">
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              className={styles.githubLogo}
+              src="/logo/github.png"
+              alt="github repository"
+              width={100}
+              height={100}
+            />
+          </div>
         </Link>
       </div>
     </div>

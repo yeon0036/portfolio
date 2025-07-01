@@ -10,81 +10,20 @@ export default function GlobalNomad() {
       <div className={styles.container}>
         <p className={styles.title}>GlobalNomad</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://globalnomad-t2.vercel.app/">
+          <Link
+            href="https://globalnomad-t2.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/GlobalNomad/GlobalNomadTN.png"
               alt="GlobalNomad 대표 썸네일"
               width={600}
               height={400}
-              style={{ objectFit: "contain" }}
-            />{" "}
+              className={styles.thumbnail}
+            />
           </Link>
         </div>
-      </div>
-      <div className={styles.container}>
-        <p className={styles.title}>Overview</p>
-        <p className={styles.semiTitle}>메인 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad1.png"
-          alt="GlobalNomad main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>체험 상세 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad2.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad2-1.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>내 정보 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad3.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>예약 내역 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad4.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>내 체험 관리 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad5.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad5-1.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
-        <p className={styles.semiTitle}>예약 현황 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/GlobalNomad/GlobalNomad6.png"
-          alt="rolling main page"
-          width={600}
-          height={400}
-        />
       </div>
       <div className={styles.container}>
         <p className={styles.title}>Details</p>
@@ -270,8 +209,8 @@ export default function GlobalNomad() {
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>기존 훅들을 수정해서 써야 하는 경우가 많아졌음</li>
-                    <li>mutation과 query의 초기 분리가 부족했음</li>
+                    <li>기존 훅들을 수정해서 써야 하는 경우가 많아짐</li>
+                    <li>mutation과 query의 초기 분리 부족</li>
                   </div>
                 </ul>
               </li>
@@ -300,7 +239,7 @@ export default function GlobalNomad() {
                 <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>모달 기반 UX 설계의 흐름을 고민하게 되었음</li>
+                    <li>모달 기반 UX 설계의 흐름을 고민하며 개선</li>
                     <li>
                       useMutation과 query hook으로 데이터 흐름 제어 방식 학습
                     </li>
@@ -314,7 +253,7 @@ export default function GlobalNomad() {
                   <div className={styles.rnrDetail}>
                     <li>
                       invalidateQueries 대신 refetch와 setState를 사용해 구조적
-                      통일성이 떨어졌음
+                      통일성이 떨어짐
                     </li>
                   </div>
                 </ul>
@@ -349,8 +288,8 @@ export default function GlobalNomad() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      상태 변경 후 UI 반영이 즉각적이지 않았고, 로직이 복잡해져
-                      유지보수가 어려워졌음
+                      상태 변경 후 UI 반영이 즉각적이지 않은 부분 존재, 로직이
+                      복잡해져 유지보수가 어려워짐
                     </li>
                   </div>
                 </ul>
@@ -359,19 +298,86 @@ export default function GlobalNomad() {
           </div>
         </div>
       </div>
+      <div className={styles.container}>
+        <p className={styles.title}>Overview</p>
+        <p className={styles.semiTitle}>메인 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad1.png"
+          alt="GlobalNomad main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>체험 상세 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad2.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad2-1.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>내 정보 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad3.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>예약 내역 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad4.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>내 체험 관리 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad5.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad5-1.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+        <p className={styles.semiTitle}>예약 현황 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/GlobalNomad/GlobalNomad6.png"
+          alt="rolling main page"
+          width={600}
+          height={400}
+        />
+      </div>
       <div className={styles.bottomContainer}>
         <p className={styles.title}>Repository</p>
         <Link
           href="https://github.com/T2-GlobalNomad/GlobalNomad"
           target="_blank"
         >
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              src="/logo/github.png"
+              alt="github repository"
+              width={100}
+              height={100}
+              className={styles.githubLogo}
+            />
+          </div>
         </Link>
       </div>
     </div>

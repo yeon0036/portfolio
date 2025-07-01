@@ -10,74 +10,21 @@ export default function Whyne() {
       <div className={styles.container}>
         <p className={styles.title}>WHYNE</p>
         <div className={styles.thumbnailLink}>
-          <Link href="https://WHYNE-yeon.vercel.app/">
+          <Link
+            href="https://wyene-yeon.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/WHYNE/WHYNETN.png"
               alt="WHYNE 대표 썸네일"
               width={600}
               height={400}
               style={{ objectFit: "contain" }}
+              className={styles.thumbnail}
             />
           </Link>
         </div>
-      </div>
-
-      <div className={styles.container}>
-        <p className={styles.title}>Overview</p>
-
-        <p className={styles.semiTitle}>메인 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE1.png"
-          alt="WHYNE main page"
-          width={600}
-          height={400}
-        />
-
-        <p className={styles.semiTitle}>검색 기능</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE1-1.png"
-          alt="WHYNE main page - search"
-          width={600}
-          height={400}
-        />
-
-        <p className={styles.semiTitle}>와인 상세 페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE2.png"
-          alt="WHYNE detail page"
-          width={600}
-          height={400}
-        />
-
-        <p className={styles.semiTitle}>리뷰 작성</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE2-1.png"
-          alt="WHYNE detail page - review"
-          width={600}
-          height={400}
-        />
-
-        <p className={styles.semiTitle}>마이페이지</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE3.png"
-          alt="WHYNE mypage"
-          width={600}
-          height={400}
-        />
-
-        <p className={styles.semiTitle}>프로필 수정</p>
-        <Image
-          className={styles.overviewImg}
-          src="/images/WHYNE/WHYNE3-1.png"
-          alt="WHYNE mypage - edit"
-          width={600}
-          height={400}
-        />
       </div>
 
       <div className={styles.container}>
@@ -262,19 +209,78 @@ export default function Whyne() {
           </div>
         </div>
       </div>
+      <div className={styles.container}>
+        <p className={styles.title}>Overview</p>
+
+        <p className={styles.semiTitle}>메인 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE1.png"
+          alt="WHYNE main page"
+          width={600}
+          height={400}
+        />
+
+        <p className={styles.semiTitle}>검색 기능</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE1-1.png"
+          alt="WHYNE main page - search"
+          width={600}
+          height={400}
+        />
+
+        <p className={styles.semiTitle}>와인 상세 페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE2.png"
+          alt="WHYNE detail page"
+          width={600}
+          height={400}
+        />
+
+        <p className={styles.semiTitle}>리뷰 작성</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE2-1.png"
+          alt="WHYNE detail page - review"
+          width={600}
+          height={400}
+        />
+
+        <p className={styles.semiTitle}>마이페이지</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE3.png"
+          alt="WHYNE mypage"
+          width={600}
+          height={400}
+        />
+
+        <p className={styles.semiTitle}>프로필 수정</p>
+        <Image
+          className={styles.overviewImg}
+          src="/images/WHYNE/WHYNE3-1.png"
+          alt="WHYNE mypage - edit"
+          width={600}
+          height={400}
+        />
+      </div>
       <div className={styles.bottomContainer}>
         <p className={styles.title}>Repository</p>
         <Link
           href="https://github.com/yujuseop/Project-Team2-WINE"
           target="_blank"
         >
-          <Image
-            className={styles.overviewImg}
-            src="/logo/github.png"
-            alt="github repository"
-            width={150}
-            height={150}
-          />
+          <div className={styles.githubLogo}>
+            <Image
+              className={styles.githubLogo}
+              src="/logo/github.png"
+              alt="github repository"
+              width={100}
+              height={100}
+            />
+          </div>
         </Link>
       </div>
     </div>

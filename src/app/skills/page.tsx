@@ -32,7 +32,6 @@ export default function Skills() {
       <p className={styles.title}>Skills</p>
       <div className={styles.content}>
         <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>주로 사용해요</p>
           <Image
             className={styles.logoImg}
             src="/logo/html.png"
@@ -110,9 +109,6 @@ export default function Skills() {
             width={80}
             height={80}
           />
-        </div>
-        <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>사용할 수 있어요</p>
           <Image
             className={styles.logoImg}
             src="/logo/NextJs.svg"
@@ -162,9 +158,6 @@ export default function Skills() {
             width={80}
             height={80}
           />
-        </div>
-        <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>사용해 봤어요</p>
           <Image
             className={styles.logoImg}
             src="/logo/storybook.png"

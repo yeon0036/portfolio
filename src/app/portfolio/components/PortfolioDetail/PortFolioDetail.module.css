@@ -4,7 +4,7 @@
   font-size: 80px;
   font-weight: bold;
   color: var(--White);
-  z-index: 1;
+  z-index: 2;
 }
 
 .semiTitle {
@@ -42,29 +42,47 @@
 }
 
 /* header */
+.thumbnail {
+  display: flex;
+  object-fit: contain;
+  width: 100%;
+}
 
 .thumbnailLink {
   display: flex;
-  z-index: 2;
-  margin-top: -72px;
   justify-content: center;
   align-items: center;
-  object-fit: contain;
   width: 100%;
+  margin-top: -60px;
 }
 
 /* overview */
 
 .overviewImg {
   display: flex;
+  gap: 12px;
   z-index: 2;
-  margin-top: -30px;
+  margin: -30px auto;
   justify-content: center;
   align-items: center;
+  /* position: relative; */
   object-fit: contain;
   width: 100%;
+  max-width: 900px;
 }
 
+.overviewImgDesign {
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+  margin: -20px auto 10px;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  object-fit: contain;
+  width: 100%;
+  max-width: 900px;
+}
 /* detail */
 
 .detaileContainer {
@@ -129,5 +147,90 @@
   flex-direction: column;
   gap: 24px;
   margin-bottom: 52px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
+}
+
+.githubLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .overviewImg {
+    margin: -20px auto;
+  }
+
+  .overviewImgDesign {
+    margin: -10px auto 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .bottomContainer {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .semiTitle {
+    font-size: 16px;
+    width: 100%; /* 좁은 화면에선 가득 채우기 */
+  }
+
+  .thumbnail {
+    margin-top: 40px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .detailList {
+    margin: 12px 0;
+  }
+
+  .detailTItle {
+    font-size: 16px;
+  }
+
+  .contentText {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .rnrIndex {
+    font-size: 16px;
+  }
+
+  .rnrDetail {
+    font-size: 12px;
+  }
+
+  .overviewImg,
+  .overviewImgDesign {
+    width: 100%;
+    height: 200px;
+  }
+
+  .logoImg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .githubLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .closeBtn {
+    size: 20px;
+  }
 }
