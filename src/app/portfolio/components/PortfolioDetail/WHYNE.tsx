@@ -17,12 +17,14 @@ export default function Whyne() {
               width={600}
               height={400}
               style={{ objectFit: "contain" }}
-            />{" "}
+            />
           </Link>
         </div>
       </div>
+
       <div className={styles.container}>
         <p className={styles.title}>Overview</p>
+
         <p className={styles.semiTitle}>메인 페이지</p>
         <Image
           className={styles.overviewImg}
@@ -31,14 +33,16 @@ export default function Whyne() {
           width={600}
           height={400}
         />
-        <p className={styles.semiTitle}>메인 페이지 - 검색</p>
+
+        <p className={styles.semiTitle}>검색 기능</p>
         <Image
           className={styles.overviewImg}
           src="/images/WHYNE/WHYNE1-1.png"
-          alt="WHYNE main page - serch"
+          alt="WHYNE main page - search"
           width={600}
           height={400}
         />
+
         <p className={styles.semiTitle}>와인 상세 페이지</p>
         <Image
           className={styles.overviewImg}
@@ -47,7 +51,8 @@ export default function Whyne() {
           width={600}
           height={400}
         />
-        <p className={styles.semiTitle}>와인 상세 페이지 - 리뷰작성</p>
+
+        <p className={styles.semiTitle}>리뷰 작성</p>
         <Image
           className={styles.overviewImg}
           src="/images/WHYNE/WHYNE2-1.png"
@@ -55,6 +60,7 @@ export default function Whyne() {
           width={600}
           height={400}
         />
+
         <p className={styles.semiTitle}>마이페이지</p>
         <Image
           className={styles.overviewImg}
@@ -63,7 +69,8 @@ export default function Whyne() {
           width={600}
           height={400}
         />
-        <p className={styles.semiTitle}>마이페이지 - 프로필수정</p>
+
+        <p className={styles.semiTitle}>프로필 수정</p>
         <Image
           className={styles.overviewImg}
           src="/images/WHYNE/WHYNE3-1.png"
@@ -72,31 +79,34 @@ export default function Whyne() {
           height={400}
         />
       </div>
+
       <div className={styles.container}>
         <p className={styles.title}>Details</p>
 
         {/* Functions */}
         <div className={styles.detailContainer}>
           <ul>
-            <p className={styles.semiTitle}>🔎 대표 기능 </p>
+            <p className={styles.semiTitle}>🔎 주요 기능</p>
             <div className={styles.detailList}>
               <li>
-                <p className={styles.detailTItle}>롤링페이퍼 </p>
+                <p className={styles.detailTItle}>메인 페이지</p>
                 <p className={styles.contentText}>
-                  나만의 롤링페이퍼를 만들고, 누군가가 남기는 메세지를 받을 수
-                  있어요.
+                  전체 와인 리스트를 확인할 수 있으며, 이름 또는 조건 검색을
+                  통해 원하는 와인을 빠르게 찾을 수 있습니다.
                 </p>
               </li>
               <li>
-                <p className={styles.detailTItle}>메세지보내기</p>
+                <p className={styles.detailTItle}>상세 페이지 및 리뷰</p>
                 <p className={styles.contentText}>
-                  내가 원하는 사람에게 메세지를 보내기가 가능합니다.
+                  와인 상세 페이지에서는 다른 유저들이 남긴 리뷰와 평점을 확인할
+                  수 있으며, 나만의 리뷰도 작성할 수 있습니다.
                 </p>
               </li>
               <li>
-                <p className={styles.detailTItle}>인기 롤링페이퍼</p>
+                <p className={styles.detailTItle}>마이페이지</p>
                 <p className={styles.contentText}>
-                  상대방에 대한 내 기분을 이모지로 표현 할 수 있어요.
+                  작성한 리뷰, 등록한 와인 내역을 관리(수정/삭제)할 수 있고, 내
+                  프로필 정보도 수정할 수 있습니다.
                 </p>
               </li>
             </div>
@@ -105,47 +115,54 @@ export default function Whyne() {
 
         {/* lang & Tools */}
         <div className={styles.detailContainer}>
-          <p className={styles.semiTitle}>🔗 언어 및 툴 </p>
+          <p className={styles.semiTitle}>🔗 사용 기술 스택</p>
           <div className={styles.detailList}>
             <Image
               className={styles.logoImg}
-              src="/logo/javascript.png"
-              alt="js"
+              src="/logo/typescript.png"
+              alt="TypeScript"
               width={80}
               height={80}
             />
             <Image
               className={styles.logoImg}
               src="/logo/react.png"
-              alt="react"
+              alt="React"
               width={80}
               height={80}
             />
             <Image
               className={styles.logoImg}
               src="/logo/restAPI.png"
-              alt="rest api"
+              alt="REST API"
               width={80}
               height={80}
             />
             <Image
               className={styles.logoImg}
               src="/logo/styledComponents.png"
-              alt="styled components"
+              alt="Styled Components"
               width={80}
               height={80}
             />
             <Image
               className={styles.logoImg}
               src="/logo/moduleCSS.png"
-              alt="module css"
+              alt="CSS Module"
               width={80}
               height={80}
             />
             <Image
               className={styles.logoImg}
               src="/logo/vercel.svg"
-              alt="vercel"
+              alt="Vercel"
+              width={80}
+              height={80}
+            />
+            <Image
+              className={styles.logoImg}
+              src="/logo/prettier.svg"
+              alt="prettier"
               width={80}
               height={80}
             />
@@ -154,32 +171,38 @@ export default function Whyne() {
 
         {/* R & R */}
         <div className={styles.detailContainer}>
-          <p className={styles.semiTitle}>📄 R & R</p>
+          <p className={styles.semiTitle}>📄 R & R </p>
           <div className={styles.detailList}>
             <ul className={styles.rnrList}>
               <li>
-                <p className={styles.semiTitle}>Button components</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.semiTitle}>
+                  공통 Button 컴포넌트 및 Global CSS
+                </p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>styled-component를 사용하여 제작</li>
+                    <li>CSS Module 기반으로 공통 Button 컴포넌트 구현</li>
                     <li>
-                      모양과 크기가 같은 버튼은 하나의 스크립트로 재사용이
-                      가능하도록 구성 (RoundButton - checkbutton, homebutton,
-                      plusbutton)
+                      Primary/Secondary 타입과 small/regular 사이즈 옵션 설정
+                    </li>
+                    <li>
+                      className을 props로 받아 커스터마이징 가능하도록 설계
+                    </li>
+                    <li>
+                      전역 컬러와 마진 등 스타일 가이드 기준을 기본값으로 적용
                     </li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      Primary, Secondary, Outlined 버튼등은 하나의 스크립트로
-                      관리가 가능했음에도 각각의 파일로 제작해 불필요하게 파일이
-                      많아짐
+                      공통 컴포넌트는 초기 설계 기준이 중요하며, 흐름 전반에 큰
+                      영향을 줌을 체감
                     </li>
                     <li>
-                      기본 사이즈를 지정한 버튼과 그렇지 않은 버튼이 중구난방함
+                      className을 props로 전달하지 않으면 기본 스타일이 적용되지
+                      않음을 인지함
                     </li>
                   </div>
                 </ul>
@@ -187,52 +210,50 @@ export default function Whyne() {
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      Primary, Secondary, Outlined 버튼등은 하나의 스크립트로
-                      관리가 가능했음에도 각각의 파일로 제작해 불필요하게 파일이
-                      많아짐
+                      버튼 타입별로 파일이 분리되어 코드가 분산되고 유지보수가
+                      불편해졌음
                     </li>
                     <li>
-                      기본 사이즈를 지정한 버튼과 그렇지 않은 버튼이 중구난방함
+                      전역 폰트 적용이 제대로 되지 않아 설정을 재검토할 필요가
+                      있었음
+                    </li>
+                    <li>
+                      디자인 가이드가 일부 불명확해 스타일 통일 적용이 어려웠음
                     </li>
                   </div>
                 </ul>
               </li>
+
               <li>
-                <p className={styles.semiTitle}>새 롤링페이퍼 생성 페이지</p>
-                <p className={styles.rnrIndex}>제작방향</p>
+                <p className={styles.semiTitle}>마이페이지(내 정보) 구현</p>
+                <p className={styles.rnrIndex}>제작 방향</p>
                 <ul>
                   <div className={styles.rnrDetail}>
-                    <li>styled-component를 사용하여 제작</li>
+                    <li>탭 UI를 활용해 리뷰/와인/프로필 정보를 구분</li>
                     <li>
-                      모양과 크기가 같은 버튼은 하나의 스크립트로 재사용이
-                      가능하도록 구성 (RoundButton - checkbutton, homebutton,
-                      plusbutton)
+                      스크립트 길이를 줄이기 위해 컴포넌트를 최대한 분리하여
+                      구성
                     </li>
+                    <li>사용자 전용 리뷰 모달을 재구성하여 UX를 개선</li>
+                    <li>삭제 기능에 확인 모달을 추가해 실수 방지 처리</li>
                   </div>
                 </ul>
-                <p className={styles.rnrIndex}>배운점</p>
+                <p className={styles.rnrIndex}>배운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
                     <li>
-                      Primary, Secondary, Outlined 버튼등은 하나의 스크립트로
-                      관리가 가능했음에도 각각의 파일로 제작해 불필요하게 파일이
-                      많아짐
-                    </li>
-                    <li>
-                      기본 사이즈를 지정한 버튼과 그렇지 않은 버튼이 중구난방함
+                      제한된 UI 조건 안에서 더 나은 UX를 고민하고 개선하는
+                      경험을 얻음
                     </li>
                   </div>
                 </ul>
                 <p className={styles.rnrIndex}>아쉬운 점</p>
                 <ul>
                   <div className={styles.rnrDetail}>
+                    <li>반응형 디자인을 더 정교하게 개선할 시간이 부족했음</li>
                     <li>
-                      Primary, Secondary, Outlined 버튼등은 하나의 스크립트로
-                      관리가 가능했음에도 각각의 파일로 제작해 불필요하게 파일이
-                      많아짐
-                    </li>
-                    <li>
-                      기본 사이즈를 지정한 버튼과 그렇지 않은 버튼이 중구난방함
+                      상태 관리를 useState 위주로만 하여 React Query를
+                      활용했다면 더 효율적이었을 것 같음
                     </li>
                   </div>
                 </ul>
@@ -240,6 +261,21 @@ export default function Whyne() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={styles.bottomContainer}>
+        <p className={styles.title}>Repository</p>
+        <Link
+          href="https://github.com/yujuseop/Project-Team2-WINE"
+          target="_blank"
+        >
+          <Image
+            className={styles.overviewImg}
+            src="/logo/github.png"
+            alt="github repository"
+            width={150}
+            height={150}
+          />
+        </Link>
       </div>
     </div>
   );

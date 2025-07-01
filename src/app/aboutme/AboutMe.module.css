@@ -125,3 +125,21 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 850px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .image {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto 0;
+  }
+}

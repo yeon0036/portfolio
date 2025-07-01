@@ -35,10 +35,10 @@ export default function AboutMe() {
         <div className={styles.container}>
           <div>
             <Image
-              src="/images/ProfilePhoto.jpeg"
+              src="/images/ProfilePhoto2.jpeg"
               alt="profile image"
-              width={240}
-              height={240}
+              width={280}
+              height={280}
               className={styles.image}
             />
           </div>

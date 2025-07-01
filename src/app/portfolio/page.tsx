@@ -20,7 +20,9 @@ export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState<null | string>(null);
-  const [activeTab, setActiveTab] = useState<"ALL" | "FE" | "DESIGN">("ALL");
+  const [activeTab, setActiveTab] = useState<
+    "ALL" | "JavaScript" | "TypeScript"
+  >("ALL");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,7 +44,7 @@ export default function Portfolio() {
   return (
     <section
       ref={sectionRef}
-      style={{ minHeight: "50vh" }}
+      // style={{ minHeight: "50vh" }}
       id="portfolio"
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
@@ -52,10 +54,12 @@ export default function Portfolio() {
 
       {/* 탭 */}
       <div className={styles.tabs}>
-        {["ALL", "FE", "DESIGN"].map((tab) => (
+        {["ALL", "JavaScript", "TypeScript"].map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab as "ALL" | "FE" | "DESIGN")}
+            onClick={() =>
+              setActiveTab(tab as "ALL" | "JavaScript" | "TypeScript")
+            }
             className={`${styles.tab} ${
               activeTab === tab ? styles.active : ""
             }`}
@@ -76,12 +80,12 @@ export default function Portfolio() {
               <div key={item.id} onClick={() => setIsOpen(item.id)}>
                 <div className={styles.portfolioCard}>
                   <Image
+                    className={styles.portfolioImage}
                     src={item.image}
                     alt={item.title}
                     width={200}
                     height={200}
                   />
-                  <p className={styles.portfolioTitle}>{item.title}</p>
                 </div>
               </div>
             ))}

@@ -56,3 +56,9 @@
   height: 6px;
   border-radius: 9999px;
 }
+
+@media (max-width: 850px) {
+  .sideNav {
+    display: none;
+  }
+}

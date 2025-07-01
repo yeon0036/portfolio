@@ -120,3 +120,14 @@
   gap: 8px;
   margin-left: 20px;
 }
+
+/* repository */
+
+.bottomContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 52px;
+  padding-bottom: 60px;
+}

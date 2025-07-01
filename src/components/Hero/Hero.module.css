@@ -46,3 +46,12 @@
     transform: translateY(8px);
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 200px 20px 20px;
+  }
+  .title {
+    font-size: 52px;
+  }
+}
