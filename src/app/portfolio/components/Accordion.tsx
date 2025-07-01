@@ -1,22 +1,12 @@
-// Accordion.tsx
 import React, { useState, useRef } from "react";
 import AccordionMenu from "./AccordionMenu";
 import styles from "./Accordion.module.css";
-import GlobalNomad from "./PortfolioDetail/GlobalNomad";
-import Rolling from "./PortfolioDetail/Rolling";
-import Whyne from "./PortfolioDetail/WHYNE";
-import With from "./PortfolioDetail/With";
-import { PortfolioProps } from "../PortfolioData";
+import PortfolioDetail from "./FrontedDetail";
+import DesignDetail from "./DesignDetail";
+import { PortfolioProps } from "./FrontendData";
 
 type AccordionProps = {
   items: PortfolioProps[];
-};
-
-const componentMap: Record<string, React.ReactElement> = {
-  GlobalNomad: <GlobalNomad />,
-  Rolling: <Rolling />,
-  WHYNE: <Whyne />,
-  With: <With />,
 };
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
@@ -48,7 +38,11 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           }}
         >
           <div className={styles.container}>
-            {componentMap[item.id] ?? <p>준비 중입니다.</p>}
+            {item.category === "Design" ? (
+              <DesignDetail />
+            ) : (
+              <PortfolioDetail id={item.id} />
+            )}
           </div>
         </AccordionMenu>
       ))}
