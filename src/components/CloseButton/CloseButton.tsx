@@ -8,7 +8,7 @@ interface CloseButtonProps {
 const CloseButton: React.FC<CloseButtonProps> = ({ onClick, className }) => {
   return (
     <button onClick={onClick} className={className || ""}>
-      <IoCloseOutline size={28} strokeWidth={0.5} />
+      <IoCloseOutline size={30} strokeWidth={0.5} />
     </button>
   );
 };

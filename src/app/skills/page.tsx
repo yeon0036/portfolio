@@ -32,7 +32,6 @@ export default function Skills() {
       <p className={styles.title}>Skills</p>
       <div className={styles.content}>
         <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>주로 사용해요</p>
           <Image
             className={styles.logoImg}
             src="/logo/html.png"
@@ -61,17 +60,26 @@ export default function Skills() {
             width={80}
             height={80}
           />
+
           <Image
             className={styles.logoImg}
-            src="/logo/moduleCSS.png"
-            alt="module css"
+            src="/logo/react.png"
+            alt="react"
             width={80}
             height={80}
           />
           <Image
             className={styles.logoImg}
-            src="/logo/react.png"
-            alt="react"
+            src="/logo/NextJs.svg"
+            alt="next js"
+            width={80}
+            height={80}
+          />
+
+          <Image
+            className={styles.logoImg}
+            src="/logo/reactQuery.svg"
+            alt="react query"
             width={80}
             height={80}
           />
@@ -82,48 +90,18 @@ export default function Skills() {
             width={80}
             height={80}
           />
+
           <Image
             className={styles.logoImg}
-            src="/logo/nodeJs.png"
-            alt="node js"
+            src="/logo/tailwind.png"
+            alt="tailwind CSS"
             width={80}
             height={80}
           />
           <Image
             className={styles.logoImg}
-            src="/logo/vscode.png"
-            alt="vscode"
-            width={80}
-            height={80}
-          />
-          <Image
-            className={styles.logoImg}
-            src="/logo/github.png"
-            alt="github"
-            width={80}
-            height={80}
-          />
-          <Image
-            className={styles.logoImg}
-            src="/logo/notion.png"
-            alt="noiton"
-            width={80}
-            height={80}
-          />
-        </div>
-        <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>사용할 수 있어요</p>
-          <Image
-            className={styles.logoImg}
-            src="/logo/NextJs.svg"
-            alt="next js"
-            width={80}
-            height={80}
-          />
-          <Image
-            className={styles.logoImg}
-            src="/logo/reactQuery.svg"
-            alt="react query"
+            src="/logo/moduleCSS.png"
+            alt="module css"
             width={80}
             height={80}
           />
@@ -136,8 +114,29 @@ export default function Skills() {
           />
           <Image
             className={styles.logoImg}
-            src="/logo/vercel.svg"
-            alt="vercel"
+            src="/logo/zod.png"
+            alt="zod"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/zustand.webp"
+            alt="zustand"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/storybook.png"
+            alt="storybook"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/vscode.png"
+            alt="vscode"
             width={80}
             height={80}
           />
@@ -145,6 +144,20 @@ export default function Skills() {
             className={styles.logoImg}
             src="/logo/git.png"
             alt="git"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/github.png"
+            alt="github"
+            width={80}
+            height={80}
+          />
+          <Image
+            className={styles.logoImg}
+            src="/logo/vercel.svg"
+            alt="vercel"
             width={80}
             height={80}
           />
@@ -158,23 +171,6 @@ export default function Skills() {
           <Image
             className={styles.logoImg}
             src="/logo/figma.avif"
-            alt="vercel"
-            width={80}
-            height={80}
-          />
-        </div>
-        <div className={styles.skillContiner}>
-          <p className={styles.skillTitle}>사용해 봤어요</p>
-          <Image
-            className={styles.logoImg}
-            src="/logo/storybook.png"
-            alt="storybook"
-            width={80}
-            height={80}
-          />
-          <Image
-            className={styles.logoImg}
-            src="/logo/zod.png"
             alt="vercel"
             width={80}
             height={80}

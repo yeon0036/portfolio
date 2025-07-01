@@ -25,7 +25,7 @@ export default function AboutMe() {
     <section
       ref={sectionRef}
       id="aboutme"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "50vh" }}
       className={`${styles.about} ${styles["fade-in"]} ${
         isVisible ? styles.show : ""
       }`}
@@ -49,8 +49,8 @@ export default function AboutMe() {
               </p>
               <p>2000.03.06</p>
               <p>
-                안녕하세요. <strong>익숙함과 새로움의 공존</strong>을 추구하는
-                개발자 정혜연입니다.
+                <strong>익숙함과 새로움의 공존</strong>을 추구하는 개발자
+                정혜연입니다.
               </p>
               <p>
                 TypeScript와 React 기반의 프로젝트를 주로 다뤄왔고, <br />
@@ -113,8 +113,8 @@ export default function AboutMe() {
                   </div>
                 </div>
               </div>
+              <p className={styles.sectionTitle}>Language</p>
               <div className={styles.certificateGroup}>
-                <p className={styles.certificateTitle}>Language</p>
                 <div className={styles.certificateContainer}>
                   <div>
                     <p className={styles.certificateTitle}>Delf B1</p>
@@ -126,11 +126,11 @@ export default function AboutMe() {
                 </div>
                 <div className={styles.certificateContainer}>
                   <div>
-                    <p className={styles.certificateTitle}>TOEIC</p>
+                    <p className={styles.certificateTitle}>TOEIC 720</p>
                   </div>
                   <div>
                     <p>YBM</p>
-                    <p>2019.02.02(임)</p>
+                    <p>만료됨.</p>
                   </div>
                 </div>
               </div>
