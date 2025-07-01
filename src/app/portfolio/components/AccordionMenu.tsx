@@ -38,5 +38,4 @@ const AccordionMenu = forwardRef<HTMLDivElement, AccordionMenuProps>(
 );
 
 AccordionMenu.displayName = "AccordionMenu";
-
 export default AccordionMenu;

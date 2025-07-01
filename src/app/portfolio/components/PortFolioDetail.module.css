@@ -62,7 +62,7 @@
   display: flex;
   gap: 12px;
   z-index: 2;
-  margin: -30px auto;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   /* position: relative; */
@@ -120,7 +120,6 @@
 .rnrList {
   display: flex;
   flex-direction: column;
-  gap: 36px;
 }
 
 .rnrIndex {
@@ -214,6 +213,7 @@
   .overviewImgDesign {
     width: 100%;
     height: 200px;
+    margin: 20px auto;
   }
 
   .logoImg {

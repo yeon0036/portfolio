@@ -1,22 +1,17 @@
-// Accordion.tsx
 import React, { useState, useRef } from "react";
 import AccordionMenu from "./AccordionMenu";
 import styles from "./Accordion.module.css";
-import GlobalNomad from "./PortfolioDetail/GlobalNomad";
-import Rolling from "./PortfolioDetail/Rolling";
-import Whyne from "./PortfolioDetail/WHYNE";
-import With from "./PortfolioDetail/With";
-import { PortfolioProps } from "../PortfolioData";
+import PortfolioDetail from "./PortfolioDetail";
+import DesignDetail from "./DesignDetail";
+import { PortfolioProps, DesignProps } from "../types";
+
+// category로 타입 분기
+function isDesign(item: PortfolioProps | DesignProps): item is DesignProps {
+  return item.category === "Design";
+}
 
 type AccordionProps = {
-  items: PortfolioProps[];
-};
-
-const componentMap: Record<string, React.ReactElement> = {
-  GlobalNomad: <GlobalNomad />,
-  Rolling: <Rolling />,
-  WHYNE: <Whyne />,
-  With: <With />,
+  items: (PortfolioProps | DesignProps)[];
 };
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
@@ -48,7 +43,11 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           }}
         >
           <div className={styles.container}>
-            {componentMap[item.id] ?? <p>준비 중입니다.</p>}
+            {isDesign(item) ? (
+              <DesignDetail data={item} />
+            ) : (
+              <PortfolioDetail id={item.id} />
+            )}
           </div>
         </AccordionMenu>
       ))}

@@ -1,8 +1,7 @@
 "use client";
 
-// import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { portfolioItems } from "./PortfolioData";
+import { portfolioData } from "./PortfolioData";
 import Accordion from "./components/Accordion";
 import styles from "./portfolio.module.css";
 
@@ -32,8 +31,8 @@ export default function Portfolio() {
 
   const filteredItems =
     activeTab === "ALL"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeTab);
+      ? portfolioData
+      : portfolioData.filter((item) => item.category === activeTab);
 
   return (
     <section
