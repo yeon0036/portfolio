@@ -84,7 +84,7 @@ export default function PortfolioDetail({ id }: PortfolioDetailProps) {
             <ul className={styles.rnrList}>
               {project.rnr.map((item) => (
                 <li key={item}>
-                  <p className={styles.semiTitle}>{item}</p>
+                  <p className={styles.detailTItle}>{item}</p>
                 </li>
               ))}
             </ul>

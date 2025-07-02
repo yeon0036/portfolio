@@ -214,7 +214,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
   {
     id: "rolling",
     title: "Rolling",
-    category: "Typescript",
+    category: "Javascript",
     image: "/images/Rolling/Rolling.svg",
     intro: "익명/비익명 메세지 전달 플랫폼",
     link: "https://rolling-yeon.vercel.app/",
