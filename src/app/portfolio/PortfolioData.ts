@@ -393,7 +393,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
         },
       ],
       tools: [{ src: "/logo/xd.png", alt: "xd" }],
-      rnr: ["동아리 탐색"],
+      rnr: ["동아리 탐색", "메인 페이지", "검색 페이지", "마이페이지 일부"],
       build: {
         motivation: [
           "카카오톡, 엑셀, 워드, 인스타 등 하나의 동아리 관리를 위해 사용되는 어플이 너무 많음",
