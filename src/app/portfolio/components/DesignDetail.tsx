@@ -119,23 +119,26 @@ export default function DesignDetail({ data }: DesignDetailProps) {
                   </div>
                 </ul>
               </li>
-              <p className={styles.semiTitle}>⛓️ flowChart & SiteMap</p>
-              <ul>
-                <div className={styles.rnrDetail}>
-                  {data.overviewImages
-                    .find((o) => o.section.includes("flowChart")) // flowChart 섹션만
-                    ?.images.map((img) => (
-                      <Image
-                        key={img.src}
-                        className={styles.overviewImgDesign}
-                        src={img.src}
-                        alt={img.alt}
-                        width={600}
-                        height={350}
-                      />
-                    ))}
-                </div>
-              </ul>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.detailContainer}>
+          <p className={styles.semiTitle}>⛓️FlowChart & SiteMap</p>
+          <div className={styles.detailList}>
+            <ul className={styles.rnrList}>
+              {data.overviewImages
+                .find((o) => o.section.includes("flowChart")) // flowChart 섹션만
+                ?.images.map((img) => (
+                  <Image
+                    key={img.src}
+                    className={styles.overviewImgDesign}
+                    src={img.src}
+                    alt={img.alt}
+                    width={600}
+                    height={350}
+                  />
+                ))}
+              ;
             </ul>
           </div>
         </div>
