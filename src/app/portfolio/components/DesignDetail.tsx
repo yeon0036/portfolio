@@ -1,4 +1,3 @@
-// DesignDetail.tsx
 "use client";
 
 import Image from "next/image";
@@ -26,6 +25,27 @@ export default function DesignDetail({ data }: DesignDetailProps) {
             />
           </Link>
         </div>
+      </div>
+      {/* Overview */}
+      <div className={styles.bottomContainer}>
+        <p className={styles.title}>Overview</p>
+        {data.overviewImages
+          .filter((o) => !o.section.includes("flowChart"))
+          .map((section) => (
+            <div key={section.section}>
+              <p className={styles.semiTitle}>{section.section}</p>
+              {section.images.map((img) => (
+                <Image
+                  key={img.src}
+                  className={styles.overviewImgDesign}
+                  src={img.src}
+                  alt={img.alt}
+                  width={600}
+                  height={400}
+                />
+              ))}
+            </div>
+          ))}
       </div>
       <div className={styles.container}>
         <p className={styles.title}>Details</p>
@@ -119,27 +139,6 @@ export default function DesignDetail({ data }: DesignDetailProps) {
             </ul>
           </div>
         </div>
-      </div>
-      {/* Overview */}
-      <div className={styles.bottomContainer}>
-        <p className={styles.title}>Overview</p>
-        {data.overviewImages
-          .filter((o) => !o.section.includes("flowChart"))
-          .map((section) => (
-            <div key={section.section}>
-              <p className={styles.semiTitle}>{section.section}</p>
-              {section.images.map((img) => (
-                <Image
-                  key={img.src}
-                  className={styles.overviewImgDesign}
-                  src={img.src}
-                  alt={img.alt}
-                  width={600}
-                  height={400}
-                />
-              ))}
-            </div>
-          ))}
       </div>
     </div>
   );

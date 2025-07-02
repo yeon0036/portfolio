@@ -369,7 +369,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
     id: "with",
     title: "With",
     category: "Design",
-    image: "/images/WITH/with.png",
+    image: "/images/WITH/WITH.png",
     intro: "동아리 활동 총 관리 앱",
     link: "https://xd.adobe.com/view/d10f6bd5-2d5e-4457-915b-1ee6b0f4065c-845c/?fullscreen",
     thumbnail: "/images/WITH/withTN.jpg",
