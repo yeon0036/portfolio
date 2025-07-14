@@ -83,7 +83,7 @@ export default function DesignDetail({ data }: DesignDetailProps) {
             <ul className={styles.rnrList}>
               {data.details.rnr.map((item) => (
                 <li key={item}>
-                  <p className={styles.semiTitle}>{item}</p>
+                  <p className={styles.detailTitle}>{item}</p>
                 </li>
               ))}
             </ul>
@@ -127,7 +127,7 @@ export default function DesignDetail({ data }: DesignDetailProps) {
           <div className={styles.detailList}>
             <ul className={styles.rnrList}>
               {data.overviewImages
-                .find((o) => o.section.includes("flowChart")) // flowChart 섹션만
+                .find((o) => o.section.includes("flowChart"))
                 ?.images.map((img) => (
                   <Image
                     key={img.src}
@@ -138,7 +138,6 @@ export default function DesignDetail({ data }: DesignDetailProps) {
                     height={350}
                   />
                 ))}
-              ;
             </ul>
           </div>
         </div>

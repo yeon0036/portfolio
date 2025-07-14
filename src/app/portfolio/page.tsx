@@ -9,7 +9,7 @@ export default function Portfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<
-    "ALL" | "JavaScript" | "TypeScript" | "Design"
+    "ALL" | "Internship" | "Team Project"
   >("ALL");
 
   useEffect(() => {
@@ -47,13 +47,11 @@ export default function Portfolio() {
 
       {/* 모바일 탭 */}
       <div className={styles.tabs}>
-        {["ALL", "JavaScript", "TypeScript", "Design"].map((tab) => (
+        {["ALL", "Internship", "Team Project"].map((tab) => (
           <button
             key={tab}
             onClick={() =>
-              setActiveTab(
-                tab as "ALL" | "JavaScript" | "TypeScript" | "Design"
-              )
+              setActiveTab(tab as "ALL" | "Internship" | "Team Project")
             }
             className={`${styles.tab} ${
               activeTab === tab ? styles.active : ""

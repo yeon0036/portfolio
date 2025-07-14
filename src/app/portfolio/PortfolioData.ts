@@ -7,7 +7,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
     title: "TetherDrop",
     image: "/images/TetherDrop/TetherDrop.svg",
     intro: "코인 거래 플랫폼",
-    category: "TypeScript",
+    category: "Internship",
     link: "https://www.tetherdrop.io/",
     github: "",
     thumbnail: "/images/TetherDrop/TetherDropTN.png",
@@ -89,7 +89,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
       },
     ],
     tools: [
-      { src: "/logo/typescript.png", alt: "TypeScript" },
+      { src: "/logo/Project.png", alt: "Project" },
       { src: "/logo/react.png", alt: "React" },
       { src: "/logo/serverAction.png", alt: "Server Actions" },
       { src: "/logo/Prisma.png", alt: "Prisma" },
@@ -109,7 +109,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
   /** @GlobalNomad */
   {
     id: "globalNomad",
-    category: "TypeScript",
+    category: "Team Project",
     title: "GlobalNomad",
     image: "/images/GlobalNomad/GlobalNomad.svg",
     intro: "취미활동 참여 및 주최 플랫폼",
@@ -196,7 +196,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
       },
     ],
     tools: [
-      { src: "/logo/typescript.png", alt: "ts" },
+      { src: "/logo/Project.png", alt: "ts" },
       { src: "/logo/react.png", alt: "react" },
       { src: "/logo/reactQuery.svg", alt: "react query" },
       { src: "/logo/moduleCSS.png", alt: "module css" },
@@ -214,7 +214,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
   {
     id: "rolling",
     title: "Rolling",
-    category: "Javascript",
+    category: "Team Project",
     image: "/images/Rolling/Rolling.svg",
     intro: "익명/비익명 메세지 전달 플랫폼",
     link: "https://rolling-yeon.vercel.app/",
@@ -258,7 +258,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
       },
     ],
     tools: [
-      { src: "/logo/javascript.png", alt: "JavaScript" },
+      { src: "/logo/Team Project.png", alt: "Team Project" },
       { src: "/logo/react.png", alt: "React" },
       { src: "/logo/restAPI.png", alt: "REST API" },
       { src: "/logo/styledComponents.png", alt: "Styled Components" },
@@ -275,7 +275,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
     title: "WHYNE",
     image: "/images/WHYNE/WHYNE.svg",
     intro: "와인 관련 정보공유 커뮤니티",
-    category: "TypeScript",
+    category: "Team Project",
     link: "https://wyene-yeon.vercel.app/",
     github: "https://github.com/yujuseop/Project-Team2-WINE",
     thumbnail: "/images/WHYNE/WHYNETN.png",
@@ -353,7 +353,7 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
       },
     ],
     tools: [
-      { src: "/logo/typescript.png", alt: "TypeScript" },
+      { src: "/logo/Project.png", alt: "Project" },
       { src: "/logo/react.png", alt: "React" },
       { src: "/logo/restAPI.png", alt: "REST API" },
       { src: "/logo/styledComponents.png", alt: "Styled Components" },
@@ -368,9 +368,9 @@ export const portfolioData: (PortfolioProps | DesignProps)[] = [
   {
     id: "with",
     title: "With",
-    category: "Design",
+    category: "Team Project",
     image: "/images/WITH/WITH.png",
-    intro: "동아리 활동 총 관리 앱",
+    intro: "동아리 활동 총 관리 앱 UIUX",
     link: "https://xd.adobe.com/view/d10f6bd5-2d5e-4457-915b-1ee6b0f4065c-845c/?fullscreen",
     thumbnail: "/images/WITH/withTN.jpg",
     details: {
