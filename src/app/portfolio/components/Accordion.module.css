@@ -1,47 +1,52 @@
 /* menus */
 .menuBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  border-bottom: 0.5px solid var(--White);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 0.5px solid var(--White);
 }
 
 .infoSection {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.thumbnail {
+    background-color: white;
+    padding: 4px;
 }
 
 .titleSection {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .title {
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--White);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--White);
 }
 
 .intro {
-  font-size: 16px;
-  color: var(--light-Gray);
+    font-size: 16px;
+    color: var(--light-Gray);
 }
 
 @media (max-width: 1024px) {
-  .title {
-    font-size: 20px;
-  }
+    .title {
+        font-size: 20px;
+    }
 
-  .intro {
-    font-size: 12px;
-  }
+    .intro {
+        font-size: 12px;
+    }
 }
 
 /* accordion */
 .container {
-  padding: 20px;
-  border: 1px solid var(--White);
+    padding: 20px;
+    border: 1px solid var(--White);
 }

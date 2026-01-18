@@ -1,147 +1,156 @@
 .sectionLine {
-  margin: 32px 0;
-  padding-bottom: 80px;
-  width: 100%;
-  border-bottom: 0.5px solid var(--light-Gray);
-  scroll-margin-top: 200px;
+    margin: 32px 0;
+    padding-bottom: 80px;
+    width: 100%;
+    border-bottom: 0.5px solid var(--light-Gray);
+    scroll-margin-top: 200px;
 }
 
 .about {
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .title {
-  display: flex;
-  justify-content: flex-start;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 80px;
-  border-left: 10px solid var(--Blue);
-  padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 80px;
+    border-left: 10px solid var(--Blue);
+    padding-left: 20px;
 }
 
 .container {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  line-height: 26px;
-  gap: 52px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    line-height: 26px;
+    gap: 52px;
 }
 
 .image {
-  border-radius: 9999px;
-  object-fit: cover;
-  align-items: top;
+    border-radius: 9999px;
+    object-fit: cover;
+    align-items: top;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 32px;
 }
 
 .sectionTitle {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .semiTitle {
-  font-size: 18px;
-  font-weight: 400;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .intro {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-bottom: 24px;
-  border-bottom: 0.5px solid var(--light-Gray);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 0.5px solid var(--light-Gray);
+}
+
+.experienceLogo {
+    padding: 6px;
+    margin: 12px 0;
+    background-color: white;
+    object-fit: contain;
 }
 
 .education {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 40px;
-  padding-bottom: 40px;
-  border-bottom: 0.5px solid var(--light-Gray);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid var(--light-Gray);
 }
 
 .eduLogo {
-  padding: 8px;
-  margin: 12px 0;
-  background-color: white;
-  object-fit: cover;
+    padding: 8px;
+    margin: 12px 0;
+    background-color: white;
+    object-fit: cover;
 }
 
 .schoolName {
-  font-size: 18px;
-  font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .eduContainer {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
 }
 
 .eduContent {
-  display: flex;
-  flex-direction: column;
-  margin: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 16px;
 }
 
 .certificate {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 40px;
 }
 
 .certificateGroup {
-  margin-top: 18px;
+    margin-top: 18px;
 }
 
 .certificateTitle {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  min-width: 120px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    min-width: 120px;
 }
 
 .certificateContainer {
-  display: flex;
-  margin-bottom: 12px;
+    display: flex;
+    margin-bottom: 12px;
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 5s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 5s ease,
+        transform 1s ease;
 }
 
 .show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 850px) {
-  .container {
-    width: 100%;
-    flex-direction: column;
-    gap: 12px;
-  }
+    .container {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  .content {
-    margin: 0;
-  }
+    .content {
+        margin: 0;
+    }
 
-  .image {
-    width: 120px;
-    height: 120px;
-    margin: 20px auto 0;
-  }
+    .image {
+        width: 120px;
+        height: 120px;
+        margin: 20px auto 0;
+    }
 }

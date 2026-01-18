@@ -1,113 +1,116 @@
 .content {
-  margin: 32px 0;
-  padding-bottom: 80px;
-  border-bottom: 0.5px solid var(--light-Gray);
-  scroll-margin-top: 200px;
+    margin: 32px 0;
+    padding-bottom: 80px;
+    border-bottom: 0.5px solid var(--light-Gray);
+    scroll-margin-top: 200px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 12px 12px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 12px 12px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .title {
-  display: flex;
-  justify-content: flex-start;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 80px;
-  border-left: 10px solid var(--Blue);
-  padding-left: 20px;
-  margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 80px;
+    border-left: 10px solid var(--Blue);
+    padding-left: 20px;
+    margin-bottom: 24px;
 }
 
 .tab {
-  /* display: flex; */
-  align-items: center;
-  max-width: 100%;
-  margin: 12px 8px;
-  padding: 4px 12px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--White);
-  /* border-bottom: 1px solid var(--light-Gray); */
+    /* display: flex; */
+    align-items: center;
+    max-width: 100%;
+    margin: 12px 8px;
+    padding: 4px 12px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--White);
+    cursor: pointer;
+    /* border-bottom: 1px solid var(--light-Gray); */
 }
 
 .tab:hover {
-  border-bottom: 3px solid var(--light-Blue);
-  transition: all 0.5s ease;
+    border-bottom: 3px solid var(--light-Blue);
+    transition: all 0.5s ease;
 }
 
 .tab.active {
-  border-bottom: 3px solid var(--Blue);
-  transition: all 0.5s ease;
+    border-bottom: 3px solid var(--Blue);
+    transition: all 0.5s ease;
 }
 
 .portfolioCard {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 300px;
-  box-sizing: border-box;
-  border: 0.5px solid var(--light-Gray);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 0.5px solid var(--light-Gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .portfolioImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .portfolioCard:hover {
-  transform: translateY(-10px);
-  transition: all 0.5s ease;
-  box-shadow: 5px 5px 20px rgba(122, 178, 240, 0.3);
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+    box-shadow: 5px 5px 20px rgba(122, 178, 240, 0.3);
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 5s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 5s ease,
+        transform 1s ease;
 }
 
 .show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 0 16px;
-  }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0 16px;
+    }
 
-  .portfolioCard {
-    width: 100%;
-    max-width: none;
-  }
+    .portfolioCard {
+        width: 100%;
+        max-width: none;
+    }
 
-  .portfolioImage {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .portfolioImage {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-  .tab {
-    font-size: 16px;
-  }
+    .tab {
+        font-size: 16px;
+    }
 }

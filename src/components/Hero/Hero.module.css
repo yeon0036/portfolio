@@ -1,57 +1,57 @@
 .hero {
-  padding: 280px 40px 40px;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--Black);
-  scroll-margin-top: 100px;
+    padding: 280px 40px 40px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--Black);
+    scroll-margin-top: 100px;
 }
 
 .title {
-  font-size: 96px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1.1;
-  color: var(--Blue);
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: var(--Blue);
 }
 
 .subtitle {
-  font-size: 24px;
-  margin-top: 16px;
-  color: var(--light-Gray);
+    font-size: 24px;
+    margin-top: 16px;
+    color: var(--light-Gray);
 }
 
 .scrollArrow {
-  font-size: 24px;
-  margin-top: 100px;
-  width: 100%;
-  max-width: 100%;
-  background: none;
-  color: var(--light-Blue);
-  border: none;
-  animation: bounce 1.4s infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-size: 24px;
+    margin-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    color: var(--light-Blue);
+    border: none;
+    animation: bounce 1.4s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
 }
 
 @media (max-width: 1024px) {
-  .hero {
-    padding: 200px 20px 20px;
-  }
-  .title {
-    font-size: 52px;
-  }
+    .hero {
+        padding: 200px 20px 20px;
+    }
+    .title {
+        font-size: 52px;
+    }
 }

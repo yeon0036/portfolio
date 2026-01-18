@@ -1,474 +1,718 @@
 import { PortfolioProps, DesignProps } from "./types";
 
 export const portfolioData: (PortfolioProps | DesignProps)[] = [
-  /** @TetherDrop */
-  {
-    id: "TetherDrop",
-    title: "TetherDrop",
-    image: "/images/TetherDrop/TetherDrop.svg",
-    intro: "코인 거래 플랫폼",
-    category: "Internship",
-    link: "https://www.tetherdrop.io/",
-    github: "",
-    thumbnail: "/images/TetherDrop/TetherDropTN.png",
-    overviewImages: [
-      {
-        section: "소개 페이지",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop1.png",
-            alt: "TederDrop 소개 페이지",
-          },
+    /** @MPZ (mpz.kr) */
+    {
+        id: "MPZ",
+        title: "마펫쯔 (MPZ)",
+        image: "/images/MPZ/MPZ.png",
+        intro: "반려동물 입양/커뮤니티 플랫폼",
+        category: "Work Experience",
+        type: "Mobile",
+        link: "https://mpz.kr/",
+        github: "",
+        thumbnail: "/images/MPZ/MPZ.png",
+        overviewImages: [
+            {
+                section: "로그인",
+                images: [{ src: "/images/MPZ/MPZ1.png", alt: "MPZ 로그인" }],
+            },
+            {
+                section: "메인 탐색",
+                images: [{ src: "/images/MPZ/MPZ2.png", alt: "MPZ 메인 탐색" }],
+            },
+            {
+                section: "동물 리스트",
+                images: [{ src: "/images/MPZ/MPZ3.png", alt: "MPZ 동물 리스트" }],
+            },
+            {
+                section: "동물 상세",
+                images: [{ src: "/images/MPZ/MPZ3-1.png", alt: "MPZ 동물 상세" }],
+            },
+            {
+                section: "센터 리스트",
+                images: [{ src: "/images/MPZ/MPZ4.png", alt: "MPZ 센터 리스트" }],
+            },
+            {
+                section: "센터 상세",
+                images: [{ src: "/images/MPZ/MPZ4-1.png", alt: "MPZ 센터 상세" }],
+            },
+            {
+                section: "커뮤티티 리스트",
+                images: [{ src: "/images/MPZ/MPZ5.png", alt: "MPZ 커뮤티티 리스트" }],
+            },
+            {
+                section: "커뮤티티 작성",
+                images: [{ src: "/images/MPZ/MPZ6.png", alt: "MPZ 커뮤티티 작성" }],
+            },
+            {
+                section: "커뮤티티 상세",
+                images: [{ src: "/images/MPZ/MPZ7.png", alt: "MPZ 커뮤티티 상세" }],
+            },
+            {
+                section: "찜 목록 - 동물",
+                images: [{ src: "/images/MPZ/MPZ9.png", alt: "MPZ 찜 목록 - 동물" }],
+            },
+            {
+                section: "찜 목록 - 센터",
+                images: [{ src: "/images/MPZ/MPZ10.png", alt: "MPZ 찜 목록 - 센터" }],
+            },
+            {
+                section: "마이페이지",
+                images: [{ src: "/images/MPZ/MPZ11.png", alt: "MPZ 마이페이지" }],
+            },
+            {
+                section: "마이페이지 - 입양신청 상세",
+                images: [{ src: "/images/MPZ/MPZ12.png", alt: "MPZ 마이페이지 - 설정" }],
+            },
         ],
-      },
-      {
-        section: "등록 방법 안내",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop2.png",
-            alt: "TederDrop 등록방법",
-          },
+        features: [
+            {
+                title: "로그인 및 사용자 진입 흐름",
+                description:
+                    "로그인을 통해 사용자 상태를 식별하고, 이후 서비스 이용 동선(탐색·커뮤니티·마이페이지)으로 자연스럽게 이어질 수 있도록 진입 흐름을 구성했습니다.",
+            },
+            {
+                title: "지역 기반 보호동물 탐색",
+                description:
+                    "사용자 위치 또는 선택한 지역을 기준으로 보호동물을 탐색할 수 있도록 구성했으며, 리스트 형태로 주요 정보(종, 상태, 보호소)를 한눈에 확인할 수 있도록 설계했습니다.",
+            },
+            {
+                title: "보호동물 상세 정보 제공",
+                description:
+                    "각 보호동물의 상세 페이지에서 기본 정보뿐 아니라 입양 관련 정보까지 확인할 수 있도록 구성하여, 탐색 이후 의사결정이 이어질 수 있도록 했습니다.",
+            },
+            {
+                title: "보호센터 탐색 및 상세",
+                description:
+                    "보호동물과 연계된 보호센터를 리스트 및 상세 페이지로 제공하여, 센터 정보 확인과 추가 탐색이 자연스럽게 이어지도록 구성했습니다.",
+            },
+            {
+                title: "커뮤니티 기능",
+                description:
+                    "사용자 간 경험 공유와 소통을 위한 커뮤니티를 제공하며, 게시글 조회·작성·상세 확인까지 하나의 흐름으로 이어지도록 구현했습니다.",
+            },
+            {
+                title: "관심 등록(찜) 기능",
+                description:
+                    "보호동물과 보호센터를 각각 찜 목록으로 관리할 수 있도록 분리하여, 사용자가 관심 있는 항목을 쉽게 다시 확인할 수 있도록 했습니다.",
+            },
+            {
+                title: "마이페이지 및 입양 신청 관리",
+                description:
+                    "마이페이지에서 사용자의 기본 정보와 함께 입양 신청 내역 및 상세 정보를 확인할 수 있도록 구성하여, 서비스 이용 이력을 한곳에서 관리할 수 있도록 했습니다.",
+            },
         ],
-      },
-      {
-        section: "이벤트 페이지",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop3.png",
-            alt: "TederDrop 이벤트 페이지",
-          },
+        tools: [
+            { src: "/logo/react.png", alt: "React" },
+            { src: "/logo/NextJs.svg", alt: "NextJs" },
+            { src: "/logo/typescript.png", alt: "TypeScript" },
+            { src: "/logo/tailwind.png", alt: "Tailwind" },
+            { src: "/logo/python.png", alt: "Python" },
+            { src: "/logo/Django.png", alt: "Django" },
+            { src: "/logo/PostgreSQL.png", alt: "PostgreSQL" },
+            { src: "/logo/capacitor.png", alt: "Capacitor" },
+            { src: "/logo/railway.png", alt: "Railway" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+            { src: "/logo/ESLint.png", alt: "ESLint" },
         ],
-      },
-      {
-        section: "거래소 리스트",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop4.png",
-            alt: "TederDrop 제휴 거래소",
-          },
+        rnr: [
+          "프론트엔드 및 백엔드 전반 개발 담당 (공공 동물 데이터 수집·초기 백엔드 데이터 구조 설계 제외)",
+          "메인 탐색/리스트 UI 및 관련 API 연동 구현",
+          "지역 기반 필터·탭 로직 및 상태 관리 처리",
+          "커뮤니티·찜·마이페이지 등 주요 기능의 화면과 서버 로직 구현",
+          "운영을 고려한 컴포넌트 구조 및 API 구조 정리",
         ],
-      },
-      {
-        section: "거래소 상세 페이지",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop5.png",
-            alt: "TederDrop 제휴 거래소 상세",
-          },
-        ],
-      },
-      {
-        section: "step 제어페이지(테스트 페이지 예시)",
-        images: [
-          {
-            src: "/images/TetherDrop/TetherDrop6.png",
-            alt: "TederDrop Step별 제어 페이지",
-          },
-        ],
-      },
-    ],
-    features: [
-      {
-        title: "소개 페이지",
-        description: "해당 사의 장점과 서비스를 소개하는 페이지 입니다.",
-      },
-      {
-        title: "이용방법 페이지",
-        description:
-          "테더드랍의 서비스를 이용하기 위해 등록 방법을 순차적으로 안내해주는 페이지 입니다.",
-      },
-      {
-        title: "제휴거래소 및 상세",
-        description:
-          "테더드랍과 제휴를 맺은 거래소의 리스트 페이지입니다. 해당 거래소의 상세 페이지를 들어가면 타 사와 비교해 얻을 수 있는 베네핏 등의 정보를 확인할 수 있습니다.",
-      },
-      {
-        title: "마이페이지 및 파트너페이지",
-        description:
-          "사용자가 거래한 내역, 등록한 거래소의 계정 등을 관리할 수 있습니다. 로그아웃/회원가입을 제어할 수 있습니다. 파트너로 등록된 경우, 파트너로의 레퍼럴 혜택 등을 정리한 내역을 확인할 수 있습니다.",
-      },
-    ],
-    tools: [
-      { src: "/logo/Project.png", alt: "Project" },
-      { src: "/logo/react.png", alt: "React" },
-      { src: "/logo/serverAction.png", alt: "Server Actions" },
-      { src: "/logo/Prisma.png", alt: "Prisma" },
-      { src: "/logo/supabase.png", alt: "Supabase" },
-      { src: "/logo/tailwind.png", alt: "Tailwind" },
-      { src: "/logo/vercel.svg", alt: "Vercel" },
-      { src: "/logo/prettier.svg", alt: "prettier" },
-      { src: "/logo/ESLint.png", alt: "ESLint" },
-    ],
-    rnr: [
-      "주요 데이터 연결 및 CRUD 제어",
-      "마이페이지 및 파트너페이지",
-      "제휴거래소 및 상세페이지",
-      "Step progress 사용 컴포넌트 및 페이지",
-    ],
-  },
-  /** @GlobalNomad */
-  {
-    id: "globalNomad",
-    category: "Team Project",
-    title: "GlobalNomad",
-    image: "/images/GlobalNomad/GlobalNomad.svg",
-    intro: "취미활동 참여 및 주최 플랫폼",
-    link: "https://globalnomad-t2.vercel.app/",
-    github: "https://github.com/T2-GlobalNomad/GlobalNomad",
-    thumbnail: "/images/GlobalNomad/GlobalNomadTN.png",
-    overviewImages: [
-      {
-        section: "메인 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad1.png",
-            alt: "GlobalNomad main page",
-          },
-        ],
-      },
-      {
-        section: "체험 상세 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad2.png",
-            alt: "rolling main page",
-          },
-          {
-            src: "/images/GlobalNomad/GlobalNomad2-1.png",
-            alt: "rolling main page",
-          },
-        ],
-      },
-      {
-        section: "내 정보 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad3.png",
-            alt: "rolling main page",
-          },
-        ],
-      },
-      {
-        section: "예약 내역 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad4.png",
-            alt: "rolling main page",
-          },
-        ],
-      },
-      {
-        section: "내 체험 관리 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad5.png",
-            alt: "rolling main page",
-          },
-          {
-            src: "/images/GlobalNomad/GlobalNomad5-1.png",
-            alt: "rolling main page",
-          },
-        ],
-      },
-      {
-        section: "예약 현황 페이지",
-        images: [
-          {
-            src: "/images/GlobalNomad/GlobalNomad6.png",
-            alt: "rolling main page",
-          },
-        ],
-      },
-    ],
-    features: [
-      {
-        title: "롤링페이퍼",
-        description:
-          "나만의 롤링페이퍼를 만들고, 누군가가 남기는 메세지를 받을 수 있어요.",
-      },
-      {
-        title: "메세지보내기",
-        description: "내가 원하는 사람에게 메세지를 보내기가 가능합니다.",
-      },
-      {
-        title: "인기 롤링페이퍼",
-        description: "상대방에 대한 내 기분을 이모지로 표현 할 수 있어요.",
-      },
-    ],
-    tools: [
-      { src: "/logo/Project.png", alt: "ts" },
-      { src: "/logo/react.png", alt: "react" },
-      { src: "/logo/reactQuery.svg", alt: "react query" },
-      { src: "/logo/moduleCSS.png", alt: "module css" },
-      { src: "/logo/vercel.svg", alt: "vercel" },
-      { src: "/logo/prettier.svg", alt: "prettier" },
-      { src: "/logo/ESLint.png", alt: "ESLint" },
-      { src: "/logo/zod.png", alt: "zod" },
-      { src: "/logo/zustand.webp", alt: "zustand" },
-      { src: "/logo/storybook.png", alt: "storybook" },
-    ],
-    rnr: ["API", "Query hooks", "내 정보 페이지", "예약 현황 페이지"],
-  },
-
-  /** @Rolling */
-  {
-    id: "rolling",
-    title: "Rolling",
-    category: "Team Project",
-    image: "/images/Rolling/Rolling.svg",
-    intro: "익명/비익명 메세지 전달 플랫폼",
-    link: "https://rolling-yeon.vercel.app/",
-    github: "https://github.com/y5037/Rolling",
-    thumbnail: "/images/Rolling/RollingTN.png",
-    overviewImages: [
-      {
-        section: "메인 페이지",
-        images: [
-          { src: "/images/Rolling/Rolling1.png", alt: "rolling main page" },
-        ],
-      },
-      {
-        section: "롤링페이퍼 상세 페이지",
-        images: [
-          { src: "/images/Rolling/Rolling2.png", alt: "rolling detail page" },
-        ],
-      },
-      {
-        section: "롤링페이퍼 개설 페이지",
-        images: [
-          { src: "/images/Rolling/Rolling3.png", alt: "rolling create page" },
-        ],
-      },
-    ],
-    features: [
-      {
-        title: "롤링페이퍼 생성",
-        description:
-          "사용자 본인만의 롤링페이퍼를 개설할 수 있으며, 이를 통해 다양한 메세지를 받을 수 있습니다.",
-      },
-      {
-        title: "메세지 작성",
-        description:
-          "원하는 대상의 롤링페이퍼에 자유롭게 메세지를 작성할 수 있습니다.",
-      },
-      {
-        title: "감정 이모지 표현",
-        description:
-          "상대방에 대한 감정을 다양한 이모지로 표현해, 메시지에 감성을 더합니다.",
-      },
-    ],
-    tools: [
-      { src: "/logo/Team Project.png", alt: "Team Project" },
-      { src: "/logo/react.png", alt: "React" },
-      { src: "/logo/restAPI.png", alt: "REST API" },
-      { src: "/logo/styledComponents.png", alt: "Styled Components" },
-      { src: "/logo/moduleCSS.png", alt: "CSS Module" },
-      { src: "/logo/vercel.svg", alt: "Vercel" },
-      { src: "/logo/prettier.svg", alt: "prettier" },
-    ],
-    rnr: ["공통 Button 컴포넌트 개발", "롤링페이퍼 생성 페이지 구현"],
-  },
-
-  /** @Whyne */
-  {
-    id: "whyne",
-    title: "WHYNE",
-    image: "/images/WHYNE/WHYNE.svg",
-    intro: "와인 관련 정보공유 커뮤니티",
-    category: "Team Project",
-    link: "https://wyene-yeon.vercel.app/",
-    github: "https://github.com/yujuseop/Project-Team2-WINE",
-    thumbnail: "/images/WHYNE/WHYNETN.png",
-    overviewImages: [
-      {
-        section: "메인 페이지",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE1.png",
-            alt: "WHYNE main page",
-          },
-        ],
-      },
-      {
-        section: "검색 기능",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE1-1.png",
-            alt: "WHYNE main page - search",
-          },
-        ],
-      },
-      {
-        section: "와인 상세 페이지",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE2.png",
-            alt: "WHYNE detail page",
-          },
-        ],
-      },
-      {
-        section: "리뷰 작성",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE2-1.png",
-            alt: "WHYNE detail page - review",
-          },
-        ],
-      },
-      {
-        section: "마이페이지",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE3.png",
-            alt: "WHYNE mypage",
-          },
-        ],
-      },
-      {
-        section: "프로필 수정",
-        images: [
-          {
-            src: "/images/WHYNE/WHYNE3-1.png",
-            alt: "WHYNE mypage - edit",
-          },
-        ],
-      },
-    ],
-    features: [
-      {
-        title: "메인 페이지",
-        description:
-          "전체 와인 리스트를 확인할 수 있으며, 이름 또는 조건 검색을 통해 원하는 와인을 빠르게 찾을 수 있습니다.",
-      },
-      {
-        title: "상세 페이지 및 리뷰",
-        description:
-          "와인 상세 페이지에서는 다른 유저들이 남긴 리뷰와 평점을 확인할 수 있으며, 나만의 리뷰도 작성할 수 있습니다.",
-      },
-      {
-        title: "마이페이지",
-        description:
-          "작성한 리뷰, 등록한 와인 내역을 관리(수정/삭제)할 수 있고, 내 프로필 정보도 수정할 수 있습니다.",
-      },
-    ],
-    tools: [
-      { src: "/logo/Project.png", alt: "Project" },
-      { src: "/logo/react.png", alt: "React" },
-      { src: "/logo/restAPI.png", alt: "REST API" },
-      { src: "/logo/styledComponents.png", alt: "Styled Components" },
-      { src: "/logo/moduleCSS.png", alt: "CSS Module" },
-      { src: "/logo/vercel.svg", alt: "Vercel" },
-      { src: "/logo/prettier.svg", alt: "prettier" },
-    ],
-    rnr: ["공통 Button 컴포넌트 및 Global CSS", "마이페이지(내 정보) 구현"],
-  },
-
-  /** @With */
-  {
-    id: "with",
-    title: "With",
-    category: "Team Project",
-    image: "/images/WITH/WITH.png",
-    intro: "동아리 활동 총 관리 앱 UIUX",
-    link: "https://xd.adobe.com/view/d10f6bd5-2d5e-4457-915b-1ee6b0f4065c-845c/?fullscreen",
-    thumbnail: "/images/WITH/withTN.jpg",
-    details: {
-      functions: [
-        {
-          title: "동아리 둘러보기",
-          desc: "내가 재학중인 대학교에 어떤 동아리가 있는지 둘러볼 수 있어요.",
-        },
-        {
-          title: "메세지보내기",
-          desc: "내가 원하는 사람에게 메세지를 보내기가 가능합니다.",
-        },
-        {
-          title: "채팅/마이페이지",
-          desc: "내가 속한 동아리의 채팅에 참여할 수 있고, 내 정보 둘러보기를 할 수 있어요.",
-        },
-        {
-          title: "내 동아리",
-          desc: "내가 속한 동아리의 전체 일정, 커뮤니티 등을 확인할 수 있어요.",
-        },
-      ],
-      tools: [{ src: "/logo/xd.png", alt: "xd" }],
-      rnr: ["동아리 탐색", "메인 페이지", "검색 페이지", "마이페이지 일부"],
-      build: {
-        motivation: [
-          "카카오톡, 엑셀, 워드, 인스타 등 하나의 동아리 관리를 위해 사용되는 어플이 너무 많음",
-          "동아리 모집 공고를 한 곳에서 확인하고싶음",
-          "관심있는 동아리에 대한 정보에 간단히 접근하고 싶음",
-          "중요한 공지를 모든 채팅방마다 해야하는 것이 번거로움",
-        ],
-        competitors: [
-          {
-            name: "소모임",
-            info: [
-              "목적: 누구나 쉽게 자신의 지역과 관심사에 맞는 모임을 찾을 수 있다.",
-              "타겟층: 오프라인 취미 활동 모임을 찾는 고객",
-              "강점: 다양한 모임 카테고리",
-              "약점: 무분별한 초대기능",
-            ],
-          },
-          {
-            name: "모두의동아리",
-            info: [
-              "목적: 주변에 물어볼 사람이 없는 학생들에게 동아리에 관한 유용한 정보들을 제공",
-              "타겟층: 동아리 활동을 하는 대학생들",
-              "강점: 학교 이메일 인증, 동아리장 양도 기능",
-              "약점: IOS 기기 사용 불가",
-            ],
-          },
-          {
-            name: "네이버밴드",
-            info: [
-              "목적: 가족, 커플, 친구, 학교, 회사, 동호회 등 모든 종류의 모임 운영을 쉽게 가능하게 하는 공간 제공",
-              "타겟층: 모임에 참여하는 모든 사람",
-              "강점: 밴드 활용법 가이드 제공, 많은 사진 업로드 가능",
-              "약점: 올드한 인식, 폐쇄적인 성격",
-            ],
-          },
-        ],
-      },
+        
     },
-    overviewImages: [
-      {
-        section: "로그인/회원가입",
-        images: [
-          { src: "/images/WITH/overview1.jpg", alt: "with login/signup" },
+
+    /** @BBU (bbufe-production) */
+    {
+        id: "BBU",
+        title: "쀼 (BBU)",
+        image: "/images/BBU/BBU.svg",
+        intro: "이혼·재혼·미혼 상담을 위한 매칭 & 변호사 상담 서비스",
+        category: "Work Experience",
+        type: "Mobile",
+        link: "https://bbufe-production.up.railway.app/",
+        github: "",
+        thumbnail: "/images/BBU/BBU.svg",
+        overviewImages: [
+            {
+                section: "메인화면",
+                images: [{ src: "/images/BBU/BBU1.png", alt: "BBU 메인화면" }],
+            },
+            {
+                section: "프로필 상세",
+                images: [{ src: "/images/BBU/BBU2.png", alt: "BBU 프로필 상세" }],
+            },
+            {
+                section: "커뮤니티",
+                images: [{ src: "/images/BBU/BBU3.png", alt: "BBU 커뮤니티" }],
+            },
+            {
+                section: "커뮤니티 작성",
+                images: [{ src: "/images/BBU/BBU3-1.png", alt: "BBU 커뮤니티 작성" }],
+            },
+            {
+                section: "커뮤니티 상세",
+                images: [{ src: "/images/BBU/BBU3-2.png", alt: "BBU 커뮤니티 상세" }],
+            },
+            {
+                section: "채팅",
+                images: [{ src: "/images/BBU/BBU4.png", alt: "BBU 채팅" }],
+            },
+            {
+                section: "전문가 채팅 종료",
+                images: [{ src: "/images/BBU/BBU4-1.png", alt: "BBU 채팅 상세" }],
+            },
+            {
+                section: "마이페이지",
+                images: [{ src: "/images/BBU/BBU5.png", alt: "BBU 마이페이지" }],
+            },
+            {
+                section: "크레딧 사용 내역",
+                images: [{ src: "/images/BBU/BBU5-1.png", alt: "BBU 크레딧 사용 내역" }],
+            },
+            {
+                section: "크레딧 결제",
+                images: [{ src: "/images/BBU/BBU5-2.png", alt: "BBU 크레딧 결제" }],
+            },
+            {
+                section: "인기도",
+                images: [{ src: "/images/BBU/BBU5-3.png", alt: "BBU 인기도" }],
+            },
+            {
+                section: "전문가 리스트",
+                images: [{ src: "/images/BBU/BBU6.png", alt: "BBU 전문가 리스트" }],
+            },
+            {
+                section: "전문가 상세",
+                images: [{ src: "/images/BBU/BBU6-1.png", alt: "BBU 전문가 상세" }],
+            },
+            {
+                section: "전문가 리뷰",
+                images: [{ src: "/images/BBU/BBU6-2.png", alt: "BBU 전문가 리뷰" }],
+            },
         ],
-      },
-      {
-        section: "메인페이지",
-        images: [{ src: "/images/WITH/overview2.jpg", alt: "with main" }],
-      },
-      {
-        section: "동아리 상세",
-        images: [
-          { src: "/images/WITH/overview3.jpg", alt: "with main" },
-          { src: "/images/WITH/overview4.jpg", alt: "with main" },
-          { src: "/images/WITH/overview5.jpg", alt: "with main" },
+        features: [
+          {
+            title: "스와이프 기반 매칭 메인",
+            description:
+              "틴더형 스와이프 UI를 통해 상대 프로필을 탐색하고 매칭을 형성하는 메인 화면을 구성했습니다. 첫 진입 시 복잡한 선택 없이 핵심 기능에 바로 도달할 수 있도록 동선을 단순화했습니다.",
+          },
+          {
+            title: "프로필 상세 및 관계 정보 제공",
+            description:
+              "매칭 대상의 프로필 상세 화면에서 기본 정보와 함께 관계 상태(이혼/재혼/미혼)를 자연스럽게 확인할 수 있도록 구성해, 이후 상담 여부를 판단할 수 있도록 했습니다.",
+          },
+          {
+            title: "커뮤니티 (리스트·작성·상세)",
+            description:
+              "사용자 간 경험과 고민을 공유할 수 있도록 커뮤니티 리스트, 게시글 작성, 상세 조회 기능을 제공했으며, 서비스 이용 흐름 중 자연스럽게 접근할 수 있도록 설계했습니다.",
+          },
+          {
+            title: "실시간 채팅 기반 상담 경험",
+            description:
+              "매칭 이후 채팅을 통해 상담을 진행할 수 있는 구조를 구현했으며, 상담 종료 시 대화 상태가 명확히 구분되도록 화면을 분리해 사용자 혼란을 최소화했습니다.",
+          },
+          {
+            title: "전문가 탐색 및 상세 정보",
+            description:
+              "상담 가능한 전문가 리스트와 상세 페이지를 제공하여, 전문 분야·리뷰·평점 등을 확인한 후 상담으로 이어질 수 있도록 구성했습니다.",
+          },
+          {
+            title: "크레딧 기반 결제 및 사용 내역",
+            description:
+              "상담 이용을 위한 크레딧 결제, 사용 내역 조회 기능을 제공해 서비스 이용 흐름과 과금 구조를 명확히 인지할 수 있도록 했습니다.",
+          },
+          {
+            title: "마이페이지 및 사용자 상태 관리",
+            description:
+              "마이페이지에서 사용자 정보, 인기도, 크레딧 상태 등을 한눈에 확인할 수 있도록 구성하여 서비스 전반의 이용 현황을 관리할 수 있도록 했습니다.",
+          },
+        ],        
+        tools: [
+            { src: "/logo/react.png", alt: "React" },
+            { src: "/logo/NextJs.svg", alt: "NextJs" },
+            { src: "/logo/typescript.png", alt: "TypeScript" },
+            { src: "/logo/tailwind.png", alt: "Tailwind" },
+            { src: "/logo/python.png", alt: "Python" },
+            { src: "/logo/Django.png", alt: "Django" },
+            { src: "/logo/PostgreSQL.png", alt: "PostgreSQL" },
+            { src: "/logo/capacitor.png", alt: "Capacitor" },
+            { src: "/logo/railway.png", alt: "Railway" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+            { src: "/logo/ESLint.png", alt: "ESLint" },
         ],
-      },
-      {
-        section: "동아리 탐색",
-        images: [
-          { src: "/images/WITH/overview6.jpg", alt: "with search" },
-          { src: "/images/WITH/overview7.jpg", alt: "with search" },
+        rnr: [
+          "프론트엔드 및 백엔드 전반 단독 개발",
+          "스와이프 기반 매칭 UI와 이에 따른 상태 관리 로직 구현",
+          "전문가 리스트·상세·채팅 상담 등 핵심 기능 API 및 화면 연동",
+          "인증 상태 기반 라우팅/가드 및 서버 인증 처리",
+          "공통 컴포넌트·훅·서버 로직 분리로 재사용성과 유지보수성 확보",
         ],
-      },
-      {
-        section: "내 정보",
-        images: [{ src: "/images/WITH/overview8.jpg", alt: "with mypage" }],
-      },
-      {
-        section: "flowChart & SiteMap",
-        images: [
-          { src: "/images/WITH/flowChart.jpg", alt: "flowchart" },
-          { src: "/images/WITH/siteMap.jpg", alt: "siteMap" },
+        
+        
+    },
+
+    /** @TetherDrop */
+    {
+        id: "TetherDrop",
+        title: "TetherDrop",
+        image: "/images/TetherDrop/TetherDrop.svg",
+        intro: "코인 거래 플랫폼",
+        category: "Work Experience",
+        link: "https://www.tetherdrop.io/",
+        github: "",
+        thumbnail: "/images/TetherDrop/TetherDropTN.png",
+        overviewImages: [
+            {
+                section: "소개 페이지",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop1.png",
+                        alt: "TederDrop 소개 페이지",
+                    },
+                ],
+            },
+            {
+                section: "등록 방법 안내",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop2.png",
+                        alt: "TederDrop 등록방법",
+                    },
+                ],
+            },
+            {
+                section: "이벤트 페이지",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop3.png",
+                        alt: "TederDrop 이벤트 페이지",
+                    },
+                ],
+            },
+            {
+                section: "거래소 리스트",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop4.png",
+                        alt: "TederDrop 제휴 거래소",
+                    },
+                ],
+            },
+            {
+                section: "거래소 상세 페이지",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop5.png",
+                        alt: "TederDrop 제휴 거래소 상세",
+                    },
+                ],
+            },
+            {
+                section: "step 제어페이지(테스트 페이지 예시)",
+                images: [
+                    {
+                        src: "/images/TetherDrop/TetherDrop6.png",
+                        alt: "TederDrop Step별 제어 페이지",
+                    },
+                ],
+            },
         ],
-      },
-    ],
-  },
+        features: [
+            {
+                title: "소개 페이지",
+                description: "해당 사의 장점과 서비스를 소개하는 페이지 입니다.",
+            },
+            {
+                title: "이용방법 페이지",
+                description:
+                    "테더드랍의 서비스를 이용하기 위해 등록 방법을 순차적으로 안내해주는 페이지 입니다.",
+            },
+            {
+                title: "제휴거래소 및 상세",
+                description:
+                    "테더드랍과 제휴를 맺은 거래소의 리스트 페이지입니다. 해당 거래소의 상세 페이지를 들어가면 타 사와 비교해 얻을 수 있는 베네핏 등의 정보를 확인할 수 있습니다.",
+            },
+            {
+                title: "마이페이지 및 파트너페이지",
+                description:
+                    "사용자가 거래한 내역, 등록한 거래소의 계정 등을 관리할 수 있습니다. 로그아웃/회원가입을 제어할 수 있습니다. 파트너로 등록된 경우, 파트너로의 레퍼럴 혜택 등을 정리한 내역을 확인할 수 있습니다.",
+            },
+        ],
+        tools: [
+            { src: "/logo/react.png", alt: "React" },
+            { src: "/logo/typescript.png", alt: "TypeScript" },
+            { src: "/logo/serverAction.png", alt: "Server Actions" },
+            { src: "/logo/Prisma.png", alt: "Prisma" },
+            { src: "/logo/supabase.png", alt: "Supabase" },
+            { src: "/logo/tailwind.png", alt: "Tailwind" },
+            { src: "/logo/vercel.svg", alt: "Vercel" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+            { src: "/logo/ESLint.png", alt: "ESLint" },
+        ],
+        rnr: [
+            "주요 데이터 연결 및 CRUD 제어",
+            "마이페이지 및 파트너페이지",
+            "제휴거래소 및 상세페이지",
+            "Step progress 사용 컴포넌트 및 페이지",
+        ],
+    },
+    /** @GlobalNomad */
+    {
+        id: "globalNomad",
+        category: "Team Project",
+        title: "GlobalNomad",
+        image: "/images/GlobalNomad/GlobalNomad.svg",
+        intro: "취미활동 참여 및 주최 플랫폼",
+        link: "https://globalnomad-t2.vercel.app/",
+        github: "https://github.com/T2-GlobalNomad/GlobalNomad",
+        thumbnail: "/images/GlobalNomad/GlobalNomadTN.png",
+        overviewImages: [
+            {
+                section: "메인 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad1.png",
+                        alt: "GlobalNomad main page",
+                    },
+                ],
+            },
+            {
+                section: "체험 상세 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad2.png",
+                        alt: "rolling main page",
+                    },
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad2-1.png",
+                        alt: "rolling main page",
+                    },
+                ],
+            },
+            {
+                section: "내 정보 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad3.png",
+                        alt: "rolling main page",
+                    },
+                ],
+            },
+            {
+                section: "예약 내역 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad4.png",
+                        alt: "rolling main page",
+                    },
+                ],
+            },
+            {
+                section: "내 체험 관리 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad5.png",
+                        alt: "rolling main page",
+                    },
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad5-1.png",
+                        alt: "rolling main page",
+                    },
+                ],
+            },
+            {
+                section: "예약 현황 페이지",
+                images: [
+                    {
+                        src: "/images/GlobalNomad/GlobalNomad6.png",
+                        alt: "rolling main page",
+                    },
+                ],
+            },
+        ],
+        features: [
+            {
+                title: "롤링페이퍼",
+                description: "나만의 롤링페이퍼를 만들고, 누군가가 남기는 메세지를 받을 수 있어요.",
+            },
+            {
+                title: "메세지보내기",
+                description: "내가 원하는 사람에게 메세지를 보내기가 가능합니다.",
+            },
+            {
+                title: "인기 롤링페이퍼",
+                description: "상대방에 대한 내 기분을 이모지로 표현 할 수 있어요.",
+            },
+        ],
+        tools: [
+            { src: "/logo/react.png", alt: "react" },
+            { src: "/logo/typescript.png", alt: "typescript" },
+            { src: "/logo/reactQuery.svg", alt: "react query" },
+            { src: "/logo/moduleCSS.png", alt: "module css" },
+            { src: "/logo/vercel.svg", alt: "vercel" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+            { src: "/logo/ESLint.png", alt: "ESLint" },
+            { src: "/logo/zod.png", alt: "zod" },
+            { src: "/logo/zustand.webp", alt: "zustand" },
+            { src: "/logo/storybook.png", alt: "storybook" },
+        ],
+        rnr: ["API", "Query hooks", "내 정보 페이지", "예약 현황 페이지"],
+    },
+
+    /** @Rolling */
+    {
+        id: "rolling",
+        title: "Rolling",
+        category: "Team Project",
+        image: "/images/Rolling/Rolling.svg",
+        intro: "익명/비익명 메세지 전달 플랫폼",
+        link: "https://rolling-yeon.vercel.app/",
+        github: "https://github.com/y5037/Rolling",
+        thumbnail: "/images/Rolling/RollingTN.png",
+        overviewImages: [
+            {
+                section: "메인 페이지",
+                images: [{ src: "/images/Rolling/Rolling1.png", alt: "rolling main page" }],
+            },
+            {
+                section: "롤링페이퍼 상세 페이지",
+                images: [{ src: "/images/Rolling/Rolling2.png", alt: "rolling detail page" }],
+            },
+            {
+                section: "롤링페이퍼 개설 페이지",
+                images: [{ src: "/images/Rolling/Rolling3.png", alt: "rolling create page" }],
+            },
+        ],
+        features: [
+            {
+                title: "롤링페이퍼 생성",
+                description:
+                    "사용자 본인만의 롤링페이퍼를 개설할 수 있으며, 이를 통해 다양한 메세지를 받을 수 있습니다.",
+            },
+            {
+                title: "메세지 작성",
+                description: "원하는 대상의 롤링페이퍼에 자유롭게 메세지를 작성할 수 있습니다.",
+            },
+            {
+                title: "감정 이모지 표현",
+                description:
+                    "상대방에 대한 감정을 다양한 이모지로 표현해, 메시지에 감성을 더합니다.",
+            },
+        ],
+        tools: [
+            { src: "/logo/react.png", alt: "React" },
+            { src: "/logo/typescript.png", alt: "TypeScript" },
+            { src: "/logo/restAPI.png", alt: "REST API" },
+            { src: "/logo/styledComponents.png", alt: "Styled Components" },
+            { src: "/logo/moduleCSS.png", alt: "CSS Module" },
+            { src: "/logo/vercel.svg", alt: "Vercel" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+        ],
+        rnr: ["공통 Button 컴포넌트 개발", "롤링페이퍼 생성 페이지 구현"],
+    },
+
+    /** @Whyne */
+    {
+        id: "whyne",
+        title: "WHYNE",
+        image: "/images/WHYNE/WHYNE.svg",
+        intro: "와인 관련 정보공유 커뮤니티",
+        category: "Team Project",
+        link: "https://wyene-yeon.vercel.app/",
+        github: "https://github.com/yujuseop/Project-Team2-WINE",
+        thumbnail: "/images/WHYNE/WHYNETN.png",
+        overviewImages: [
+            {
+                section: "메인 페이지",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE1.png",
+                        alt: "WHYNE main page",
+                    },
+                ],
+            },
+            {
+                section: "검색 기능",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE1-1.png",
+                        alt: "WHYNE main page - search",
+                    },
+                ],
+            },
+            {
+                section: "와인 상세 페이지",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE2.png",
+                        alt: "WHYNE detail page",
+                    },
+                ],
+            },
+            {
+                section: "리뷰 작성",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE2-1.png",
+                        alt: "WHYNE detail page - review",
+                    },
+                ],
+            },
+            {
+                section: "마이페이지",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE3.png",
+                        alt: "WHYNE mypage",
+                    },
+                ],
+            },
+            {
+                section: "프로필 수정",
+                images: [
+                    {
+                        src: "/images/WHYNE/WHYNE3-1.png",
+                        alt: "WHYNE mypage - edit",
+                    },
+                ],
+            },
+        ],
+        features: [
+            {
+                title: "메인 페이지",
+                description:
+                    "전체 와인 리스트를 확인할 수 있으며, 이름 또는 조건 검색을 통해 원하는 와인을 빠르게 찾을 수 있습니다.",
+            },
+            {
+                title: "상세 페이지 및 리뷰",
+                description:
+                    "와인 상세 페이지에서는 다른 유저들이 남긴 리뷰와 평점을 확인할 수 있으며, 나만의 리뷰도 작성할 수 있습니다.",
+            },
+            {
+                title: "마이페이지",
+                description:
+                    "작성한 리뷰, 등록한 와인 내역을 관리(수정/삭제)할 수 있고, 내 프로필 정보도 수정할 수 있습니다.",
+            },
+        ],
+        tools: [
+            { src: "/logo/react.png", alt: "React" },
+            { src: "/logo/restAPI.png", alt: "REST API" },
+            { src: "/logo/styledComponents.png", alt: "Styled Components" },
+            { src: "/logo/moduleCSS.png", alt: "CSS Module" },
+            { src: "/logo/vercel.svg", alt: "Vercel" },
+            { src: "/logo/prettier.svg", alt: "prettier" },
+        ],
+        rnr: ["공통 Button 컴포넌트 및 Global CSS", "마이페이지(내 정보) 구현"],
+    },
+
+    /** @With */
+    {
+        id: "with",
+        title: "With",
+        category: "Team Project",
+        image: "/images/WITH/WITH.png",
+        intro: "동아리 활동 총 관리 앱 UIUX",
+        link: "https://xd.adobe.com/view/d10f6bd5-2d5e-4457-915b-1ee6b0f4065c-845c/?fullscreen",
+        thumbnail: "/images/WITH/withTN.jpg",
+        details: {
+            functions: [
+                {
+                    title: "동아리 둘러보기",
+                    desc: "내가 재학중인 대학교에 어떤 동아리가 있는지 둘러볼 수 있어요.",
+                },
+                {
+                    title: "메세지보내기",
+                    desc: "내가 원하는 사람에게 메세지를 보내기가 가능합니다.",
+                },
+                {
+                    title: "채팅/마이페이지",
+                    desc: "내가 속한 동아리의 채팅에 참여할 수 있고, 내 정보 둘러보기를 할 수 있어요.",
+                },
+                {
+                    title: "내 동아리",
+                    desc: "내가 속한 동아리의 전체 일정, 커뮤니티 등을 확인할 수 있어요.",
+                },
+            ],
+            tools: [{ src: "/logo/xd.png", alt: "xd" }],
+            rnr: ["동아리 탐색", "메인 페이지", "검색 페이지", "마이페이지 일부"],
+            build: {
+                motivation: [
+                    "카카오톡, 엑셀, 워드, 인스타 등 하나의 동아리 관리를 위해 사용되는 어플이 너무 많음",
+                    "동아리 모집 공고를 한 곳에서 확인하고싶음",
+                    "관심있는 동아리에 대한 정보에 간단히 접근하고 싶음",
+                    "중요한 공지를 모든 채팅방마다 해야하는 것이 번거로움",
+                ],
+                competitors: [
+                    {
+                        name: "소모임",
+                        info: [
+                            "목적: 누구나 쉽게 자신의 지역과 관심사에 맞는 모임을 찾을 수 있다.",
+                            "타겟층: 오프라인 취미 활동 모임을 찾는 고객",
+                            "강점: 다양한 모임 카테고리",
+                            "약점: 무분별한 초대기능",
+                        ],
+                    },
+                    {
+                        name: "모두의동아리",
+                        info: [
+                            "목적: 주변에 물어볼 사람이 없는 학생들에게 동아리에 관한 유용한 정보들을 제공",
+                            "타겟층: 동아리 활동을 하는 대학생들",
+                            "강점: 학교 이메일 인증, 동아리장 양도 기능",
+                            "약점: IOS 기기 사용 불가",
+                        ],
+                    },
+                    {
+                        name: "네이버밴드",
+                        info: [
+                            "목적: 가족, 커플, 친구, 학교, 회사, 동호회 등 모든 종류의 모임 운영을 쉽게 가능하게 하는 공간 제공",
+                            "타겟층: 모임에 참여하는 모든 사람",
+                            "강점: 밴드 활용법 가이드 제공, 많은 사진 업로드 가능",
+                            "약점: 올드한 인식, 폐쇄적인 성격",
+                        ],
+                    },
+                ],
+            },
+        },
+        overviewImages: [
+            {
+                section: "로그인/회원가입",
+                images: [{ src: "/images/WITH/overview1.jpg", alt: "with login/signup" }],
+            },
+            {
+                section: "메인페이지",
+                images: [{ src: "/images/WITH/overview2.jpg", alt: "with main" }],
+            },
+            {
+                section: "동아리 상세",
+                images: [
+                    { src: "/images/WITH/overview3.jpg", alt: "with main" },
+                    { src: "/images/WITH/overview4.jpg", alt: "with main" },
+                    { src: "/images/WITH/overview5.jpg", alt: "with main" },
+                ],
+            },
+            {
+                section: "동아리 탐색",
+                images: [
+                    { src: "/images/WITH/overview6.jpg", alt: "with search" },
+                    { src: "/images/WITH/overview7.jpg", alt: "with search" },
+                ],
+            },
+            {
+                section: "내 정보",
+                images: [{ src: "/images/WITH/overview8.jpg", alt: "with mypage" }],
+            },
+            {
+                section: "flowChart & SiteMap",
+                images: [
+                    { src: "/images/WITH/flowChart.jpg", alt: "flowchart" },
+                    { src: "/images/WITH/siteMap.jpg", alt: "siteMap" },
+                ],
+            },
+        ],
+    },
 ];

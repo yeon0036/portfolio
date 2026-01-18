@@ -6,66 +6,60 @@ import Accordion from "./components/Accordion";
 import styles from "./portfolio.module.css";
 
 export default function Portfolio() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState<
-    "ALL" | "Internship" | "Team Project"
-  >("ALL");
+    const sectionRef = useRef<HTMLElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [activeTab, setActiveTab] = useState<"ALL" | "Work Experience" | "Team Project">("ALL");
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
         }
-      },
-      { threshold: 0.1 }
+
+        return () => observer.disconnect();
+    }, []);
+
+    const filteredItems =
+        activeTab === "ALL"
+            ? portfolioData
+            : portfolioData.filter((item) => item.category === activeTab);
+
+    return (
+        <section
+            ref={sectionRef}
+            // style={{ minHeight: "50vh" }}
+            id="portfolio"
+            className={`${styles.about} ${styles["fade-in"]} ${isVisible ? styles.show : ""}`}
+        >
+            <p className={styles.title}>Portfolio</p>
+
+            {/* 모바일 탭 */}
+            <div className={styles.tabs}>
+                {["ALL", "Work Experience", "Team Project"].map((tab) => (
+                    <button
+                        key={tab}
+                        onClick={() =>
+                            setActiveTab(tab as "ALL" | "Work Experience" | "Team Project")
+                        }
+                        className={`${styles.tab} ${activeTab === tab ? styles.active : ""}`}
+                    >
+                        {tab === "ALL" ? "All" : tab}
+                    </button>
+                ))}
+            </div>
+
+            {/* accordion */}
+            <div className={styles.content}>
+                <Accordion key={activeTab} items={filteredItems} />
+            </div>
+        </section>
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const filteredItems =
-    activeTab === "ALL"
-      ? portfolioData
-      : portfolioData.filter((item) => item.category === activeTab);
-
-  return (
-    <section
-      ref={sectionRef}
-      // style={{ minHeight: "50vh" }}
-      id="portfolio"
-      className={`${styles.about} ${styles["fade-in"]} ${
-        isVisible ? styles.show : ""
-      }`}
-    >
-      <p className={styles.title}>Portfolio</p>
-
-      {/* 모바일 탭 */}
-      <div className={styles.tabs}>
-        {["ALL", "Internship", "Team Project"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() =>
-              setActiveTab(tab as "ALL" | "Internship" | "Team Project")
-            }
-            className={`${styles.tab} ${
-              activeTab === tab ? styles.active : ""
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      {/* accordion */}
-      <div className={styles.content}>
-        <Accordion key={activeTab} items={filteredItems} />
-      </div>
-    </section>
-  );
 }

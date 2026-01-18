@@ -1,18 +1,18 @@
 .container {
-  padding: 40px;
-  background-color: var(--Blue);
-  align-items: center;
+    padding: 40px;
+    background-color: var(--Blue);
+    align-items: center;
 }
 
 .copyright {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 200;
-  color: var(--Black);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--Black);
 }
 
 @media (max-width: 850px) {
-  .container {
-    width: 100%;
-  }
+    .container {
+        width: 100%;
+    }
 }
