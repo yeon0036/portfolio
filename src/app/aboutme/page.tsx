@@ -133,20 +133,36 @@ export default function AboutMe() {
                                 <p className={styles.certificateTitle}>Languages</p>
                                 <div className={styles.certificateContainer}>
                                     <div>
-                                        <p className={styles.certificateTitle}>Delf B1</p>
+                                        <p className={styles.certificateTitle}>French</p>
                                     </div>
                                     <div>
+                                        <p>
+                                            <strong>Delf B1</strong>
+                                        </p>
                                         <p>France Education International</p>
                                         <p>2022.12.19</p>
                                     </div>
                                 </div>
                                 <div className={styles.certificateContainer}>
                                     <div>
-                                        <p className={styles.certificateTitle}>TOEIC 720</p>
+                                        <p className={styles.certificateTitle}>English</p>
                                     </div>
                                     <div>
+                                        <p>
+                                            <strong>TOEIC 720</strong>
+                                        </p>
                                         <p>YBM</p>
                                         <p>만료됨.</p>
+                                    </div>
+                                </div>
+                                <div className={styles.certificateContainer}>
+                                    <div>
+                                        <p className={styles.certificateTitle}>Japanese</p>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <strong>일상회화 수준</strong>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
