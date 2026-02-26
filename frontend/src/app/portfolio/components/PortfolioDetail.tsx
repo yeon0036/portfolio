@@ -20,7 +20,13 @@ interface PortfolioDetailProps {
 export default function PortfolioDetail({ id }: PortfolioDetailProps) {
     const { data: project, isLoading, isError } = usePortfolioItem(id);
 
-    if (isLoading) return <div className={styles.loading}>로딩 중...</div>;
+    if (isLoading)
+        return (
+            <div className={styles.loading}>
+                <div className={styles.loadingSpinner} />
+                <p>로딩 중...</p>
+            </div>
+        );
     if (isError || !project) return <div>Not found</div>;
 
     const p = project as PortfolioProps;

@@ -1,8 +1,12 @@
 from rest_framework import viewsets
+from rest_framework.views import APIView
+from rest_framework.permissions import AllowAny
+from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import PortfolioItem
 from .serializers import PortfolioItemSerializer
+from .rag import search_chunks, generate_answer
 
 
 class PortfolioItemViewSet(viewsets.ReadOnlyModelViewSet):
@@ -28,3 +32,48 @@ class PortfolioItemViewSet(viewsets.ReadOnlyModelViewSet):
         queryset = self.filter_queryset(self.get_queryset())
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
+
+
+class RagSearchView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        query = request.data.get("query", "")
+        top_k = int(request.data.get("top_k", 3))
+        doc_type = request.data.get("doc_type")
+        model = request.data.get("model", "intfloat/multilingual-e5-small")
+
+        if not query or not str(query).strip():
+            return Response(
+                {"error": "query is required"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        results = search_chunks(query=str(query), top_k=top_k, doc_type=doc_type, model=model)
+        return Response({"query": query, "results": results})
+
+
+class RagAnswerView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        query = request.data.get("query", "")
+        top_k = int(request.data.get("top_k", 3))
+        doc_type = request.data.get("doc_type")
+        model = request.data.get("model", "intfloat/multilingual-e5-small")
+
+        if not query or not str(query).strip():
+            return Response(
+                {"error": "query is required"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        results = search_chunks(query=str(query), top_k=top_k, doc_type=doc_type, model=model)
+        answer = generate_answer(query=str(query), chunks=results)
+        return Response(
+            {
+                "query": query,
+                "answer": answer,
+                "sources": results,
+            }
+        )
