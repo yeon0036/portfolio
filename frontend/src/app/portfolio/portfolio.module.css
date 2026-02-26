@@ -5,15 +5,147 @@
     scroll-margin-top: 200px;
 }
 
-.container {
+.cardGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 12px 12px;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cardButton {
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0));
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.22),
+        0 2px 8px rgba(122, 178, 240, 0.1);
     overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    height: 360px;
+}
+
+.cardButton:hover .card {
+    transform: translateY(-5px);
+    border-color: rgba(122, 178, 240, 0.55);
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.28),
+        0 6px 18px rgba(122, 178, 240, 0.18);
+}
+
+.cardImageWrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+.cardText {
+    padding: 14px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--White);
+}
+
+.cardIntro {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--White);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+}
+
+.modalBackdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    border: none;
+}
+
+.modalContent {
+    position: relative;
+    width: min(1100px, 92vw);
+    height: min(88vh, 900px);
+    background: #0b0f16;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 8px 24px rgba(122, 178, 240, 0.2);
+    overflow: hidden;
+    animation: modalFlipIn 0.35s ease;
+}
+
+.modalClose {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--White);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modalBody {
+    height: 100%;
+    overflow: auto;
+    padding: 24px;
+}
+
+@keyframes modalFlipIn {
+    from {
+        opacity: 0;
+        transform: rotateY(10deg) translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0deg) translateY(0) scale(1);
+    }
 }
 
 .title {
@@ -52,33 +184,6 @@
     transition: all 0.5s ease;
 }
 
-.portfolioCard {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 300px;
-    box-sizing: border-box;
-    border: 0.5px solid var(--light-Gray);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-.portfolioImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.portfolioCard:hover {
-    transform: translateY(-10px);
-    transition: all 0.5s ease;
-    box-shadow: 5px 5px 20px rgba(122, 178, 240, 0.3);
-}
-
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -99,24 +204,35 @@
 }
 
 @media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 0 16px;
+    .cardGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
     }
 
-    .portfolioCard {
-        width: 100%;
-        max-width: none;
-    }
-
-    .portfolioImage {
-        width: 100%;
-        height: auto;
-        display: block;
+    .card {
+        height: 340px;
     }
 
     .tab {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 320px;
+    }
+
+    .modalContent {
+        width: 94vw;
+        height: 70vh;
+    }
+
+    .modalBody {
+        padding: 16px;
     }
 }
