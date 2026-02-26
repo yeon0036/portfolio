@@ -17,7 +17,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key-change-in-produ
 DEBUG = os.environ.get('DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,backend').split(',')
-# Vercel 배포 시 *.vercel.app 도메인 허용
 if '.vercel.app' not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append('.vercel.app')
 
