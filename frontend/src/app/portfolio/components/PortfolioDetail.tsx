@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./PortFolioDetail.module.css";
-import { usePortfolioItem } from "@/hooks/usePortfolio";
-import { PortfolioProps } from "../types";
+import { getPortfolioItem } from "../PortfolioData";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 function isExternalUrl(url: string): boolean {
@@ -18,18 +17,10 @@ interface PortfolioDetailProps {
 }
 
 export default function PortfolioDetail({ id }: PortfolioDetailProps) {
-    const { data: project, isLoading, isError } = usePortfolioItem(id);
+    const project = getPortfolioItem(id);
+    if (!project || "details" in project) return <div>Not found</div>;
 
-    if (isLoading)
-        return (
-            <div className={styles.loading}>
-                <div className={styles.loadingSpinner} />
-                <p>로딩 중...</p>
-            </div>
-        );
-    if (isError || !project) return <div>Not found</div>;
-
-    const p = project as PortfolioProps;
+    const p = project;
     const features = p.features ?? [];
     const tools = p.tools ?? [];
     const rnr = p.rnr ?? [];
@@ -53,6 +44,7 @@ export default function PortfolioDetail({ id }: PortfolioDetailProps) {
                                 alt={`${p.title} 대표 썸네일`}
                                 width={600}
                                 height={400}
+                                loading="eager"
                                 className={styles.thumbnail}
                             />
                         </div>
@@ -66,6 +58,7 @@ export default function PortfolioDetail({ id }: PortfolioDetailProps) {
                                 alt={`${p.title} 대표 썸네일`}
                                 width={600}
                                 height={400}
+                                loading="eager"
                                 className={styles.thumbnail}
                             />
                         </div>

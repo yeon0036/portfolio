@@ -22,6 +22,7 @@ export interface DesignProps {
     title: string;
     intro: string;
     image: string;
+    thumbnail?: string;
     type?: "Mobile" | "Web";
     category: string;
     link: string;

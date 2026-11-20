@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePortfolioItem } from "@/hooks/usePortfolio";
-import { PortfolioProps } from "../types";
+import { getPortfolioItem } from "../PortfolioData";
 import Link from "next/link";
 import styles from "./PortFolioDetail.module.css";
 import { ArrowUpRight } from "@phosphor-icons/react";
@@ -21,7 +20,7 @@ export default function MobileDetail({ id }: MobileDetailProps) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 
-    const { data: project, isLoading, isError } = usePortfolioItem(id);
+    const project = getPortfolioItem(id);
 
     useEffect(() => {
         setIsMounted(true);
@@ -41,16 +40,9 @@ export default function MobileDetail({ id }: MobileDetailProps) {
         };
     }, [isCarouselOpen]);
 
-    if (isLoading)
-        return (
-            <div className={styles.loading}>
-                <div className={styles.loadingSpinner} />
-                <p>로딩 중...</p>
-            </div>
-        );
-    if (isError || !project) return <div>Not found</div>;
+    if (!project || "details" in project) return <div>Not found</div>;
 
-    const p = project as PortfolioProps;
+    const p = project;
     const overviewImages = p.overviewImages.flatMap((section) => section.images);
     const features = p.features ?? [];
     const tools = p.tools ?? [];
@@ -80,6 +72,7 @@ export default function MobileDetail({ id }: MobileDetailProps) {
                             alt={`${p.title} 대표 썸네일`}
                             width={600}
                             height={400}
+                            loading="eager"
                             className={styles.thumbnail}
                         />
                     </div>

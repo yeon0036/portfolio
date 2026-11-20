@@ -104,6 +104,17 @@
     object-fit: contain;
 }
 
+.experienceIcon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    margin: 12px 0;
+    color: var(--Blue);
+    background-color: var(--White);
+}
+
 .education {
     display: flex;
     flex-direction: column;

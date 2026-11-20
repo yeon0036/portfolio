@@ -31,6 +31,7 @@ export default function DesignDetail({ data }: DesignDetailProps) {
                             alt={`${data.title} 대표 썸네일`}
                             width={600}
                             height={350}
+                            loading="eager"
                             className={styles.thumbnail}
                         />
                     </Link>

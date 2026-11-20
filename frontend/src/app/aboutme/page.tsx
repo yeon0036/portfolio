@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./AboutMe.module.css";
 import { useEffect, useRef, useState } from "react";
-import { Download } from "@phosphor-icons/react";
+import { Briefcase, Download } from "@phosphor-icons/react";
 
 export default function AboutMe() {
     const sectionRef = useRef<HTMLElement>(null);
@@ -35,10 +35,12 @@ export default function AboutMe() {
                     <div className={styles.container}>
                         <div className={styles.profileContainer}>
                             <Image
-                                src="/images/ProfilePhoto2.jpeg"
-                                alt="profile image"
+                                src="/images/ProfilePhoto.png"
+                                alt="정혜연 프로필 사진"
                                 width={280}
                                 height={280}
+                                loading="eager"
+                                sizes="(max-width: 850px) 120px, 280px"
                                 className={styles.image}
                             />
                         </div>
@@ -61,6 +63,15 @@ export default function AboutMe() {
                             </div>
                             <div className={styles.education}>
                                 <p className={styles.sectionTitle}>Work Experience</p>
+                                <div className={styles.eduContainer}>
+                                    <div className={styles.experienceIcon} aria-hidden="true">
+                                        <Briefcase size={48} weight="light" />
+                                    </div>
+                                    <div className={styles.eduContent}>
+                                        <p className={styles.schoolName}>EnkiWhitehat</p>
+                                        <p>2026.03 ~ 재직 중</p>
+                                    </div>
+                                </div>
                                 <div className={styles.eduContainer}>
                                     <Image
                                         className={styles.experienceLogo}

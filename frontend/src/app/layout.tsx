@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/global.css";
 import Footer from "@/components/Footer/Footer";
-import QueryProvider from "@/lib/QueryProvider";
 //import AppXY from "@/components/mousepointer/AppXY";
 
 export const metadata: Metadata = {
@@ -17,13 +16,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body>
-                <QueryProvider>
-                    {/* <AppXY /> */}
-                    <main>{children}</main>
-                    <footer>
-                        <Footer />
-                    </footer>
-                </QueryProvider>
+                {/* <AppXY /> */}
+                <main>{children}</main>
+                <footer>
+                    <Footer />
+                </footer>
             </body>
         </html>
     );

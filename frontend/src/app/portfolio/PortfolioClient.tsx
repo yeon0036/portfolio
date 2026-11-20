@@ -2,66 +2,21 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { usePortfolio } from "@/hooks/usePortfolio";
 import styles from "./portfolio.module.css";
 import PortfolioDetail from "./components/PortfolioDetail";
 import DesignDetail from "./components/DesignDetail";
 import MobileDetail from "./components/MobileDetail";
 import type { PortfolioProps, DesignProps } from "./types";
-import type { PortfolioItem } from "@/hooks/usePortfolio";
+import { portfolioData } from "./PortfolioData";
 
-type PortfolioClientProps = {
-    initialData?: PortfolioItem[];
-};
-
-export default function PortfolioClient({ initialData }: PortfolioClientProps) {
+export default function PortfolioClient() {
     const [activeTab, setActiveTab] = useState<"ALL" | "Work Experience" | "Team Project">("ALL");
     const [selectedItem, setSelectedItem] = useState<PortfolioProps | DesignProps | null>(null);
-
-    const queryOptions = initialData
-        ? {
-              initialData,
-              refetchOnMount: false,
-              refetchOnWindowFocus: false,
-          }
-        : undefined;
-
-    const { data: portfolioData = [], isLoading, isError, error } = usePortfolio(
-        undefined,
-        queryOptions
-    );
 
     const filteredItems =
         activeTab === "ALL"
             ? portfolioData
             : portfolioData.filter((item) => item.category === activeTab);
-
-    if (isLoading) {
-        return (
-            <section id="portfolio" className={styles.about}>
-                <p className={styles.title}>Portfolio</p>
-                <p className={styles.loading}>로딩 중...</p>
-            </section>
-        );
-    }
-
-    if (isError) {
-        const message = error instanceof Error ? error.message : String(error);
-        const isConnectionError =
-            message.includes("Failed to fetch") ||
-            message.includes("NetworkError") ||
-            message.includes("connection");
-        return (
-            <section id="portfolio" className={styles.about}>
-                <p className={styles.title}>Portfolio</p>
-                <p className={styles.loading}>
-                    {isConnectionError
-                        ? "백엔드에 연결할 수 없습니다."
-                        : `목록을 불러오지 못했습니다. (${message})`}
-                </p>
-            </section>
-        );
-    }
 
     const isDesign = (item: PortfolioProps | DesignProps): item is DesignProps => {
         return "details" in item && !!item.details;

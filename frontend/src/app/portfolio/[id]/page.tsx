@@ -1,8 +1,5 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { usePortfolioItem } from "@/hooks/usePortfolio";
-import type { PortfolioItem } from "@/hooks/usePortfolio";
+import { notFound } from "next/navigation";
+import { getPortfolioItem, portfolioData, type PortfolioItem } from "../PortfolioData";
 import type { DesignProps } from "../types";
 import PortfolioDetail from "../components/PortfolioDetail";
 import DesignDetail from "../components/DesignDetail";
@@ -12,13 +9,15 @@ function isDesign(item: PortfolioItem): item is DesignProps {
     return "details" in item && !!item.details;
 }
 
-export default function PortfolioDetailPage() {
-    const params = useParams<{ id: string }>();
-    const id = params?.id ?? null;
-    const { data: item, isLoading, isError } = usePortfolioItem(id);
+export function generateStaticParams() {
+    return portfolioData.map((item) => ({ id: item.id }));
+}
 
-    if (isLoading) return <div>로딩 중...</div>;
-    if (isError || !item) return <div>Not found</div>;
+export default async function PortfolioDetailPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const item = getPortfolioItem(id);
+
+    if (!item) notFound();
 
     if (item.type === "Mobile") {
         return <MobileDetail id={item.id} />;
