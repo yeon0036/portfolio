@@ -5,8 +5,8 @@ import Footer from "@/components/Footer/Footer";
 //import AppXY from "@/components/mousepointer/AppXY";
 
 export const metadata: Metadata = {
-    title: "정혜연 | Frontend Developer",
-    description: "정혜연의 프론트앤드 포트폴리오입니다.",
+    title: "정혜연 | Web Developer",
+    description: "정혜연의 웹 개발 포트폴리오입니다.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

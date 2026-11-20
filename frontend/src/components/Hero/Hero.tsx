@@ -26,7 +26,7 @@ export default function Hero({ embedded = false }: { embedded?: boolean }) {
                     ))}
                 </span>
             </h1>
-            <p className={styles.subtitle}>Frontend Developer</p>
+            <p className={styles.subtitle}>Web Developer</p>
             {!embedded && <FaChevronDown size={24} className={styles.scrollArrow} />}
         </section>
     );
