@@ -1,24 +1,103 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./AboutMe.module.css";
 import { useEffect, useRef, useState } from "react";
-import { Briefcase, Download } from "@phosphor-icons/react";
+import { Download } from "@phosphor-icons/react";
+import ProfileLanyard from "@/components/ReactBits/ProfileLanyard/ProfileLanyard";
+import styles from "./AboutMe.module.css";
+
+type AboutEntry = {
+    name: string;
+    logo?: string;
+    details?: string[];
+    value?: string;
+    dateTime?: string;
+};
+
+const groups: { title: string; titleId: string; entries: AboutEntry[] }[] = [
+    {
+        title: "Work Experience",
+        titleId: "work-experience-title",
+        entries: [
+            {
+                name: "EnkiWhitehat",
+                logo: "/logo/enki.png",
+                details: ["Fullstack Developer & Design"],
+                value: "2026.03 ~ 재직 중",
+            },
+            {
+                name: "Conscience Partners",
+                logo: "/logo/cp_logo.png",
+                details: ["Frontend(&backend) Developer"],
+                value: "2025.08 ~ 2026.01",
+            },
+        ],
+    },
+    {
+        title: "Education",
+        titleId: "education-title",
+        entries: [
+            {
+                name: "아주대학교",
+                logo: "/logo/AjouUniv.png",
+                details: ["제 1 전공: 불어불문학과", "제 2 전공: 디지털미디어학과"],
+                value: "2019.03 ~ 2025.02",
+            },
+            {
+                name: "청주외국어고등학교",
+                logo: "/logo/CFLHS.webp",
+                details: ["전공: 프랑스어과"],
+                value: "2016.03 ~ 2019.02",
+            },
+        ],
+    },
+    {
+        title: "Certificates",
+        titleId: "certificates-title",
+        entries: [
+            {
+                name: "GTQ 1급",
+                details: ["한국생산성본부"],
+                value: "2023.09.15",
+                dateTime: "2023-09-15",
+            },
+            {
+                name: "GTQi 1급",
+                details: ["한국생산성본부"],
+                value: "2023.09.15",
+                dateTime: "2023-09-15",
+            },
+        ],
+    },
+    {
+        title: "Languages",
+        titleId: "languages-title",
+        entries: [
+            {
+                name: "French",
+                value: "DELF B1",
+                details: ["France Education International · 2022.12.19"],
+            },
+            { name: "English", value: "TOEIC 720", details: ["YBM · 만료"] },
+            { name: "Japanese", value: "N3 수준" },
+        ],
+    },
+];
 
 export default function AboutMe() {
     const sectionRef = useRef<HTMLElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-        if (sectionRef.current) observer.observe(sectionRef.current);
+        const section = sectionRef.current;
+        if (!section) return;
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.disconnect();
+            }
+        });
+        observer.observe(section);
         return () => observer.disconnect();
     }, []);
 
@@ -27,162 +106,78 @@ export default function AboutMe() {
             <section
                 ref={sectionRef}
                 id="aboutme"
-                style={{ minHeight: "50vh" }}
-                className={`${styles.about} ${styles["fade-in"]} ${isVisible ? styles.show : ""}`}
+                aria-labelledby="aboutme-title"
+                className={`${styles.about} ${isVisible ? styles.show : ""}`}
             >
-                <div className={styles.sectionLine}>
-                    <p className={styles.title}>About Me</p>
-                    <div className={styles.container}>
-                        <div className={styles.profileContainer}>
-                            <Image
-                                src="/images/ProfilePhoto.png"
-                                alt="정혜연 프로필 사진"
-                                width={280}
-                                height={280}
-                                loading="eager"
-                                sizes="(max-width: 850px) 120px, 280px"
-                                className={styles.image}
-                            />
-                        </div>
-                        <div className={styles.content}>
-                            <div className={styles.intro}>
-                                <p className={styles.sectionTitle}>
-                                    정혜연 <span className={styles.semiTitle}>Jung HyeYeon</span>
-                                </p>
-                                <p>2000.03.06</p>
-                                <p>
-                                    <strong>익숙함과 새로움의 공존을 추구</strong>하는 개발자
-                                    정혜연입니다.
-                                </p>
-                                <p>
-                                    TypeScript와 React 기반의 프로젝트를 주로 다뤄왔으며,
-                                    <br />
-                                    단순한 구현을 넘어 사용 환경과 제약을 고려한 설계와 지속적으로
-                                    개선 가능한 구조에 관심을 두고 있습니다.
-                                </p>
-                            </div>
-                            <div className={styles.education}>
-                                <p className={styles.sectionTitle}>Work Experience</p>
-                                <div className={styles.eduContainer}>
-                                    <div className={styles.experienceIcon} aria-hidden="true">
-                                        <Briefcase size={48} weight="light" />
-                                    </div>
-                                    <div className={styles.eduContent}>
-                                        <p className={styles.schoolName}>EnkiWhitehat</p>
-                                        <p>2026.03 ~ 재직 중</p>
-                                    </div>
-                                </div>
-                                <div className={styles.eduContainer}>
-                                    <Image
-                                        className={styles.experienceLogo}
-                                        src="/logo/cp_logo.png"
-                                        alt="Conscience Partners"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <div className={styles.eduContent}>
-                                        <p className={styles.schoolName}>Conscience Partners</p>
-                                        <p>2025.08 ~ 2026.01</p>
-                                        <p>Frontend(&backend) Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.education}>
-                                <p className={styles.sectionTitle}>Education</p>
-                                <div className={styles.eduContainer}>
-                                    <Image
-                                        className={styles.eduLogo}
-                                        src="/logo/AjouUniv.png"
-                                        alt="Ajou University"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <div className={styles.eduContent}>
-                                        <p className={styles.schoolName}>아주대학교</p>
-                                        <p>2019.03 ~ 2025.02</p>
-                                        <p>제 1 전공: 불어불문학과</p>
-                                        <p>제 2 전공: 디지털미디어학과</p>
-                                    </div>
-                                </div>
-                                <div className={styles.eduContainer}>
-                                    <Image
-                                        className={styles.eduLogo}
-                                        src="/logo/CFLHS.webp"
-                                        alt="Cheongju Foreign Language High School"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <div className={styles.eduContent}>
-                                        <p className={styles.schoolName}>청주외국어고등학교</p>
-                                        <p>2016.03 ~ 2019.02</p>
-                                        <p>전공: 프랑스어과</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.certificate}>
-                                <p className={styles.sectionTitle}>Certificate</p>
-                                <div className={styles.certificateGroup}>
-                                    <p className={styles.certificateTitle}>Skills</p>
-                                    <div className={styles.certificateContainer}>
-                                        <div>
-                                            <p className={styles.certificateTitle}>GTQ 1급</p>
-                                        </div>
-                                        <div>
-                                            <p>한국생산성본부</p>
-                                            <p>2023.09.15</p>
-                                        </div>
-                                    </div>
-                                    <div className={styles.certificateContainer}>
-                                        <div>
-                                            <p className={styles.certificateTitle}>GTQi 1급</p>
-                                        </div>
-                                        <div>
-                                            <p>한국생산성본부</p>
-                                            <p>2023.09.15</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={styles.certificateGroup}>
-                                    <p className={styles.certificateTitle}>Languages</p>
-                                    <div className={styles.certificateContainer}>
-                                        <div>
-                                            <p className={styles.certificateTitle}>French</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <strong>Delf B1</strong>
-                                            </p>
-                                            <p>France Education International</p>
-                                            <p>2022.12.19</p>
-                                        </div>
-                                    </div>
-                                    <div className={styles.certificateContainer}>
-                                        <div>
-                                            <p className={styles.certificateTitle}>English</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <strong>TOEIC 720</strong>
-                                            </p>
-                                            <p>YBM</p>
-                                            <p>만료됨.</p>
-                                        </div>
-                                    </div>
-                                    <div className={styles.certificateContainer}>
-                                        <div>
-                                            <p className={styles.certificateTitle}>Japanese</p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <strong>일상회화 수준</strong>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* @TODO 경력 */}
-                        </div>
+                <h2 id="aboutme-title" className={styles.title}>
+                    About Me
+                </h2>
+                <div className={styles.profileRow}>
+                    <div className={styles.profileContainer}>
+                        <ProfileLanyard />
                     </div>
+                    <div className={styles.intro}>
+                        <h3 className={styles.name}>정혜연</h3>
+                        <p className={styles.englishName}>Jung HyeYeon</p>
+                        <time className={styles.meta} dateTime="2000-03-06">
+                            2000.03.06
+                        </time>
+                        <p className={styles.bio}>
+                            <strong>프론트엔드와 백엔드</strong>를 함께 다루며, 기능 구현부터{" "}
+                            <strong>화면의 흐름과 작은 디테일</strong>까지 다듬어 왔습니다. 사용자가
+                            맥락을 놓치지 않고 편하게 이용할 수 있도록 구성하고, 실제 사용
+                            환경에서도 <strong>안정적으로 동작하는 서비스</strong>를 만드는 데
+                            집중합니다.
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.details}>
+                    {groups.map(({ title, titleId, entries }) => (
+                        <section key={titleId} className={styles.group} aria-labelledby={titleId}>
+                            <h3 id={titleId} className={styles.groupTitle}>
+                                {title}
+                            </h3>
+                            <ul className={styles.entries} role="list">
+                                {entries.map(({ name, logo, details, value, dateTime }) => (
+                                    <li key={name} className={styles.entry}>
+                                        {logo && (
+                                            <Image
+                                                className={styles.logo}
+                                                src={logo}
+                                                alt=""
+                                                width={44}
+                                                height={44}
+                                                loading="eager"
+                                                unoptimized
+                                            />
+                                        )}
+                                        <div className={styles.entryContent}>
+                                            <div className={styles.entryHeading}>
+                                                <strong>{name}</strong>
+                                                {dateTime ? (
+                                                    <time
+                                                        className={styles.entryValue}
+                                                        dateTime={dateTime}
+                                                    >
+                                                        {value}
+                                                    </time>
+                                                ) : (
+                                                    <span className={styles.entryValue}>
+                                                        {value}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            {details?.map((detail) => (
+                                                <p key={detail} className={styles.meta}>
+                                                    {detail}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    ))}
                 </div>
             </section>
             <a

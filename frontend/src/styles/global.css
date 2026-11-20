@@ -1,7 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }
 
 html,
@@ -10,6 +16,17 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100%;
+}
+
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -33,4 +50,23 @@ body {
 
     --Blue: #0277f7;
     --light-Blue: #7ab2f0;
+
+    --section-spacing: clamp(96px, 8vw, 128px);
+    --section-content-gap: clamp(40px, 4vw, 56px);
+    --section-divider-color: color-mix(in srgb, var(--White) 15%, transparent);
+}
+
+/* The decorative canvas stays behind the existing page and ignores clicks. */
+body {
+    position: relative;
+    isolation: isolate;
+}
+.effects-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.site-content {
+    position: relative;
 }

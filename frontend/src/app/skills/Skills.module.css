@@ -1,44 +1,39 @@
+.about {
+    composes: section from "../../styles/section.module.css";
+    container-type: inline-size;
+}
+
 .title {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 80px;
-    border-left: 10px solid var(--Blue);
-    padding-left: 20px;
+    composes: title from "../../styles/section.module.css";
 }
 
 .content {
-    margin: 32px 0;
-    padding-bottom: 80px;
-    border-bottom: 0.5px solid var(--light-Gray);
-    scroll-margin-top: 200px;
+    margin: 0;
 }
 
-.logoContainer {
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    gap: 12px;
-}
-
-.logoImg {
-    object-fit: contain;
-    border: 1px solid var(--light-Gray);
-    background-color: var(--White);
-    border-radius: 8px;
-    padding: 8px;
-    margin-right: 8px;
-}
-
-.skillTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 12px;
+.hint {
+    margin-bottom: 24px;
+    color: var(--White);
+    font-size: 13px;
+    opacity: 0.65;
 }
 
 .skillContiner {
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    align-items: end;
+    gap: 28px 20px;
+}
+
+.skillGroup {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+    position: relative;
+}
+
+.skillGroup[data-open] {
+    z-index: 2;
 }
 
 .fade-in {
@@ -52,4 +47,18 @@
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+@container (max-width: 340px) {
+    .skillContiner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        transition: none;
+        transform: none;
+    }
 }

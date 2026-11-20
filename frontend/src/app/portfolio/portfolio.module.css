@@ -1,8 +1,9 @@
+.about {
+    composes: section from "../../styles/section.module.css";
+}
+
 .content {
-    margin: 32px 0;
-    padding-bottom: 80px;
-    border-bottom: 0.5px solid var(--light-Gray);
-    scroll-margin-top: 200px;
+    margin-top: var(--section-content-gap);
 }
 
 .cardGrid {
@@ -149,14 +150,7 @@
 }
 
 .title {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 80px;
-    border-left: 10px solid var(--Blue);
-    padding-left: 20px;
-    margin-bottom: 24px;
+    composes: title from "../../styles/section.module.css";
 }
 
 .tab {

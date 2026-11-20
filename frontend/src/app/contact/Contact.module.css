@@ -1,18 +1,15 @@
+.about {
+    composes: section from "../../styles/section.module.css";
+    padding-block-end: var(--section-content-gap);
+}
+
 .title {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 80px;
-    border-left: 10px solid var(--Blue);
-    padding-left: 20px;
-    margin-bottom: 24px;
+    composes: title from "../../styles/section.module.css";
 }
 
 .container {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 118px;
 }
 
 .content {
@@ -46,10 +43,6 @@
 }
 
 @media (max-width: 850px) {
-    .container {
-        padding-bottom: 0;
-    }
-
     .logo {
         width: 60px;
         height: 60px;

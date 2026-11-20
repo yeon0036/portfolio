@@ -1,38 +1,23 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    padding-left: 350px;
+    padding-inline: 240px 48px;
     width: 100%;
     min-height: 100vh;
     background-color: var(--Black);
-    overflow-x: hidden;
-}
-
-.mainContent {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    max-width: 1920px;
-    margin: 0 auto;
 }
 
 .content {
+    --section-inline-padding: 0px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 40px;
-    padding: 40px;
-    box-sizing: border-box;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.section {
+    min-width: 0;
 }
 
 .mobileNav {
@@ -40,42 +25,76 @@
 }
 
 .mobileNav a {
-    color: var(--White);
-    padding: 8px 12px;
+    padding: 20px 0 16px;
+    border-bottom: 2px solid transparent;
+    color: var(--light-Gray);
     text-decoration: none;
-    transition: color 0.3s;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.mobileNav a:hover {
+    color: var(--White);
 }
 
 .mobileNav a.active {
-    color: var(--Blue);
-    font-weight: bold;
+    color: var(--White);
+    border-bottom-color: var(--Blue);
+}
+
+.mobileNav a:focus-visible {
+    outline: 2px solid var(--light-Blue);
+    outline-offset: 2px;
 }
 
 @media (max-width: 1024px) {
     .wrapper {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    .content {
-        padding: 0 8px;
+        padding-inline: 32px;
     }
 
     .mobileNav {
         position: fixed;
         top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        background-color: var(--Gray);
-        border-bottom: 1px solid var(--light-Gray);
-        padding: 12px 0;
+        left: 0;
         z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: clamp(20px, 5vw, 40px);
+        width: 100%;
+        padding-inline: 20px;
+        background-color: color-mix(in srgb, var(--Black) 94%, transparent);
+        backdrop-filter: blur(12px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-100%);
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s;
     }
 
-    .section {
-        scroll-margin-top: 52px;
+    .mobileNavVisible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding-inline: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobileNav,
+    .mobileNav a {
+        transition: none;
     }
 }

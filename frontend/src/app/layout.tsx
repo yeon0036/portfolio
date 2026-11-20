@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/global.css";
+import EffectsBackground from "@/components/ReactBits/EffectsBackground";
 import Footer from "@/components/Footer/Footer";
 //import AppXY from "@/components/mousepointer/AppXY";
 
@@ -16,9 +17,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body>
+                <EffectsBackground />
                 {/* <AppXY /> */}
-                <main>{children}</main>
-                <footer>
+                <main className="site-content">{children}</main>
+                <footer className="site-content">
                     <Footer />
                 </footer>
             </body>

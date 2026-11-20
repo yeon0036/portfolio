@@ -1,0 +1,47 @@
+.profile {
+    position: relative;
+    width: 340px;
+    max-width: 100%;
+    height: var(--profile-lanyard-height, 520px);
+}
+.fallback {
+    position: absolute;
+    inset: 12.5% 24px auto;
+    text-align: center;
+}
+.fallback img {
+    width: 100%;
+    height: min(300px, calc(var(--profile-lanyard-height, 520px) - 148px));
+    object-fit: cover;
+    border-radius: 18px;
+}
+.fallback p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--White);
+    margin-top: 16px;
+}
+.fallback strong {
+    color: var(--light-Blue);
+    font-weight: 600;
+}
+.introLine {
+    display: block;
+    white-space: nowrap;
+}
+.accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+@media (max-width: 850px) {
+    .profile {
+        width: min(400px, 90vw);
+        height: var(--profile-lanyard-height, 480px);
+    }
+}

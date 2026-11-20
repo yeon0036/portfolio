@@ -1,0 +1,17 @@
+.section {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding-block: var(--section-spacing);
+    padding-inline: var(--section-inline-padding, clamp(24px, 4vw, 48px));
+    border-bottom: 1px solid var(--section-divider-color);
+}
+
+.title {
+    margin: 0 0 var(--section-content-gap);
+    padding-left: 16px;
+    border-left: 4px solid var(--Blue);
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+}

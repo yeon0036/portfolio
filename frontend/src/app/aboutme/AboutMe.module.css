@@ -1,39 +1,140 @@
-.sectionLine {
-    margin: 32px 0;
-    padding-bottom: 80px;
-    width: 100%;
-    border-bottom: 0.5px solid var(--light-Gray);
-    scroll-margin-top: 200px;
+.about {
+    composes: section from "../../styles/section.module.css";
+    --about-line: var(--section-divider-color);
+    --about-meta: color-mix(in srgb, var(--White) 76%, var(--Gray));
+    container-type: inline-size;
+    opacity: 0.75;
+    transition: opacity 0.45s ease-out;
 }
 
-.about {
-    width: 100%;
-    margin: 0 auto;
+.show {
+    opacity: 1;
 }
 
 .title {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 80px;
-    border-left: 10px solid var(--Blue);
-    padding-left: 20px;
+    composes: title from "../../styles/section.module.css";
 }
 
-.container {
+.profileRow {
     display: flex;
-    align-items: flex-start;
-    width: 100%;
-    line-height: 26px;
-    gap: 52px;
+    align-items: center;
+    gap: clamp(24px, 5cqw, 56px);
 }
 
 .profileContainer {
+    --profile-lanyard-height: 360px;
+    flex: 0 0 280px;
+    width: 280px;
+    max-width: 100%;
+}
+
+.intro {
+    flex: 1;
+    padding-block: 20px;
+    min-width: 0;
+}
+
+.name {
+    font-size: clamp(32px, 6cqw, 52px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.englishName {
+    margin: 10px 0 6px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.bio {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+.bio strong {
+    color: var(--light-Blue);
+    font-weight: 600;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(24px, 5cqw, 56px);
+    row-gap: 24px;
+    margin-top: 24px;
+}
+
+.group {
+    min-width: 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--about-line);
+}
+
+.groupTitle {
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.entries {
+    list-style: none;
+}
+
+.entry {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
-    align-items: center;
+    padding-block: 12px;
+}
+
+.entry + .entry {
+    border-top: 1px solid var(--about-line);
+}
+
+.logo {
+    display: block;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: white;
+    object-fit: contain;
+}
+
+.entryContent {
+    min-width: 0;
+    flex: 1;
+}
+
+.entryHeading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2px 12px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.meta,
+.entryValue {
+    color: var(--about-meta);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.entryContent .meta {
+    margin-top: 3px;
+}
+
+.entryValue {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .resumeFloating {
@@ -66,146 +167,45 @@
     line-height: 1;
 }
 
-.image {
-    border-radius: 9999px;
-    object-fit: cover;
-    align-items: top;
-}
+@container (max-width: 650px) {
+    .profileRow {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 20px 32px;
-}
+    .profileContainer {
+        flex: none;
+        align-self: center;
+    }
 
-.sectionTitle {
-    font-size: 24px;
-    font-weight: bold;
-}
+    .intro {
+        padding-block: 8px 20px;
+    }
 
-.semiTitle {
-    font-size: 18px;
-    font-weight: 400;
-}
+    .bio {
+        margin-top: 16px;
+    }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-bottom: 24px;
-    border-bottom: 0.5px solid var(--light-Gray);
-}
-
-.experienceLogo {
-    padding: 6px;
-    margin: 12px 0;
-    background-color: white;
-    object-fit: contain;
-}
-
-.experienceIcon {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    margin: 12px 0;
-    color: var(--Blue);
-    background-color: var(--White);
-}
-
-.education {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 40px;
-    padding-bottom: 40px;
-    border-bottom: 0.5px solid var(--light-Gray);
-}
-
-.eduLogo {
-    padding: 8px;
-    margin: 12px 0;
-    background-color: white;
-    object-fit: cover;
-}
-
-.schoolName {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.eduContainer {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-}
-
-.eduContent {
-    display: flex;
-    flex-direction: column;
-    margin: 8px 16px;
-}
-
-.certificate {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 40px;
-}
-
-.certificateGroup {
-    margin-top: 18px;
-}
-
-.certificateTitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 12px;
-    min-width: 180px;
-}
-
-.certificateContainer {
-    display: flex;
-    margin-bottom: 12px;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-        opacity 5s ease,
-        transform 1s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
+    .details {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 20px;
+        margin-top: 12px;
+    }
 }
 
 @media (max-width: 850px) {
-    .container {
-        width: 100%;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .content {
-        margin: 0;
-    }
-
-    .image {
-        width: 120px;
-        height: 120px;
-        margin: 20px auto 0;
-    }
-
     .resumeFloating {
         right: 16px;
         bottom: 16px;
         padding: 10px 12px;
         font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about {
+        opacity: 1;
+        transition: none;
     }
 }

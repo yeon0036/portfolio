@@ -1,64 +1,95 @@
 .sideNav {
     position: fixed;
     top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
+    left: clamp(28px, 4vw, 72px);
+    width: 160px;
+    transform: translate(-8px, -50%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s;
     z-index: 50;
-    margin: 0 20px;
 }
 
 .show {
     opacity: 1;
-    pointer-events: auto;
-}
-
-.sideNav.show {
-    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
     pointer-events: auto;
 }
 
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     list-style: none;
 }
 
 .tab {
-    all: unset;
+    position: relative;
+    display: inline-block;
+    padding-block: 8px;
     color: var(--light-Gray);
     text-decoration: none;
-    font-weight: 900;
-    font-size: 52px;
-    transition: color 0.3s ease;
-    cursor: pointer;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.tab:hover {
-    color: var(--light-Blue);
+.tab::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    background-color: var(--Blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.tab:hover,
+.tab:focus-visible {
+    color: var(--White);
+    transform: translateX(4px);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--light-Blue);
+    outline-offset: 3px;
 }
 
 .active {
-    color: var(--Blue);
-    font-weight: 700;
-    position: relative;
+    color: var(--White);
 }
 
-.active::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
+.active::after {
+    transform: scaleX(1);
 }
 
 @media (max-width: 1024px) {
     .sideNav {
         display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sideNav,
+    .tab,
+    .tab::after {
+        transition: none;
+    }
+
+    .tab:hover,
+    .tab:focus-visible {
+        transform: none;
     }
 }

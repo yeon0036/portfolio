@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import AccordionGallery from "@/components/ReactBits/AccordionGallery/AccordionGallery";
 import styles from "./portfolio.module.css";
 import PortfolioDetail from "./components/PortfolioDetail";
 import DesignDetail from "./components/DesignDetail";
@@ -12,6 +12,33 @@ import { portfolioData } from "./PortfolioData";
 export default function PortfolioClient() {
     const [activeTab, setActiveTab] = useState<"ALL" | "Work Experience" | "Team Project">("ALL");
     const [selectedItem, setSelectedItem] = useState<PortfolioProps | DesignProps | null>(null);
+    const closeRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => {
+        if (!selectedItem) return;
+        const previousFocus = document.activeElement as HTMLElement | null;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        closeRef.current?.focus();
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setSelectedItem(null);
+        };
+        document.addEventListener("keydown", onKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", onKeyDown);
+            previousFocus?.focus();
+        };
+    }, [selectedItem]);
+
+    const [vertical, setVertical] = useState(false);
+    useEffect(() => {
+        const media = window.matchMedia("(max-width: 700px)");
+        const update = () => setVertical(media.matches);
+        update();
+        media.addEventListener("change", update);
+        return () => media.removeEventListener("change", update);
+    }, []);
 
     const filteredItems =
         activeTab === "ALL"
@@ -45,39 +72,24 @@ export default function PortfolioClient() {
 
             {/* card grid */}
             <div className={styles.content}>
-                <div className={styles.cardGrid}>
-                    {filteredItems.map((item) => {
-                        const cardBody = (
-                            <div className={styles.card}>
-                                <div className={styles.cardImageWrap}>
-                                    <Image
-                                        src={item.image}
-                                        alt={`${item.title} 대표 이미지`}
-                                        width={600}
-                                        height={400}
-                                        className={styles.cardImage}
-                                    />
-                                </div>
-                                <div className={styles.cardText}>
-                                    <p className={styles.cardTitle}>{item.title}</p>
-                                    <p className={styles.cardIntro}>{item.intro}</p>
-                                </div>
-                            </div>
-                        );
-
-                        return (
-                            <button
-                                key={item.id}
-                                type="button"
-                                aria-label={`${item.title} 상세 보기`}
-                                className={styles.cardButton}
-                                onClick={() => setSelectedItem(item)}
-                            >
-                                {cardBody}
-                            </button>
-                        );
-                    })}
-                </div>
+                <AccordionGallery
+                    key={`${activeTab}-${vertical}`}
+                    items={filteredItems.map((item) => ({
+                        image: item.thumbnail || item.image,
+                        label: item.title,
+                        description: item.intro,
+                        alt: `${item.title} 대표 이미지`,
+                    }))}
+                    defaultIndex={0}
+                    accentColor="var(--Blue)"
+                    overlayColor="var(--Black)"
+                    textColor="var(--White)"
+                    orientation={vertical ? "vertical" : "horizontal"}
+                    height={vertical ? 490 : 430}
+                    expandRatio={0.58}
+                    tilt={5}
+                    onItemClick={(index) => setSelectedItem(filteredItems[index])}
+                />
             </div>
 
             {selectedItem && (
@@ -90,6 +102,7 @@ export default function PortfolioClient() {
                     />
                     <div className={styles.modalContent}>
                         <button
+                            ref={closeRef}
                             type="button"
                             className={styles.modalClose}
                             aria-label="닫기"
