@@ -1,0 +1,47 @@
+{
+    "acdc": {
+        "main": "/images/CTF/acdc/main.a33c401185.webp",
+        "challenges": "/images/CTF/acdc/challenges.3321c364d7.webp",
+        "scoreboard": "/images/CTF/acdc/scoreboard.31e2129fb7.webp"
+    },
+    "apcert": {
+        "main": "/images/CTF/apcert/main.24dcbaf025.webp",
+        "challenges": "/images/CTF/apcert/challenges.70d9b8b9ca.webp",
+        "scoreboard": "/images/CTF/apcert/scoreboard.7257c2a062.webp"
+    },
+    "cce": {
+        "main": "/images/CTF/cce/main.cdd3da3100.webp",
+        "challenges": "/images/CTF/cce/challenges.cfc8a8d78d.webp",
+        "scoreboard": "/images/CTF/cce/scoreboard.db977d86ac.webp"
+    },
+    "codegate": {
+        "main": "/images/CTF/codegate/main.2a2e803ea6.webp",
+        "challenges": "/images/CTF/codegate/challenges.7aa9b5719a.webp",
+        "scoreboard": "/images/CTF/codegate/scoreboard.0530646bc4.webp"
+    },
+    "fiesta": {
+        "main": "/images/CTF/fiesta/main.b9cf8c5e8d.webp",
+        "challenges": "/images/CTF/fiesta/challenges.fc75b20772.webp",
+        "scoreboard": "/images/CTF/fiesta/scoreboard.63f3f91a58.webp"
+    },
+    "fis": {
+        "main": "/images/CTF/fis/main.1f426b8c2a.webp",
+        "challenges": "/images/CTF/fis/challenges.2bab0984f2.webp",
+        "scoreboard": "/images/CTF/fis/scoreboard.7ac21fdaf7.webp"
+    },
+    "hacktheon": {
+        "main": "/images/CTF/hacktheon/main.f9cae5d075.webp",
+        "challenges": "/images/CTF/hacktheon/challenges.fd16185047.webp",
+        "scoreboard": "/images/CTF/hacktheon/scoreboard.a3419746cf.webp"
+    },
+    "sector": {
+        "main": "/images/CTF/sector/main.8c4f4ccf86.webp",
+        "challenges": "/images/CTF/sector/challenges.9ac25bf087.webp",
+        "scoreboard": "/images/CTF/sector/scoreboard.2102b65a34.webp"
+    },
+    "uhcon": {
+        "main": "/images/CTF/uhcon/main.d29c5eb2ce.webp",
+        "challenges": "/images/CTF/uhcon/challenges.146bace348.webp",
+        "scoreboard": "/images/CTF/uhcon/scoreboard.1c7d60d4a4.webp"
+    }
+}

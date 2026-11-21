@@ -1,197 +1,236 @@
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 80px;
-    font-weight: bold;
-    color: var(--White);
-    z-index: 2;
-}
-
-.loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 2rem;
-    color: var(--White);
-    text-align: center;
-}
-
-.loadingSpinner {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: var(--White);
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.semiTitle {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--White);
-    z-index: 1;
-    margin-bottom: 8px;
-    margin-top: 12px;
-    padding-bottom: 8px;
-    border-bottom: 0.5px solid var(--White);
-    width: 40%;
-}
-
-.rnrList > li > .semiTitle {
-    border-bottom: none;
+.project {
     width: 100%;
-}
-
-.contentText {
-    margin: 8px auto;
-    font-size: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 32px);
+    color: var(--White);
+    line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
 .container {
-    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    border-bottom: 0.5px solid var(--White);
-    margin-bottom: 52px;
-    padding-bottom: 32px;
+    gap: 16px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--section-divider-color);
+    min-width: 0;
 }
 
-/* header */
-.thumbnail {
+.container:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.category {
+    color: var(--light-Blue);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+.intro {
+    max-width: 45em;
+    font-size: 1.0625rem;
+}
+
+.semiTitle {
+    color: var(--White);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.projectLinks,
+.toolList {
     display: flex;
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    margin-top: 40px;
-    cursor: pointer;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
 }
 
-.thumbnail:hover {
-    transform: scale(1.05);
-}
-
-.thumbnailLink {
-    display: flex;
-    justify-content: center;
+.projectLink {
+    display: inline-flex;
     align-items: center;
-    width: 100%;
-    margin-top: -60px;
-}
-
-.titleLink {
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid var(--section-divider-color);
+    border-radius: 8px;
+    color: var(--light-Blue);
+    font-size: 0.875rem;
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: none;
-    color: inherit;
-    display: block;
 }
 
-.titleLink:visited,
-.titleLink:hover,
-.titleLink:active,
-.titleLink:focus {
-    text-decoration: none;
-    border-bottom: none;
-    color: inherit;
+.projectLink:hover {
+    background: var(--Gray);
+    border-color: var(--light-Blue);
 }
 
-.titleLink,
-.titleLink * {
-    text-decoration: none !important;
-    border-bottom: none !important;
+.projectLink:focus-visible,
+.overviewButton:focus-visible,
+.carouselClose:focus-visible,
+.research > summary:focus-visible {
+    outline: 2px solid var(--light-Blue);
+    outline-offset: 4px;
 }
 
-/* overview */
+.rnrList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 1.25em;
+    font-size: 1rem;
+    list-style: disc;
+}
+
+.rnrList li::marker {
+    color: var(--light-Blue);
+}
+
+.featureList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.featureItem {
+    min-width: 0;
+}
+
+.detailTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--White);
+    margin-bottom: 4px;
+}
+
+.contentText {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--White);
+}
+
+.toolItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border: 1px solid var(--section-divider-color);
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+.logoImg {
+    object-fit: contain;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.screenSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.previewNote {
+    font-size: 0.875rem;
+    color: var(--light-Blue);
+    line-height: 1.7;
+}
 
 .overviewImg {
-    display: flex;
-    gap: 12px;
-    z-index: 2;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    /* position: relative; */
-    object-fit: contain;
-    width: auto;
-    height: auto;
-    max-width: none;
-    max-height: 360px;
-}
-
-.overviewImgDesign {
-    display: flex;
-    gap: 12px;
-    z-index: 2;
-    margin: 20px auto 10px;
-    justify-content: center;
-    align-items: center;
-    /* position: relative; */
-    object-fit: contain;
+    display: block;
     width: 100%;
     height: auto;
-    max-width: 900px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
-/* overview horizontal scroll (mobile) */
 .overviewScroll {
     display: flex;
-    gap: 4px;
-    width: 100%;
+    gap: 20px;
     max-width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 16px;
+    scroll-snap-type: x proximity;
 }
 
-/* 각 이미지 카드 */
 .overviewItem {
-    flex: 0 0 auto;
-    width: auto;
-    cursor: pointer;
+    flex: 0 0 240px;
+    min-width: 0;
+    scroll-snap-align: start;
 }
 
-/* overview carousel (mobile only) */
+.screenCaption {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--White);
+    margin: 8px 0;
+}
+
+.overviewButton {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.mobileOverviewImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .carouselOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
 }
 
+.carouselBackdrop {
+    position: absolute;
+    inset: 0;
+    border: none;
+    background: color-mix(in srgb, var(--Black) 95%, transparent);
+}
+
 .carouselContent {
     position: relative;
-    width: min(92vw, 520px);
+    width: min(92vw, 480px);
+    color: var(--White);
+    text-align: center;
 }
 
 .carouselClose {
     position: absolute;
-    top: -12px;
-    right: -6px;
-    width: 32px;
-    height: 32px;
-    border: none;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--light-Gray);
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--Black);
     color: var(--White);
-    font-size: 18px;
+    font-size: 1.5rem;
     cursor: pointer;
     z-index: 3;
 }
@@ -209,154 +248,32 @@
     object-fit: contain;
 }
 
-/* detail */
-
-.detaileContainer {
-    margin: 20px 0;
+.research {
+    border-top: 1px solid var(--section-divider-color);
+    padding-top: 16px;
 }
 
-.detailList {
-    margin: 20px;
+.research > summary {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.detailTitle {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--White);
-    margin-bottom: 8px;
-}
-
-.logoImg {
-    object-fit: contain;
-    border: 1px solid var(--light-Gray);
-    background-color: var(--White);
-    border-radius: 8px;
-    padding: 8px;
-    margin-right: 8px;
-}
-
-.rnrImg {
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.5);
-}
-
-.rnrList {
-    display: flex;
-    flex-direction: column;
-}
-
-.rnrIndex {
-    padding: 8px;
-    margin: 20px 0 12px 0;
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.5);
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.rnrDetail {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-left: 20px;
-}
-
-/* repository */
-
-.bottomContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 52px;
-    padding-bottom: 20px;
-}
-
-.githubLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media (max-width: 1024px) {
-    .overviewImg {
-        margin: -20px auto;
-    }
-
-    .overviewImgDesign {
-        margin: -10px auto 10px;
-    }
+.research[open] > summary {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
-    .container,
-    .bottomContainer {
-        margin-bottom: 12px;
-        padding-bottom: 12px;
-        gap: 16px;
+    .project {
+        padding: 12px 4px;
     }
 
-    .title {
-        font-size: 32px;
+    .featureList {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-    .semiTitle {
-        font-size: 16px;
-        width: 100%; /* 좁은 화면에선 가득 채우기 */
-    }
-
-    .thumbnail {
-        margin-top: 40px;
-        width: 100%;
-        height: auto;
-    }
-
-    .detailList {
-        margin: 12px 0;
-    }
-
-    .detailTItle {
-        font-size: 16px;
-    }
-
-    .contentText {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-
-    .rnrIndex {
-        font-size: 16px;
-    }
-
-    .rnrDetail {
-        font-size: 12px;
-    }
-
-    .overviewImg,
-    .overviewImgDesign {
-        width: 100%;
-        height: auto;
-        margin: 20px auto;
-    }
-
-    .logoImg {
-        width: 48px;
-        height: 48px;
-    }
-
-    .githubLogo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
-    }
-
-    .closeBtn {
-        size: 20px;
+    .overviewItem {
+        flex-basis: 200px;
     }
 }

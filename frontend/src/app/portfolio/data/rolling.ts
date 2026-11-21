@@ -5,7 +5,7 @@ export default {
     title: "Rolling",
     category: "Team Project",
     image: "/images/Rolling/Rolling.svg",
-    intro: "익명/비익명 메세지 전달 플랫폼",
+    intro: "익명·기명 메시지와 감정을 나누는 온라인 롤링페이퍼",
     link: "https://rolling-yeon.vercel.app/",
     github: "https://github.com/y5037/Rolling",
     thumbnail: "/images/Rolling/RollingTN.png",
@@ -41,16 +41,15 @@ export default {
     features: [
         {
             title: "롤링페이퍼 생성",
-            description:
-                "사용자 본인만의 롤링페이퍼를 개설할 수 있으며, 이를 통해 다양한 메세지를 받을 수 있습니다.",
+            description: "나만의 롤링페이퍼를 만들고 다른 사람의 메시지를 받습니다.",
         },
         {
-            title: "메세지 작성",
-            description: "원하는 대상의 롤링페이퍼에 자유롭게 메세지를 작성할 수 있습니다.",
+            title: "메시지 작성",
+            description: "상대방의 롤링페이퍼에 익명 또는 이름을 표시해 메시지를 남깁니다.",
         },
         {
-            title: "감정 이모지 표현",
-            description: "상대방에 대한 감정을 다양한 이모지로 표현해, 메시지에 감성을 더합니다.",
+            title: "이모지 반응",
+            description: "이모지로 상대방에게 감정을 표현합니다.",
         },
     ],
     tools: [
@@ -72,7 +71,7 @@ export default {
         },
         {
             src: "/logo/moduleCSS.png",
-            alt: "CSS Module",
+            alt: "CSS Modules",
         },
         {
             src: "/logo/vercel.svg",
@@ -80,7 +79,7 @@ export default {
         },
         {
             src: "/logo/prettier.svg",
-            alt: "prettier",
+            alt: "Prettier",
         },
     ],
     rnr: ["공통 Button 컴포넌트 개발", "롤링페이퍼 생성 페이지 구현"],

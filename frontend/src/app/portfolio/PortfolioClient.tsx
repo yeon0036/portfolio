@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import AccordionGallery from "@/components/ReactBits/AccordionGallery/AccordionGallery";
+import PortfolioCarousel from "./components/PortfolioCarousel";
 import styles from "./portfolio.module.css";
 import PortfolioDetail from "./components/PortfolioDetail";
 import DesignDetail from "./components/DesignDetail";
@@ -9,8 +9,11 @@ import MobileDetail from "./components/MobileDetail";
 import type { PortfolioProps, DesignProps } from "./types";
 import { portfolioData } from "./PortfolioData";
 
+const tabs = ["ALL", "Work Experience", "Team Project"] as const;
+type PortfolioTab = (typeof tabs)[number];
+
 export default function PortfolioClient() {
-    const [activeTab, setActiveTab] = useState<"ALL" | "Work Experience" | "Team Project">("ALL");
+    const [activeTab, setActiveTab] = useState<PortfolioTab>("ALL");
     const [selectedItem, setSelectedItem] = useState<PortfolioProps | DesignProps | null>(null);
     const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -31,15 +34,6 @@ export default function PortfolioClient() {
         };
     }, [selectedItem]);
 
-    const [vertical, setVertical] = useState(false);
-    useEffect(() => {
-        const media = window.matchMedia("(max-width: 700px)");
-        const update = () => setVertical(media.matches);
-        update();
-        media.addEventListener("change", update);
-        return () => media.removeEventListener("change", update);
-    }, []);
-
     const filteredItems =
         activeTab === "ALL"
             ? portfolioData
@@ -57,12 +51,11 @@ export default function PortfolioClient() {
 
             {/* 모바일 탭 */}
             <div className={styles.tabs}>
-                {["ALL", "Work Experience", "Team Project"].map((tab) => (
+                {tabs.map((tab) => (
                     <button
                         key={tab}
-                        onClick={() =>
-                            setActiveTab(tab as "ALL" | "Work Experience" | "Team Project")
-                        }
+                        onClick={() => setActiveTab(tab)}
+                        aria-pressed={activeTab === tab}
                         className={`${styles.tab} ${activeTab === tab ? styles.active : ""}`}
                     >
                         {tab === "ALL" ? "All" : tab}
@@ -70,30 +63,22 @@ export default function PortfolioClient() {
                 ))}
             </div>
 
-            {/* card grid */}
+            {/* 프로젝트 갤러리 */}
             <div className={styles.content}>
-                <AccordionGallery
-                    key={`${activeTab}-${vertical}`}
-                    items={filteredItems.map((item) => ({
-                        image: item.thumbnail || item.image,
-                        label: item.title,
-                        description: item.intro,
-                        alt: `${item.title} 대표 이미지`,
-                    }))}
-                    defaultIndex={0}
-                    accentColor="var(--Blue)"
-                    overlayColor="var(--Black)"
-                    textColor="var(--White)"
-                    orientation={vertical ? "vertical" : "horizontal"}
-                    height={vertical ? 490 : 430}
-                    expandRatio={0.58}
-                    tilt={5}
-                    onItemClick={(index) => setSelectedItem(filteredItems[index])}
+                <PortfolioCarousel
+                    key={activeTab}
+                    items={filteredItems}
+                    onSelect={setSelectedItem}
                 />
             </div>
 
             {selectedItem && (
-                <div className={styles.modalOverlay} role="dialog" aria-modal="true">
+                <div
+                    className={styles.modalOverlay}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={`${selectedItem.title} 프로젝트 상세`}
+                >
                     <button
                         type="button"
                         className={styles.modalBackdrop}

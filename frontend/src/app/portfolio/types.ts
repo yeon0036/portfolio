@@ -5,6 +5,7 @@ export interface PortfolioProps {
     image: string;
     type?: "Mobile" | "Web";
     category: string;
+    previewNote?: string;
     link: string;
     github: string;
     thumbnail: string;

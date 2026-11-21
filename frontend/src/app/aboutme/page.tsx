@@ -20,7 +20,7 @@ const groups: { title: string; titleId: string; entries: AboutEntry[] }[] = [
         titleId: "work-experience-title",
         entries: [
             {
-                name: "EnkiWhitehat",
+                name: "Enki Whitehat",
                 logo: "/logo/enki.png",
                 details: ["Fullstack Developer & Design"],
                 value: "2026.03 ~ 재직 중",

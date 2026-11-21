@@ -1,0 +1,160 @@
+.carousel {
+    min-width: 0;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.hint {
+    color: var(--light-Blue);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+}
+
+.controls button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid color-mix(in srgb, var(--White) 25%, transparent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--White);
+    font-size: 22px;
+    cursor: pointer;
+    transition: border-color 160ms ease, background 160ms ease;
+}
+
+.controls button:hover:not(:disabled) {
+    border-color: var(--Blue);
+    background: color-mix(in srgb, var(--Blue) 15%, transparent);
+}
+
+.controls button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.controls button:focus-visible,
+.card:focus-visible {
+    outline: 2px solid var(--Blue);
+    outline-offset: 3px;
+}
+
+.track {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 4px 4px 20px;
+    margin: -4px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 4px;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--Blue) transparent;
+}
+
+.card {
+    display: flex;
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--White) 15%, transparent);
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--White) 3%, transparent);
+    color: var(--White);
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition: border-color 160ms ease;
+}
+
+.card:hover {
+    border-color: var(--Blue);
+}
+
+.imageWrap {
+    position: relative;
+    display: block;
+    aspect-ratio: 1.44;
+    width: 100%;
+    background: var(--Black);
+    border-bottom: 1px solid color-mix(in srgb, var(--White) 10%, transparent);
+}
+
+.image {
+    object-fit: contain;
+}
+
+.caption {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 22px;
+}
+
+.title {
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.intro {
+    color: color-mix(in srgb, var(--White) 75%, transparent);
+    font-size: 14px;
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.detail {
+    margin-top: auto;
+    padding-top: 8px;
+    color: var(--light-Blue);
+    font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+    .card {
+        flex-basis: calc((100% - 20px) / 2.15);
+    }
+}
+
+@media (max-width: 700px) {
+    .card {
+        flex-basis: 88%;
+    }
+
+    .caption {
+        padding: 20px;
+    }
+
+    .hint {
+        max-width: 160px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        scroll-behavior: auto;
+    }
+
+    .card,
+    .controls button {
+        transition: none;
+    }
+}

@@ -1,130 +1,113 @@
 "use client";
 
 import Image from "next/image";
-import { getPortfolioItem } from "../PortfolioData";
-import Link from "next/link";
-import styles from "./PortFolioDetail.module.css";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { getPortfolioItem } from "../PortfolioData";
+import PortfolioHeader from "./PortfolioHeader";
+import PortfolioSummary from "./PortfolioSummary";
+import styles from "./PortFolioDetail.module.css";
 
 interface MobileDetailProps {
     id: string;
 }
 
 export default function MobileDetail({ id }: MobileDetailProps) {
-    const [isMobile, setIsMobile] = useState(false);
     const [isCarouselOpen, setIsCarouselOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isMounted, setIsMounted] = useState(false);
-
+    const closeRef = useRef<HTMLButtonElement>(null);
     const project = getPortfolioItem(id);
 
     useEffect(() => {
-        setIsMounted(true);
-        const mediaQuery = window.matchMedia("(max-width: 768px)");
-        const update = () => setIsMobile(mediaQuery.matches);
-        update();
-        mediaQuery.addEventListener("change", update);
-        return () => mediaQuery.removeEventListener("change", update);
-    }, []);
-
-    useEffect(() => {
         if (!isCarouselOpen) return;
-        const originalOverflow = document.body.style.overflow;
+        const previousFocus = document.activeElement as HTMLElement | null;
+        const previousOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
+        closeRef.current?.focus();
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                event.stopImmediatePropagation();
+                setIsCarouselOpen(false);
+            }
+        };
+        document.addEventListener("keydown", onKeyDown, true);
         return () => {
-            document.body.style.overflow = originalOverflow;
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", onKeyDown, true);
+            previousFocus?.focus();
         };
     }, [isCarouselOpen]);
 
-    if (!project || "details" in project) return <div>Not found</div>;
+    if (!project || "details" in project) return <p>프로젝트를 찾을 수 없습니다.</p>;
 
-    const p = project;
-    const overviewImages = p.overviewImages.flatMap((section) => section.images);
-    const features = p.features ?? [];
-    const tools = p.tools ?? [];
-    const rnr = p.rnr ?? [];
-
-    const openCarousel = (index: number) => {
-        if (!isMobile) return;
-        setActiveIndex(index);
-        setIsCarouselOpen(true);
-    };
+    const overviewImages = project.overviewImages.flatMap((section) =>
+        section.images.map((img) => ({ ...img, section: section.section }))
+    );
 
     return (
-        <div>
-            <div className={styles.container}>
-                <Link
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.titleLink}
-                >
-                    <p className={styles.title}>
-                        {p.title} <ArrowUpRight size={60} weight="bold" />
-                    </p>
-                    <div className={styles.thumbnailLink}>
-                        <Image
-                            src={p.thumbnail}
-                            alt={`${p.title} 대표 썸네일`}
-                            width={600}
-                            height={400}
-                            loading="eager"
-                            className={styles.thumbnail}
-                        />
-                    </div>
-                </Link>
-            </div>
-            <div className={styles.container}>
-                <p className={styles.title}>Overview</p>
+        <article className={styles.project}>
+            <PortfolioHeader {...project} />
+            <PortfolioSummary {...project} />
+            <section className={styles.container}>
+                <h3 className={styles.semiTitle}>화면 둘러보기</h3>
+                <p className={styles.contentText}>
+                    좌우로 넘겨 보고, 이미지를 선택하면 확대할 수 있습니다.
+                </p>
                 <div className={styles.overviewScroll}>
                     {overviewImages.map((img, index) => (
-                        <div
-                            key={img.src}
-                            className={styles.overviewItem}
-                            onClick={() => openCarousel(index)}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(event) => {
-                                if (event.key === "Enter" || event.key === " ") {
-                                    openCarousel(index);
-                                }
-                            }}
-                        >
-                            <Image
-                                className={styles.overviewImg}
-                                src={img.src}
-                                alt={img.alt}
-                                width={360}
-                                height={720}
-                            />
-                        </div>
+                        <figure key={img.src} className={styles.overviewItem}>
+                            <figcaption className={styles.screenCaption}>{img.section}</figcaption>
+                            <button
+                                type="button"
+                                className={styles.overviewButton}
+                                aria-label={`${img.section} 화면 확대`}
+                                onClick={() => {
+                                    setActiveIndex(index);
+                                    setIsCarouselOpen(true);
+                                }}
+                            >
+                                <Image
+                                    className={styles.mobileOverviewImg}
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={360}
+                                    height={720}
+                                    sizes="(max-width: 768px) 200px, 240px"
+                                />
+                            </button>
+                        </figure>
                     ))}
                 </div>
-            </div>
-            {isCarouselOpen && isMobile && isMounted
+            </section>
+            {isCarouselOpen
                 ? createPortal(
-                      <div
-                          className={styles.carouselOverlay}
-                          onClick={() => setIsCarouselOpen(false)}
-                      >
+                      <div className={styles.carouselOverlay}>
+                          <button
+                              type="button"
+                              className={styles.carouselBackdrop}
+                              aria-label="확대 화면 닫기"
+                              onClick={() => setIsCarouselOpen(false)}
+                          />
                           <div
                               className={styles.carouselContent}
-                              onClick={(event) => event.stopPropagation()}
+                              role="dialog"
+                              aria-modal="true"
+                              aria-label="프로젝트 화면 확대"
                           >
                               <button
+                                  ref={closeRef}
                                   type="button"
                                   className={styles.carouselClose}
                                   onClick={() => setIsCarouselOpen(false)}
-                                  aria-label="Close carousel"
+                                  aria-label="확대 화면 닫기"
                               >
-                                  ✕
+                                  ×
                               </button>
                               <Carousel
                                   selectedItem={activeIndex}
+                                  onChange={setActiveIndex}
                                   showThumbs={false}
                                   showStatus={false}
                                   infiniteLoop
@@ -138,77 +121,20 @@ export default function MobileDetail({ id }: MobileDetailProps) {
                                               alt={img.alt}
                                               width={720}
                                               height={1280}
+                                              sizes="(max-width: 768px) 92vw, 480px"
                                               className={styles.carouselImg}
                                           />
                                       </div>
                                   ))}
                               </Carousel>
+                              <p className={styles.screenCaption}>
+                                  {overviewImages[activeIndex].section}
+                              </p>
                           </div>
                       </div>,
                       document.body
                   )
                 : null}
-            <div className={styles.container}>
-                <p className={styles.title}>Details</p>
-                <div className={styles.detailContainer}>
-                    <ul>
-                        <p className={styles.semiTitle}>🔎 주요 기능</p>
-                        <div className={styles.detailList}>
-                            {features.map((feature) => (
-                                <li key={feature.title}>
-                                    <p className={styles.detailTItle}>{feature.title}</p>
-                                    <p className={styles.contentText}>{feature.description}</p>
-                                </li>
-                            ))}
-                        </div>
-                    </ul>
-                </div>
-                <div className={styles.detailContainer}>
-                    <p className={styles.semiTitle}>🔗 사용 기술 스택</p>
-                    <div className={styles.detailList}>
-                        {tools.map((tool) => (
-                            <Image
-                                key={tool.alt}
-                                className={styles.logoImg}
-                                src={tool.src}
-                                alt={tool.alt}
-                                width={80}
-                                height={80}
-                            />
-                        ))}
-                    </div>
-                </div>
-                <div className={styles.detailContainer}>
-                    <p className={styles.semiTitle}>📄 R & R</p>
-                    <div className={styles.detailList}>
-                        <ul className={styles.rnrList}>
-                            {rnr.map((item) => (
-                                <li key={item}>
-                                    <p className={styles.detailTitle}>{item}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            {p.github ? (
-                <div className={styles.bottomContainer}>
-                    <p className={styles.title}>Repository</p>
-                    <Link href={p.github} target="_blank">
-                        <div className={styles.githubLogo}>
-                            <Image
-                                src="/logo/github.png"
-                                alt="github repository"
-                                width={100}
-                                height={100}
-                                className={styles.githubLogo}
-                            />
-                        </div>
-                    </Link>
-                </div>
-            ) : (
-                ""
-            )}
-        </div>
+        </article>
     );
 }

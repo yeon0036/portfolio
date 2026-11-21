@@ -4,7 +4,7 @@ export default {
     id: "whyne",
     title: "WHYNE",
     image: "/images/WHYNE/WHYNE.svg",
-    intro: "와인 관련 정보공유 커뮤니티",
+    intro: "와인을 탐색하고 리뷰·평점을 공유하는 커뮤니티",
     category: "Team Project",
     link: "https://wyene-yeon.vercel.app/",
     github: "https://github.com/yujuseop/Project-Team2-WINE",
@@ -67,19 +67,16 @@ export default {
     ],
     features: [
         {
-            title: "메인 페이지",
-            description:
-                "전체 와인 리스트를 확인할 수 있으며, 이름 또는 조건 검색을 통해 원하는 와인을 빠르게 찾을 수 있습니다.",
+            title: "와인 탐색·검색",
+            description: "이름과 조건으로 와인을 검색하고 목록을 확인합니다.",
         },
         {
-            title: "상세 페이지 및 리뷰",
-            description:
-                "와인 상세 페이지에서는 다른 유저들이 남긴 리뷰와 평점을 확인할 수 있으며, 나만의 리뷰도 작성할 수 있습니다.",
+            title: "와인 상세·리뷰",
+            description: "다른 사용자의 리뷰·평점을 확인하고 내 리뷰를 작성합니다.",
         },
         {
-            title: "마이페이지",
-            description:
-                "작성한 리뷰, 등록한 와인 내역을 관리(수정/삭제)할 수 있고, 내 프로필 정보도 수정할 수 있습니다.",
+            title: "내 활동 관리",
+            description: "작성한 리뷰·등록한 와인을 관리하고 프로필을 수정합니다.",
         },
     ],
     tools: [
@@ -97,7 +94,7 @@ export default {
         },
         {
             src: "/logo/moduleCSS.png",
-            alt: "CSS Module",
+            alt: "CSS Modules",
         },
         {
             src: "/logo/vercel.svg",
@@ -105,8 +102,8 @@ export default {
         },
         {
             src: "/logo/prettier.svg",
-            alt: "prettier",
+            alt: "Prettier",
         },
     ],
-    rnr: ["공통 Button 컴포넌트 및 Global CSS", "마이페이지(내 정보) 구현"],
+    rnr: ["공통 버튼 컴포넌트 및 전역 스타일 작성", "마이페이지 구현"],
 } satisfies PortfolioProps;
